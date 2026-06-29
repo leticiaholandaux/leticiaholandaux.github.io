@@ -16,8 +16,14 @@
     img, video, iframe { max-width: 100%; height: auto; }
     ::selection { background: #C4622D; color: #fff; }
     @media (max-width: 768px) {
+      [data-case-hero] { grid-template-columns: 1fr !important; }
       [data-roadmap] { grid-template-columns: 1fr !important; gap: 24px !important; }
       [data-roadmap] [data-rm-track] { display: none !important; }
+      [data-grid2], [data-grid3] { grid-template-columns: 1fr !important; }
+      [data-grid4] { grid-template-columns: 1fr !important; }
+      [data-bignum] { grid-template-columns: 1fr 1fr !important; }
+      [data-funnel] { flex-direction: column !important; }
+      .funnel-arrow { transform: rotate(90deg); }
     }
   </style>
 
@@ -355,349 +361,220 @@
       <a href="index.html" style="font-size:13.5px; color:#6B6B66; text-decoration:none; padding-bottom:2px; background-image:linear-gradient(#C4622D,#C4622D); background-size:0% 1px; background-position:0 100%; background-repeat:no-repeat; transition:background-size .35s ease, color .3s ease;" style-hover="background-size:100% 1px; color:#1A1A1A;">← Voltar</a>
     </nav>
 
-    <!-- TINTED HEADER -->
-    <div style="background:rgba(196,98,45,0.08); width:100%; min-height:clamp(140px,22vw,200px); margin-top:28px;"></div>
-
-    <!-- FLOATING LOGO -->
-    <!-- INSERIR: logo-gupy.png -->
-    <div style="display:flex; justify-content:center; margin-top:-30px;">
-      <div style="width:120px; height:60px; background:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 24px rgba(80,50,110,0.14); border-radius:4px;">
-        <span style="font-family:'DM Sans',sans-serif; font-size:20px; font-weight:600; letter-spacing:-0.01em; color:#6D34B8;">gupy</span>
-      </div>
-    </div>
-
     <!-- HERO -->
-    <header style="max-width:800px; margin:0 auto; padding:clamp(28px,5vh,44px) 24px clamp(28px,5vh,52px); text-align:center;">
-      <h1 style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(38px,7vw,68px); line-height:1.04; letter-spacing:-0.015em; margin:0 0 20px; color:#1A1A1A;">Gupy<br><span style="color:#3A3A36;">Impulsionamento de Vagas</span></h1>
-      <p style="font-size:14px; color:#9A9A92; letter-spacing:0.02em; margin:0 0 16px;">Produto SaaS B2B · 2024–2025 · Product Designer Sr</p>
-      <p style="font-size:13px; font-weight:500; letter-spacing:0.04em; color:#C4622D; margin:0;">Product Design · UX Research · B2B · SaaS · Discovery · IA</p>
+    <header style="max-width:1080px; margin:0 auto; padding:clamp(40px,7vh,72px) 24px clamp(32px,5vh,56px);">
+      <style>.case-tags{display:flex; flex-wrap:wrap; gap:8px;} .case-tag{font-family:'Inter',sans-serif; font-size:12px; font-weight:500; color:#555555; background:#F2F2F0; border-radius:999px; padding:6px 12px; line-height:1; white-space:nowrap;} .gupy-ai-tag{display:inline-flex; align-items:center; gap:8px; margin:2px 0 18px; padding:7px 14px; background:rgba(196,98,45,0.08); border-radius:999px;} .gupy-ai-ico{color:#9A9A92; animation:gupyAiBlink 1.3s ease-in-out infinite;} @keyframes gupyAiBlink{0%,100%{color:#9A9A92; opacity:0.5;} 50%{color:#C4622D; opacity:1;}}</style>
+      <div data-case-hero style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(32px,5vw,64px); align-items:start;">
+        <!-- COLUNA ESQUERDA -->
+        <div>
+          <div style="font-family:'Inter',sans-serif; font-weight:500; font-size:14px; color:#9A9A92; margin-bottom:16px;">Projeto desenvolvido para <strong style="font-weight:700; color:#1A1A1A;">Gupy</strong></div>
+          <h1 style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(34px,4.6vw,52px); line-height:1.06; letter-spacing:-0.02em; margin:0 0 14px; color:#1A1A1A;">Impulsionamento de Vagas</h1>
+          <div class="gupy-ai-tag" aria-label="Produto com Inteligência Artificial">
+            <svg class="gupy-ai-ico" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z"/></svg>
+            <span style="font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.02em; color:#1A1A1A;">Produto com Inteligência Artificial</span>
+          </div>
+          <p style="font-family:'Inter',sans-serif; font-size:14px; color:#9A9A92; letter-spacing:0.02em; margin:0 0 24px;">2026</p>
+          <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(15px,1.4vw,16px); line-height:1.7; color:#1A1A1A; margin:0 0 30px;">Liderei o design do Impulsionamento de Vagas, criado para resolver um problema de churn: vagas sem candidaturas suficientes dependiam de um processo manual que não escalava. Desenhei uma solução com IA e tracking de ponta a ponta que automatizou a divulgação e tornou o impacto mensurável, alcançando milhões de talentos.</p>
+          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.04em; text-transform:uppercase; color:#1A1A1A; margin-bottom:12px;">Tags</div>
+          <div class="case-tags">
+            <span class="case-tag">UX</span>
+            <span class="case-tag">UI</span>
+            <span class="case-tag">Research</span>
+            <span class="case-tag">Inteligência Artificial</span>
+            <span class="case-tag">B2B</span>
+            <span class="case-tag">B2C</span>
+          </div>
+        </div>
+        <!-- COLUNA DIREITA: imagem do projeto -->
+        <div data-case-hero-img style="border-radius:14px; overflow:hidden;">
+          <img src="img/gupy-resumo.png" alt="Projeto Gupy" style="width:100%; height:auto; display:block;" onerror="this.style.display='none'; this.parentElement.style.minHeight='260px';">
+        </div>
+      </div>
     </header>
 
-    <!-- HERO METRICS — 4 COLUMNS -->
-    <section style="background:#F5F5F0; border-top:1px solid #E2E2DA; border-bottom:1px solid #E2E2DA;">
-      <div style="max-width:1000px; margin:0 auto; padding:clamp(40px,6vh,64px) 24px; display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(16px,2.5vw,36px);" data-metrics4>
-        <div data-fade style="text-align:center;">
-          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(30px,4.6vw,52px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">3,7M</div>
-          <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:12px;">talentos alcançados</div>
-        </div>
-        <div data-fade style="text-align:center;">
-          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(30px,4.6vw,52px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">101k</div>
-          <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:12px;">inscrições geradas</div>
-        </div>
-        <div data-fade style="text-align:center;">
-          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(30px,4.6vw,52px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">107</div>
-          <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:12px;">contratações</div>
-        </div>
-        <div data-fade style="text-align:center;">
-          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(30px,4.6vw,52px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">2.082</div>
-          <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:12px;">empresas impactadas</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTEXTO -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:28px;">O contexto</div>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">A Gupy é uma plataforma de recrutamento e seleção B2B que conecta empresas a candidatos em escala nacional. Dentro da área de Atração, identificamos um problema recorrente: vagas publicadas há mais de 15 dias sem atingir 50 candidaturas, o que chamamos internamente de “baixa atratividade”.</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Esse cenário gerava risco de churn, especialmente para clientes com alto volume de contratações em vagas operacionais: varejistas, redes de farmácia, logística e serviços. Empresas como McDonald's, Raia Drogasil, Vivo, Stone e Total Express eram impactadas diretamente.</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">A solução inicial foi manual: o time de Produto, sob demanda, realizava consultas no banco de talentos e enviava e-mails de forma manual, o que chamamos de “processo concierge”. O sucesso e a crescente demanda por esse processo geraram a necessidade de automatizar, escalar e monetizar a solução.</p>
-      <p data-fade style="font-family:'Inter',sans-serif; font-weight:700; font-style:italic; font-size:clamp(19px,2.4vw,24px); line-height:1.5; color:#1A1A1A; margin:0;">Foi daí que surgiu o Impulsionamento de Vagas.</p>
-    </section>
-
-    <!-- O PROBLEMA -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(40px,6vh,72px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">O Problema</div>
-      <div data-fade style="background:rgba(196,98,45,0.06); border-left:3px solid #C4622D; padding:clamp(22px,3.5vw,30px) clamp(22px,3.5vw,34px); margin-bottom:28px;">
-        <p style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(20px,2.4vw,22px); line-height:1.5; color:#1A1A1A; margin:0;">Vagas publicadas há mais de 15 dias sem candidaturas suficientes geram risco de churn. O processo manual que resolvia isso não escalava — e não gerava dados.</p>
-      </div>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 clamp(36px,5vh,48px);">O processo concierge funcionava, mas tinha limites críticos: dependia de esforço humano para cada demanda, não tinha rastreabilidade de resultados e não podia ser monetizado. Para crescer, precisava virar produto.</p>
-
-      <div data-fade style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:20px;">Problema central</div>
-      <div data-fade style="display:flex; flex-wrap:wrap; gap:16px;">
-        <div style="flex:1 1 280px; background:#F5F5F0; border-top:2px solid #C4622D; padding:clamp(22px,3vw,28px);">
-          <div style="font-size:14px; font-weight:600; color:#1A1A1A; margin-bottom:10px;">Para o cliente</div>
-          <p style="font-size:15px; line-height:1.65; color:#4A4A45; margin:0;">Vagas operacionais com baixa atratividade ficavam semanas sem candidatos qualificados, aumentando risco de perder a vaga e o próprio cliente.</p>
-        </div>
-        <div style="flex:1 1 280px; background:#F5F5F0; border-top:2px solid #CCCCCC; padding:clamp(22px,3vw,28px);">
-          <div style="font-size:14px; font-weight:600; color:#1A1A1A; margin-bottom:10px;">Para a Gupy</div>
-          <p style="font-size:15px; line-height:1.65; color:#4A4A45; margin:0;">O processo manual não tinha tracking, não escalava e não gerava receita — era esforço sem retorno mensurável.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- MEU PAPEL -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">Meu papel</div>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Fui a Product Designer responsável por todo o processo de design das duas fases do produto:</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;"><span style="color:#1A1A1A; font-weight:500;">Na Fase 1 (e-mail)</span>, desenhei o fluxo completo de criação de campanhas, onde o recrutador seleciona a vaga, define os filtros de audiência (localização, escolaridade, experiência profissional, diversidade), visualiza o preview do e-mail que será enviado, revisa o resumo e confirma o impulsionamento. Também desenhei a gestão dessas campanhas, com dashboard de créditos, vagas impulsionadas, candidaturas e contratações.</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;"><span style="color:#1A1A1A; font-weight:500;">Na Fase 2 (WhatsApp + IA)</span>, trabalhei na evolução estratégica: adição do canal WhatsApp via grupos regionais e integração de IA para pré-seleção automática de filtros, eliminando o erro humano de impulsionar sem segmentação adequada.</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">Em ambas as fases, conduzi pesquisas com usuários e alinhamentos com stakeholders antes de abrir o Figma.</p>
-    </section>
-
-    <!-- FASE 1 DIVIDER -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(40px,6vh,72px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="display:flex; align-items:baseline; gap:16px; border-top:1px solid #C4622D; padding-top:24px;">
-        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#fff; background:#C4622D; padding:5px 11px; border-radius:2px; flex:0 0 auto;">Fase 1</span>
-        <h2 style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4.4vw,42px); line-height:1.1; letter-spacing:-0.01em; margin:0; color:#1A1A1A;">Impulsionamento por E-mail</h2>
-      </div>
-    </section>
-
-    <!-- FASE 1 STEPPER -->
-    <section style="max-width:800px; margin:0 auto; padding:0 24px clamp(24px,4vh,40px);">
-      <div data-fade data-stepper style="position:relative; margin:0 0 clamp(36px,5vh,48px);">
-        <div data-line style="position:absolute; background:rgba(196,98,45,0.3); left:0; top:0; width:0; height:0; z-index:0;"></div>
-        <div data-steps style="display:flex; flex-direction:row; justify-content:space-between; align-items:flex-start; gap:8px; position:relative; z-index:1;">
-          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
-            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">01</div>
-            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:110px;">Audiência</div>
-          </div>
-          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
-            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">02</div>
-            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:110px;">Mensagem</div>
-          </div>
-          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
-            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">03</div>
-            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:110px;">Resumo</div>
-          </div>
-          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
-            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">04</div>
-            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:110px;">Gestão</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FASE 1 — AUDIÊNCIA -->
-    <section style="max-width:800px; margin:0 auto; padding:0 24px clamp(8px,2vh,16px);">
-      <div data-fade style="border-top:1px solid #E2E2DA; padding-top:clamp(24px,4vh,32px);">
-        <div style="font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:14px;">Audiência</div>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0;">O recrutador define para quem a vaga será impulsionada. Os filtros disponíveis são: localização (por região ou distância em km, com opção de impulsionar para todo o Brasil), escolaridade (grau e curso), experiência profissional (cargo de referência) e diversidade (PcD, cor/raça, gênero, faixa etária, todos opcionais). No final da tela, o sistema exibe o público estimado com base nos filtros selecionados e informa que a IA da Gupy recomendará os melhores talentos conforme os critérios definidos.</p>
-      </div>
-    </section>
-    <!-- INSERIR: gupy-fase1-step1-audiencia-filtros.png -->
-    <div data-fade style="max-width:1100px; margin:clamp(20px,3vh,32px) auto clamp(32px,5vh,48px); padding:0 24px;">
-      <div style="background:#F0F0EE; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
-        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:500px;">Tela “Criar campanha de impulsionamento” — step 1 Audiência: accordions de Localização, Escolaridade, Experiência profissional e Diversidade, com contador de público estimado “87.987 talentos” no rodapé</span>
-      </div>
-    </div>
-
-    <!-- FASE 1 — MENSAGEM -->
-    <section style="max-width:800px; margin:0 auto; padding:0 24px clamp(8px,2vh,16px);">
-      <div data-fade style="border-top:1px solid #E2E2DA; padding-top:clamp(24px,4vh,32px);">
-        <div style="font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:14px;">Mensagem</div>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0;">O recrutador visualiza o preview do e-mail que será enviado automaticamente pela Gupy. O e-mail é personalizado com o nome da candidata, o nome da empresa e os dados da vaga. O recrutador não edita o conteúdo — apenas confirma que está de acordo antes de avançar.</p>
-      </div>
-    </section>
-    <!-- INSERIR: gupy-fase1-step2-mensagem-preview-email.png -->
-    <div data-fade style="max-width:1100px; margin:clamp(20px,3vh,32px) auto clamp(32px,5vh,48px); padding:0 24px;">
-      <div style="background:#F0F0EE; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
-        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:480px;">Step 2 Mensagem — preview do e-mail com o texto personalizado e botão Continuar</span>
-      </div>
-    </div>
-
-    <!-- FASE 1 — RESUMO -->
-    <section style="max-width:800px; margin:0 auto; padding:0 24px clamp(8px,2vh,16px);">
-      <div data-fade style="border-top:1px solid #E2E2DA; padding-top:clamp(24px,4vh,32px);">
-        <div style="font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:14px;">Resumo</div>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0;">Antes de confirmar, o recrutador revisa todas as configurações: público estimado com a recomendação da IA, vaga impulsionada, código da campanha e audiência definida. Pode voltar para editar ou confirmar o impulsionamento.</p>
-      </div>
-    </section>
-    <!-- INSERIR: gupy-fase1-step3-resumo.png -->
-    <div data-fade style="max-width:1100px; margin:clamp(20px,3vh,32px) auto clamp(32px,5vh,48px); padding:0 24px;">
-      <div style="background:#F0F0EE; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
-        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:480px;">Step 3 Resumo — configurações consolidadas e botão “Impulsionar”</span>
-      </div>
-    </div>
-
-    <!-- FASE 1 — GESTÃO -->
-    <section style="max-width:800px; margin:0 auto; padding:0 24px clamp(8px,2vh,16px);">
-      <div data-fade style="border-top:1px solid #E2E2DA; padding-top:clamp(24px,4vh,32px);">
-        <div style="font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:14px;">Gestão</div>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0;">Após a confirmação, o recrutador acessa a tela de “Vagas impulsionadas” com o dashboard de: créditos adquiridos, créditos consumidos, vagas impulsionadas, total de candidaturas, total de contratações e próximo vencimento. A listagem mostra cada vaga com seus impulsionamentos e candidaturas geradas.</p>
-      </div>
-    </section>
-    <!-- INSERIR: gupy-fase1-gestao-vagas-impulsionadas.png -->
-    <div data-fade style="max-width:1100px; margin:clamp(20px,3vh,32px) auto; padding:0 24px;">
-      <div style="background:#F0F0EE; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
-        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:480px;">Tela “Vagas impulsionadas” — cards de métricas no topo e lista de vagas com colunas de posições, contratações e inscrições</span>
-      </div>
-    </div>
-
-    <!-- A DECISÃO FASE 1 -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:28px;">A decisão — Fase 1</div>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">O maior risco do produto não era técnico — era de medição. Sem tracking de ponta a ponta (clique no e-mail → candidatura), era impossível provar ROI para o cliente e para o negócio. Antes de desenhar qualquer tela de criação de campanha, priorizamos resolver o gap de tracking. Isso atrasou a entrega da interface, mas garantiu que o MVP fosse validável — não apenas funcional.</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">Uma segunda decisão importante foi o modelo de permissionamento: separamos “criar impulsionamento” de “gerenciar impulsionamento”, permitindo que empresas dessem acesso granular para diferentes perfis de usuário. Isso reduziu fricção de adoção sem abrir mão de controle.</p>
-    </section>
-
-    <!-- RESULTADOS FASE 1 -->
-    <section style="background:#FAFAF8; border-top:1px solid #E2E2DA; border-bottom:1px solid #E2E2DA;">
-      <div style="max-width:900px; margin:0 auto; padding:clamp(56px,9vh,100px) 24px;">
-        <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:44px;">Resultados — Fase 1</div>
-        <div data-fade style="display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(16px,2.5vw,32px); padding-bottom:34px; border-bottom:1px solid #E2E2DA;" data-metrics4>
+    <!-- ============ SECAO 2 - O CONTEXTO ============ -->
+    <section style="background:#F5F5F0;">
+      <div style="max-width:1080px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px;">
+        <div data-grid2 style="display:grid; grid-template-columns:1fr;">
           <div>
-            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4vw,44px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">2.082</div>
-            <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:10px;">empresas impactadas</div>
+            <div data-fade style="font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; margin-bottom:20px;">Contexto</div>
+            <h2 data-fade style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(26px,3.6vw,40px); line-height:1.16; letter-spacing:-0.02em; color:#1A1A1A; margin:0 0 22px;">De processo manual a novo produto da empresa</h2>
+            <p data-fade style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(15px,1.5vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 20px;">A Gupy é uma plataforma de recrutamento B2B que conecta empresas a candidatos em escala nacional. <strong style="font-weight:700; color:#1A1A1A;">Dentro da área de Atração, identificamos um problema recorrente: vagas publicadas há mais de 15 dias sem atingir 50 candidaturas, o que chamamos de baixa atratividade.</strong></p>
+            <p data-fade style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(15px,1.5vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 28px;">Esse cenário gerava <strong style="font-weight:700; color:#1A1A1A;">risco de churn</strong> especialmente para clientes com alto volume de contratações operacionais: varejistas, redes de farmácia, logística e serviços. Empresas como McDonald's, Raia Drogasil, Vivo, Stone e Total Express eram impactadas diretamente.</p>
           </div>
-          <div>
-            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4vw,44px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">385</div>
-            <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:10px;">impulsionaram (18% adoção)</div>
+          <div data-grid3 style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+            <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(22px,3vw,28px);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:16px; color:#1A1A1A; margin:14px 0 8px;">Processo concierge</div>
+              <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.65; color:#6B6B66; margin:0;">A solução existia, mas era manual: e-mails enviados um a um para o banco de talentos. Funcionava, mas não escalava, não tinha tracking e não gerava receita.</p>
+            </div>
+            <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(22px,3vw,28px);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>
+              <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:16px; color:#1A1A1A; margin:14px 0 8px;">Risco de churn</div>
+              <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.65; color:#6B6B66; margin:0;">Vagas operacionais sem candidaturas suficientes aumentavam o risco de perder o cliente, sobretudo os de alto volume: varejo, farmácia e logística.</p>
+            </div>
+            <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(22px,3vw,28px);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v8a6 6 0 0 0 12 0V3"/><line x1="6" y1="3" x2="10" y2="3"/><line x1="14" y1="3" x2="18" y2="3"/><line x1="6" y1="8" x2="10" y2="8"/><line x1="14" y1="8" x2="18" y2="8"/></svg>
+              <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:16px; color:#1A1A1A; margin:14px 0 8px;">Baixa atratividade</div>
+              <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.65; color:#6B6B66; margin:0;">Vagas publicadas há mais de 15 dias sem atingir 50 candidaturas, o cenário que passamos a chamar de baixa atratividade.</p>
+            </div>
           </div>
-          <div>
-            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4vw,44px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">1.130</div>
-            <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:10px;">impulsionamentos realizados</div>
-          </div>
-          <div>
-            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4vw,44px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">3,7M</div>
-            <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:10px;">talentos alcançados</div>
-          </div>
-        </div>
-        <div data-fade style="display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2.5vw,32px); padding-top:34px;" data-metrics3>
-          <div>
-            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4vw,44px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">101k</div>
-            <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:10px;">inscrições geradas (2,7% conv.)</div>
-          </div>
-          <div>
-            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4vw,44px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">107</div>
-            <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:10px;">contratações (Atento: 34, RD: 9, OVD: 6)</div>
-          </div>
-          <div>
-            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4vw,44px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">51</div>
-            <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:10px;">empresas com 100% dos créditos consumidos</div>
-          </div>
-        </div>
-        <p data-fade style="font-size:13px; font-style:italic; color:#9A9A92; margin:30px 0 0;">Dados do Status Report Consolidado, 22/06/2025</p>
-      </div>
-    </section>
-
-    <!-- FASE 2 DIVIDER -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; border-top:1px solid #C4622D; padding-top:24px;">
-        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#fff; background:#C4622D; padding:5px 11px; border-radius:2px; flex:0 0 auto;">Fase 2</span>
-        <h2 style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4.4vw,42px); line-height:1.1; letter-spacing:-0.01em; margin:0; color:#1A1A1A;">WhatsApp + IA</h2>
-        <span style="font-size:12px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:#9A9A92; border:1px solid #D7D7CF; padding:4px 10px; border-radius:2px;">Em andamento</span>
-      </div>
-    </section>
-
-    <!-- POR QUE EVOLUIR -->
-    <section style="max-width:800px; margin:0 auto; padding:0 24px clamp(24px,4vh,40px);">
-      <div data-fade style="background:#F5F5F0; border-top:2px solid #C4622D; padding:clamp(26px,4vw,38px);">
-        <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(20px,2.6vw,26px); color:#1A1A1A; margin-bottom:20px;">Por que evoluir para WhatsApp?</div>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 20px;">O canal de e-mail demonstrou tração real — mas apresentava limitações estruturais que precisavam ser endereçadas antes de comprometer a escala:</p>
-        <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
-          <div style="display:flex; gap:12px; font-size:clamp(14px,1.8vw,16px); line-height:1.6; color:#4A4A45;"><span style="color:#C4622D; flex:0 0 auto;">→</span><span>Conversão média de 2,4%: para gerar 24 candidaturas, eram necessários ~1.000 disparos</span></div>
-          <div style="display:flex; gap:12px; font-size:clamp(14px,1.8vw,16px); line-height:1.6; color:#4A4A45;"><span style="color:#C4622D; flex:0 0 auto;">→</span><span>Base de 16M candidatos, com +2M com dados desatualizados, risco crescente de saturação</span></div>
-          <div style="display:flex; gap:12px; font-size:clamp(14px,1.8vw,16px); line-height:1.6; color:#4A4A45;"><span style="color:#C4622D; flex:0 0 auto;">→</span><span>Alto custo operacional de volume para vagas de baixa atratividade</span></div>
-        </div>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 20px;">A alternativa natural seria WhatsApp unitário. Avaliamos: custo estimado de R$ 0,35 por disparo individual tornaria inviável o volume necessário (R$ 350 para impulsionar 1.000 candidatos em uma única vaga). Descartamos para o MVP.</p>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0;"><span style="color:#1A1A1A; font-weight:500;">A solução:</span> grupos regionais de WhatsApp já operados pelo time “Candidato Já” (incorporado à Gupy), sem custo direto por disparo, com alto volume de resposta validado. Vagas que testaram esse canal atingiram mais de 100 candidaturas em até 2 horas.</p>
-      </div>
-    </section>
-
-    <!-- FLUXO WHATSAPP -->
-    <!-- INSERIR: gupy-fase2-fluxo-whatsapp-grupos.png -->
-    <div data-fade style="max-width:1100px; margin:clamp(24px,4vh,40px) auto; padding:0 24px;">
-      <div style="background:#F0F0EE; padding:clamp(28px,4vw,44px) clamp(20px,3vw,32px); border:1px solid #E8E8E2;">
-        <div style="display:flex; flex-wrap:wrap; align-items:stretch; justify-content:center; gap:10px;" data-flow>
-          <div style="flex:1 1 160px; min-width:140px; background:#fff; border:1px solid #E2E2DA; padding:18px 16px; text-align:center; display:flex; flex-direction:column; justify-content:center;">
-            <div style="font-size:12px; font-weight:600; color:#C4622D; margin-bottom:6px;">01</div>
-            <div style="font-size:13px; line-height:1.5; color:#3A3A36;">Cliente impulsiona a vaga</div>
-          </div>
-          <div style="display:flex; align-items:center; color:#C4622D; font-size:18px;" data-flow-arrow>→</div>
-          <div style="flex:1 1 160px; min-width:140px; background:#fff; border:1px solid #E2E2DA; padding:18px 16px; text-align:center; display:flex; flex-direction:column; justify-content:center;">
-            <div style="font-size:12px; font-weight:600; color:#C4622D; margin-bottom:6px;">02</div>
-            <div style="font-size:13px; line-height:1.5; color:#3A3A36;">Gupy envia via endpoint</div>
-          </div>
-          <div style="display:flex; align-items:center; color:#C4622D; font-size:18px;" data-flow-arrow>→</div>
-          <div style="flex:1 1 160px; min-width:140px; background:#fff; border:1px solid #E2E2DA; padding:18px 16px; text-align:center; display:flex; flex-direction:column; justify-content:center;">
-            <div style="font-size:12px; font-weight:600; color:#C4622D; margin-bottom:6px;">03</div>
-            <div style="font-size:13px; line-height:1.5; color:#3A3A36;">Candidato Já distribui nos grupos</div>
-          </div>
-          <div style="display:flex; align-items:center; color:#C4622D; font-size:18px;" data-flow-arrow>→</div>
-          <div style="flex:1 1 160px; min-width:140px; background:#fff; border:1px solid #E2E2DA; padding:18px 16px; text-align:center; display:flex; flex-direction:column; justify-content:center;">
-            <div style="font-size:12px; font-weight:600; color:#C4622D; margin-bottom:6px;">04</div>
-            <div style="font-size:13px; line-height:1.5; color:#3A3A36;">Candidato recebe e clica para se candidatar</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- A DECISÃO FASE 2 -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:28px;">A decisão — Fase 2</div>
-      <div data-fade style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:16px;">AI-first</div>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 28px;">A decisão de integrar IA ao fluxo não foi incremental. Foi uma resposta direta a um comportamento identificado em dados: usuários impulsionando sem filtros, comprometendo a qualidade das candidaturas e o valor percebido do produto.</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 28px;">Dois problemas precisavam ser resolvidos em paralelo:</p>
-
-      <div data-fade style="margin-bottom:28px;">
-        <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(18px,2.3vw,22px); color:#1A1A1A; margin-bottom:12px;"><span style="color:#C4622D;">1.</span> O comportamento de impulsionar sem filtros</div>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 16px;">Durante a análise de uso da Fase 1, identifiquei que alguns recrutadores estavam criando campanhas sem definir segmentação, impulsionando para audiências genéricas e reduzindo a qualidade das candidaturas. A solução foi adicionar IA para pré-seleção automática de filtros com base nos dados da vaga (cargo, localização, formação, experiência). O usuário ainda pode editar, adicionar ou remover filtros — mas parte certo por padrão.</p>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#4A4A45; margin:0; font-style:italic;">Essa decisão foi validada com 6 clientes Gupy em pesquisa: todos compreenderam o fluxo e afirmaram que usariam o produto.</p>
-      </div>
-
-      <div data-fade style="margin-bottom:32px;">
-        <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(18px,2.3vw,22px); color:#1A1A1A; margin-bottom:12px;"><span style="color:#C4622D;">2.</span> O atrito de marca na jornada do candidato</div>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0;">O WhatsApp via grupos usa número neutro no disparo inicial, o que reduz atrito de marca (Gupy tem percepção negativa em B2C). Mas ao clicar no link, o candidato era redirecionado para o WhatsApp oficial da Gupy para candidatura, recriando o atrito. Identificamos que o problema não estava só em quem dispara a vaga, mas em quem conduz a candidatura. A Fase 2 do WhatsApp (pós-MVP) endereça isso com white label.</p>
-      </div>
-
-      <div data-fade style="background:rgba(196,98,45,0.06); border-left:3px solid #C4622D; padding:clamp(22px,3.5vw,30px) clamp(22px,3.5vw,34px);">
-        <p style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(20px,2.4vw,22px); line-height:1.5; color:#1A1A1A; margin:0;">Reduzir esforço manual do recrutador sem comprometer a qualidade da candidatura — essa foi a tensão central que a IA resolve.</p>
-      </div>
-    </section>
-
-    <!-- VALIDAÇÃO -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">Validação</div>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 28px;">Conduzi pesquisa com 6 clientes Gupy antes da entrega da Fase 2.</p>
-      <div data-fade style="display:flex; flex-wrap:wrap; gap:16px;">
-        <div style="flex:1 1 280px; background:#F5F5F0; border-top:2px solid #C4622D; padding:clamp(24px,3.5vw,32px);">
-          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(24px,3.4vw,34px); line-height:1.05; color:#1A1A1A; margin-bottom:10px;">6 de 6 clientes</div>
-          <p style="font-size:15px; line-height:1.65; color:#4A4A45; margin:0;">compreenderam o fluxo completo sem necessidade de explicação adicional</p>
-        </div>
-        <div style="flex:1 1 280px; background:#F5F5F0; border-top:2px solid #CCCCCC; padding:clamp(24px,3.5vw,32px);">
-          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(24px,3.4vw,34px); line-height:1.05; color:#1A1A1A; margin-bottom:10px;">6 de 6 clientes</div>
-          <p style="font-size:15px; line-height:1.65; color:#4A4A45; margin:0;">afirmaram que usariam o produto na forma como foi apresentado</p>
         </div>
       </div>
     </section>
 
-    <!-- ROADMAP -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:clamp(32px,5vh,44px);">Próximas evoluções</div>
-      <div data-fade data-roadmap style="display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px,3vw,32px);">
-        <div data-rm-item style="position:relative;">
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px; position:relative;">
-            <div data-rm-dot style="width:14px; height:14px; border-radius:50%; background:#C4622D; flex:0 0 auto; position:relative; z-index:1;"></div>
-            <div data-rm-track style="position:absolute; left:14px; right:0; top:7px; height:1px; background:rgba(196,98,45,0.3); z-index:0;"></div>
+    <!-- ============ SECAO 3 - O PROBLEMA ============ -->
+    <section style="background:#FFFFFF;">
+      <div style="max-width:1080px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px;">
+        <div data-fade style="font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; margin-bottom:20px;">O Problema</div>
+        <h2 data-fade style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(26px,3.6vw,40px); line-height:1.16; letter-spacing:-0.02em; color:#1A1A1A; margin:0 0 clamp(30px,4.5vh,42px);">O que não escala não pode virar produto</h2>
+        <div data-grid2 style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:28px;">
+          <div data-fade style="background:#FFFFFF; border-top:3px solid #C4622D; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(24px,3vw,30px);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c0-3.3 2.8-5.2 5.5-5.2 1 0 1.9.3 2.7.7"/><line x1="16" y1="15" x2="21" y2="20"/><line x1="21" y1="15" x2="16" y2="20"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:16px; color:#1A1A1A; margin:14px 0 8px;">Para o cliente</div>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:14px; line-height:1.65; color:#6B6B66; margin:0;">Vagas operacionais ficavam semanas sem candidatos qualificados, aumentando o risco de perder a vaga e o cliente.</p>
           </div>
-          <div style="font-size:12px; font-weight:600; letter-spacing:0.04em; color:#C4622D; margin-bottom:8px;">V1 · Em andamento</div>
-          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(18px,2.2vw,21px); color:#1A1A1A; margin-bottom:8px; line-height:1.2;">WhatsApp via grupos (MVP)</div>
-          <p style="font-size:14px; line-height:1.6; color:#4A4A45; margin:0;">Impulsionamento via grupos regionais, filtros manuais + IA de pré-seleção.</p>
+          <div data-fade style="background:#FFFFFF; border-top:3px solid #B8B8AE; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(24px,3vw,30px);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M8 15l3-3 3 2 4-5" stroke-dasharray="2 2.5"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:16px; color:#1A1A1A; margin:14px 0 8px;">Para a Gupy</div>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:14px; line-height:1.65; color:#6B6B66; margin:0;">O processo manual não tinha tracking, não escalava e não gerava receita. Era esforço sem retorno mensurável.</p>
+          </div>
         </div>
-        <div data-rm-item style="position:relative;">
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px; position:relative;">
-            <div data-rm-dot style="width:14px; height:14px; border-radius:50%; background:#fff; border:1.5px solid #C4622D; flex:0 0 auto; position:relative; z-index:1;"></div>
-            <div data-rm-track style="position:absolute; left:14px; right:0; top:7px; height:1px; background:rgba(196,98,45,0.3); z-index:0;"></div>
-          </div>
-          <div style="font-size:12px; font-weight:600; letter-spacing:0.04em; color:#9A9A92; margin-bottom:8px;">V2 · Planejado</div>
-          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(18px,2.2vw,21px); color:#1A1A1A; margin-bottom:8px; line-height:1.2;">WhatsApp individual</div>
-          <p style="font-size:14px; line-height:1.6; color:#4A4A45; margin:0;">Disparo direto para candidatos da base Gupy, com segmentação fina e controle de saturação por candidato.</p>
-        </div>
-        <div data-rm-item style="position:relative;">
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px; position:relative;">
-            <div data-rm-dot style="width:14px; height:14px; border-radius:50%; background:#fff; border:1.5px solid #CCCCCC; flex:0 0 auto; position:relative; z-index:1;"></div>
-          </div>
-          <div style="font-size:12px; font-weight:600; letter-spacing:0.04em; color:#9A9A92; margin-bottom:8px;">V3 · Visão</div>
-          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(18px,2.2vw,21px); color:#1A1A1A; margin-bottom:8px; line-height:1.2;">White label de ponta a ponta</div>
-          <p style="font-size:14px; line-height:1.6; color:#4A4A45; margin:0;">Jornada de candidatura com a marca do cliente, eliminando o atrito de marca da Gupy do disparo à conversão.</p>
+        <div data-fade style="background:rgba(196,98,45,0.06); border-left:3px solid #C4622D; border-radius:8px; padding:clamp(22px,3vw,28px);">
+          <p style="font-family:'Inter',sans-serif; font-weight:500; font-size:clamp(15px,1.55vw,17px); line-height:1.7; color:#1A1A1A; margin:0;">Para crescer, o processo concierge precisava virar produto. Com tracking, permissionamento e receita mensurável.</p>
         </div>
       </div>
     </section>
 
-    <!-- FECHAMENTO -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(56px,9vh,104px);">
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">O Impulsionamento começou como um processo manual que não escalava e virou um produto com tracking, receita e duas fases de evolução. O aprendizado que carrego: em B2B, a decisão de produto mais importante raramente é a interface — é garantir que o impacto seja mensurável antes de construir.</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 clamp(40px,6vh,64px);">A IA aqui não foi enfeite: ela resolveu uma tensão real entre reduzir o esforço do recrutador e proteger a qualidade da candidatura. Esse é o tipo de problema que mais me interessa, onde a decisão certa de design tem consequência direta no negócio.</p>
+    <!-- ============ SECAO 4 - MEU PAPEL ============ -->
+    <section style="background:#F5F5F0;">
+      <div style="max-width:1080px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px;">
+        <div data-fade style="font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; margin-bottom:20px;">Meu Papel</div>
+        <h2 data-fade style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(26px,3.6vw,40px); line-height:1.16; letter-spacing:-0.02em; color:#1A1A1A; margin:0 0 clamp(30px,4.5vh,42px);">Atuação de ponta a ponta, do discovery ao delivery</h2>
+        <div data-grid2 style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px;">
+          <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(24px,3vw,30px);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="display:block; margin-bottom:12px;"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <span style="display:inline-block; font-family:'Inter',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.04em; color:#C4622D; background:rgba(196,98,45,0.1); border-radius:999px; padding:6px 13px; margin-bottom:16px;">Fase 1 · E-mail + IA</span>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:14.5px; line-height:1.65; color:#3A3A36; margin:0;">Conduzi o discovery, entendi o processo manual atual e avaliei a viabilidade do produto, identificando onde a IA poderia automatizar a seleção de talentos. A partir daí, desenhei o fluxo de ponta a ponta, da criação da campanha ao dashboard de gestão.</p>
+          </div>
+          <div data-fade style="background:#111111; border-radius:12px; padding:clamp(24px,3vw,30px);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="display:block; margin-bottom:12px;"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+            <span style="display:inline-block; font-family:'Inter',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.04em; color:#FFFFFF; background:rgba(255,255,255,0.12); border-radius:999px; padding:6px 13px; margin-bottom:16px;">Fase 2 · WhatsApp + IA</span>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:14.5px; line-height:1.65; color:#D6D6D2; margin:0;">Evolução estratégica com canal WhatsApp via grupos regionais e integração de IA para pré-seleção automática de filtros.</p>
+          </div>
+        </div>
+        <p data-fade style="font-family:'Inter',sans-serif; font-weight:400; font-size:14px; line-height:1.65; color:#9A9A92; margin:0;">Em ambas as fases, conduzi diversos tipos de pesquisas com usuários e alinhamentos com stakeholders.</p>
+      </div>
+    </section>
+
+    <!-- ============ SECAO 4B - IA NO PRODUTO ============ -->
+    <section style="background:#111111;">
+      <div style="max-width:1080px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px;">
+        <div data-fade style="font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; margin-bottom:20px;">IA no Produto · Fase 1</div>
+        <h2 data-fade style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(26px,3.6vw,40px); line-height:1.16; letter-spacing:-0.02em; color:#FFFFFF; margin:0 0 18px;">A IA seleciona apenas os mil melhores talentos para cada vaga</h2>
+        <p data-fade style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(15px,1.5vw,17px); line-height:1.7; color:#B8B8B2; margin:0 0 clamp(40px,6vh,56px);">O banco da Gupy tem 17M+ de talentos. Sem inteligência de seleção, impulsionar para os candidatos certos seria impossível em escala.</p>
+
+        <div data-fade style="font-family:'Inter',sans-serif; font-weight:700; font-size:18px; color:#FFFFFF; margin-bottom:20px;">Seleção inteligente de audiência<svg width="18" height="18" viewBox="0 0 24 24" fill="#C4622D" aria-hidden="true" style="vertical-align:middle; margin-left:9px;"><path d="M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z"/></svg></div>
+        <div data-funnel data-fade style="display:flex; align-items:center; justify-content:center; gap:clamp(14px,2.5vw,28px); background:#1A1A1A; border-radius:16px; padding:clamp(28px,4vw,44px); flex-wrap:wrap;">
+          <div style="text-align:center;"><div style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(30px,4.5vw,46px); line-height:1; color:#FFFFFF;">17M+</div><div style="font-family:'Inter',sans-serif; font-size:13px; color:#9A9A92; margin-top:8px;">talentos no banco</div></div>
+          <svg class="funnel-arrow" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><path d="M13 6l6 6-6 6"/></svg>
+          <div style="text-align:center;"><div style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(30px,4.5vw,46px); line-height:1; color:#FFFFFF;">~30k</div><div style="font-family:'Inter',sans-serif; font-size:13px; color:#9A9A92; margin-top:8px;">matches pelos filtros do RH</div></div>
+          <svg class="funnel-arrow" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><path d="M13 6l6 6-6 6"/></svg>
+          <div style="text-align:center;"><div style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(30px,4.5vw,46px); line-height:1; color:#C4622D;">3.000</div><div style="font-family:'Inter',sans-serif; font-size:13px; color:#9A9A92; margin-top:8px;">melhores selecionados pela IA</div></div>
+        </div>
+        <div data-fade style="background:#222222; border-left:3px solid #C4622D; border-radius:12px; padding:clamp(22px,3vw,30px); margin-top:18px;">
+          <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(14px,1.45vw,16px); line-height:1.7; color:#E4E4E0; margin:0;"><strong style="font-weight:700; color:#FFFFFF;">Rankeamento de talentos com IA:</strong> a IA compara os dados de cada vaga com os de cada candidato, como cargo, localização, escolaridade e histórico, e mede o quanto cada talento combina com a vaga. Em vez de apenas filtrar, ela ordena todos por compatibilidade e seleciona os 3.000 mais aderentes para receber o convite e garantirmos mais precisão no resultado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECAO 5 - SOLUCAO FASE 1 ============ -->
+    <section style="background:#FFFFFF;">
+      <div style="max-width:1080px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px;">
+        <div data-fade style="font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; margin-bottom:20px;">A Solução · Fase 1</div>
+        <h2 data-fade style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(26px,3.6vw,40px); line-height:1.16; letter-spacing:-0.02em; color:#1A1A1A; margin:0 0 28px;">Impulsionamento por E-mail</h2>
+        <div data-fade style="margin-bottom:clamp(34px,5vh,52px);">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+            <span style="flex:0 0 auto; width:36px; height:36px; border-radius:50%; background:#C4622D; color:#FFFFFF; font-family:'Inter',sans-serif; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center;">01</span>
+            <span style="font-family:'Inter',sans-serif; font-weight:700; font-size:18px; color:#1A1A1A;">Seleção da vaga</span>
+          </div>
+          <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(14.5px,1.5vw,16px); line-height:1.7; color:#3A3A36; margin:0 0 18px;">O recrutador escolhe a vaga que deseja impulsionar e confirma para iniciar a campanha.</p>
+          <div style="aspect-ratio:16/9; background:#E8E8E2; border-radius:12px; overflow:hidden; box-shadow:0 10px 28px rgba(0,0,0,0.10);"><img src="img/gupy-01.png" alt="Seleção da vaga" style="width:100%; height:100%; object-fit:cover; display:block;" onerror="this.style.display='none'"></div>
+        </div>
+        <div data-fade style="margin-bottom:clamp(34px,5vh,52px);">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+            <span style="flex:0 0 auto; width:36px; height:36px; border-radius:50%; background:#C4622D; color:#FFFFFF; font-family:'Inter',sans-serif; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center;">02</span>
+            <span style="font-family:'Inter',sans-serif; font-weight:700; font-size:18px; color:#1A1A1A;">Audiência</span>
+          </div>
+          <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(14.5px,1.5vw,16px); line-height:1.7; color:#3A3A36; margin:0 0 18px;">O recrutador define localização, escolaridade, experiência e diversidade. O sistema exibe o público estimado e informa que a IA selecionará os 3.000 melhores talentos.</p>
+          <div style="aspect-ratio:16/9; background:#E8E8E2; border-radius:12px; overflow:hidden; box-shadow:0 10px 28px rgba(0,0,0,0.10);"><img src="img/gupy-02.png" alt="Audiência" style="width:100%; height:100%; object-fit:cover; display:block;" onerror="this.style.display='none'"></div>
+        </div>
+        <div data-fade style="margin-bottom:clamp(34px,5vh,52px);">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+            <span style="flex:0 0 auto; width:36px; height:36px; border-radius:50%; background:#C4622D; color:#FFFFFF; font-family:'Inter',sans-serif; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center;">03</span>
+            <span style="font-family:'Inter',sans-serif; font-weight:700; font-size:18px; color:#1A1A1A;">Mensagem</span>
+          </div>
+          <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(14.5px,1.5vw,16px); line-height:1.7; color:#3A3A36; margin:0 0 18px;">Preview do e-mail personalizado com nome da candidata, empresa e dados da vaga. O recrutador não edita: apenas confirma.</p>
+          <div style="aspect-ratio:16/9; background:#E8E8E2; border-radius:12px; overflow:hidden; box-shadow:0 10px 28px rgba(0,0,0,0.10);"><img src="img/gupy-03.png" alt="Mensagem" style="width:100%; height:100%; object-fit:cover; display:block;" onerror="this.style.display='none'"></div>
+        </div>
+        <div data-fade style="margin-bottom:clamp(34px,5vh,52px);">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+            <span style="flex:0 0 auto; width:36px; height:36px; border-radius:50%; background:#C4622D; color:#FFFFFF; font-family:'Inter',sans-serif; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center;">04</span>
+            <span style="font-family:'Inter',sans-serif; font-weight:700; font-size:18px; color:#1A1A1A;">Resumo</span>
+          </div>
+          <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(14.5px,1.5vw,16px); line-height:1.7; color:#3A3A36; margin:0 0 18px;">Revisão completa antes de confirmar: público estimado com recomendação da IA, vaga impulsionada, código e audiência. Pode voltar para editar.</p>
+          <div style="aspect-ratio:16/9; background:#E8E8E2; border-radius:12px; overflow:hidden; box-shadow:0 10px 28px rgba(0,0,0,0.10);"><img src="img/gupy-04.png" alt="Resumo" style="width:100%; height:100%; object-fit:cover; display:block;" onerror="this.style.display='none'"></div>
+        </div>
+        <div data-fade style="margin-bottom:clamp(34px,5vh,52px);">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+            <span style="flex:0 0 auto; width:36px; height:36px; border-radius:50%; background:#C4622D; color:#FFFFFF; font-family:'Inter',sans-serif; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center;">05</span>
+            <span style="font-family:'Inter',sans-serif; font-weight:700; font-size:18px; color:#1A1A1A;">Gestão</span>
+          </div>
+          <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(14.5px,1.5vw,16px); line-height:1.7; color:#3A3A36; margin:0 0 18px;">Dashboard com créditos adquiridos e consumidos, vagas impulsionadas, total de candidaturas, contratações e próximo vencimento.</p>
+          <div style="aspect-ratio:16/9; background:#E8E8E2; border-radius:12px; overflow:hidden; box-shadow:0 10px 28px rgba(0,0,0,0.10);"><img src="img/gupy-05.png" alt="Gestão" style="width:100%; height:100%; object-fit:cover; display:block;" onerror="this.style.display='none'"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECAO 6 - RESULTADOS FASE 1 ============ -->
+    <section style="background:#111111;">
+      <div style="max-width:1080px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px;">
+        <div data-fade style="font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; margin-bottom:12px; text-align:center;">Resultados · Fase 1</div>
+        <div data-fade style="font-family:'Inter',sans-serif; font-weight:400; font-size:13px; color:#9A9A92; text-align:center; margin-bottom:14px;">Dados do Status Report Consolidado, 22/06/2026</div>
+        <div data-fade style="display:flex; justify-content:center; margin-bottom:clamp(40px,6vh,60px);">
+          <span style="display:inline-flex; align-items:center; gap:9px; background:rgba(196,98,45,0.12); border:1px solid rgba(196,98,45,0.35); border-radius:999px; padding:9px 18px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+            <span style="font-family:'Inter',sans-serif; font-weight:500; font-size:13px; color:#E4E4E0;">Em produção desde 14 de abril de 2026, com liberação de empresas por fases</span>
+          </span>
+        </div>
+        <div data-bignum style="display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(24px,4vw,40px);">
+          <div data-fade style="text-align:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 12px;"><rect x="5" y="3" width="14" height="18" rx="1.5"/><line x1="9" y1="8" x2="11" y2="8"/><line x1="13" y1="8" x2="15" y2="8"/><line x1="9" y1="12" x2="11" y2="12"/><line x1="13" y1="12" x2="15" y2="12"/><line x1="11" y1="20" x2="13" y2="20"/></svg><div style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(48px,7vw,80px); line-height:1; color:#FFFFFF; letter-spacing:-0.03em;">2.082</div><div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#9A9A92; margin-top:10px;">empresas impactadas</div></div><div data-fade style="text-align:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 12px;"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg><div style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(48px,7vw,80px); line-height:1; color:#FFFFFF; letter-spacing:-0.03em;">18%</div><div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#9A9A92; margin-top:10px;">taxa de adoção</div></div><div data-fade style="text-align:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 12px;"><path d="M3 10v4h3l6 4V6L6 10H3z"/><path d="M16 9a4 4 0 0 1 0 6"/></svg><div style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(48px,7vw,80px); line-height:1; color:#FFFFFF; letter-spacing:-0.03em;">1.130</div><div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#9A9A92; margin-top:10px;">impulsionamentos</div></div><div data-fade style="text-align:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 12px;"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.2 2.7-5 6-5s6 1.8 6 5"/><path d="M16 5.5a3 3 0 0 1 0 5.5"/><path d="M17.5 15c2.3.5 3.5 2 3.5 5"/></svg><div style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(48px,7vw,80px); line-height:1; color:#FFFFFF; letter-spacing:-0.03em;">3,7M</div><div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#9A9A92; margin-top:10px;">talentos alcançados</div></div>
+        </div>
+        <div style="height:1px; background:#2C2C2C; margin:clamp(40px,6vh,56px) 0;"></div>
+        <div data-grid3 style="display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(24px,4vw,40px);">
+          <div data-fade style="text-align:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 12px;"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 4.5-3"/><path d="m15 16 2 2 4-4"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(40px,6vw,64px); line-height:1; color:#FFFFFF; letter-spacing:-0.03em;">101k</div>
+            <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#D6D6D2; margin-top:10px;">inscrições geradas</div>
+            <div style="font-family:'Inter',sans-serif; font-size:12.5px; color:#9A9A92; margin-top:4px;">2,7% de conversão</div>
+          </div>
+          <div data-fade style="text-align:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 12px;"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.4 2.4 4.6-5"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(40px,6vw,64px); line-height:1; color:#FFFFFF; letter-spacing:-0.03em;">107</div>
+            <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#D6D6D2; margin-top:10px;">contratações</div>
+            <div style="font-family:'Inter',sans-serif; font-size:12.5px; color:#9A9A92; margin-top:4px;">Atento: 34, RD: 9, OVD: 6</div>
+          </div>
+          <div data-fade style="text-align:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 12px;"><path d="M7 4h10v4a5 5 0 0 1-10 0V4z"/><path d="M5 5H3v1.5a3 3 0 0 0 3 3"/><path d="M19 5h2v1.5a3 3 0 0 1-3 3"/><path d="M9.5 21h5"/><path d="M10.5 17h3l.5 4h-4l.5-4z"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(40px,6vw,64px); line-height:1; color:#FFFFFF; letter-spacing:-0.03em;">51</div>
+            <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#D6D6D2; margin-top:10px;">empresas com 100% dos créditos consumidos</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VOLTAR ============ -->
+    <section style="max-width:1080px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(56px,9vh,104px);">
       <a data-fade href="index.html" style="display:inline-block; font-size:15px; font-weight:500; color:#1A1A1A; text-decoration:none; padding-bottom:2px; background-image:linear-gradient(#C4622D,#C4622D); background-size:0% 1px; background-position:0 100%; background-repeat:no-repeat; transition:background-size .35s ease, color .3s ease;" style-hover="background-size:100% 1px; color:#C4622D;">← Voltar ao portfólio</a>
     </section>
 
@@ -998,6 +875,47 @@
     mobileMenu.querySelectorAll('a').forEach(function(link){ link.addEventListener('click', function(){ closeMenu(); }); });
     document.addEventListener('keydown', function(e){ if (e.key==='Escape' && mobileMenu.classList.contains('open')) closeMenu(); });
   })();
+})();
+</script>
+<script>
+(function(){
+  // ===== Custom cursor (apenas non-touch) =====
+  var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+  if (!coarse) {
+    var ACCENT = '#C4622D';
+    var cursor = document.createElement('div');
+    Object.assign(cursor.style, {
+      position: 'fixed', top: '0', left: '0', width: '8px', height: '8px',
+      marginLeft: '-4px', marginTop: '-4px', borderRadius: '50%',
+      background: ACCENT, border: '1px solid ' + ACCENT,
+      pointerEvents: 'none', zIndex: '99999', opacity: '0',
+      transition: 'width .2s ease, height .2s ease, margin .2s ease, background-color .2s ease, border-color .2s ease, opacity .2s ease',
+      willChange: 'transform'
+    });
+    document.body.appendChild(cursor);
+    document.body.style.cursor = 'none';
+    var cx = window.innerWidth / 2, cy = window.innerHeight / 2, raf = null;
+    var place = function(){ cursor.style.transform = 'translate(' + cx + 'px,' + cy + 'px)'; raf = null; };
+    window.addEventListener('mousemove', function(e){
+      cx = e.clientX; cy = e.clientY; cursor.style.opacity = '1';
+      if (!raf) raf = requestAnimationFrame(place);
+    }, { passive: true });
+    window.addEventListener('mouseout', function(e){ if (!e.relatedTarget) cursor.style.opacity = '0'; });
+    var grow = function(){
+      cursor.style.width = '32px'; cursor.style.height = '32px';
+      cursor.style.marginLeft = '-16px'; cursor.style.marginTop = '-16px';
+      cursor.style.background = 'transparent'; cursor.style.borderColor = ACCENT;
+    };
+    var shrink = function(){
+      cursor.style.width = '8px'; cursor.style.height = '8px';
+      cursor.style.marginLeft = '-4px'; cursor.style.marginTop = '-4px';
+      cursor.style.background = ACCENT; cursor.style.borderColor = ACCENT;
+    };
+    document.querySelectorAll('a, button, .proj').forEach(function(el){
+      el.addEventListener('mouseenter', grow);
+      el.addEventListener('mouseleave', shrink);
+    });
+  }
 })();
 </script>
 </body>

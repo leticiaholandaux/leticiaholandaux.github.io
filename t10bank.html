@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T10Bank — Redesign do App — Letícia Holanda</title>
+<title>T10 Bank — Redesign do App — Letícia Holanda</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +16,7 @@
     img, video, iframe { max-width: 100%; height: auto; }
     ::selection { background: #C4622D; color: #fff; }
     @media (max-width: 768px) {
+      [data-case-hero] { grid-template-columns: 1fr !important; }
       [data-metrics3] { grid-template-columns: 1fr !important; gap: 0 !important; }
       [data-metrics3] > div { border-left: 0 !important; border-right: 0 !important; padding: 24px 0 !important; }
       [data-metrics3] > div + div { border-top: 1px solid #E2E2DA !important; }
@@ -358,206 +359,206 @@
       <a href="index.html" style="font-size:13.5px; color:#6B6B66; text-decoration:none; padding-bottom:2px; background-image:linear-gradient(#C4622D,#C4622D); background-size:0% 1px; background-position:0 100%; background-repeat:no-repeat; transition:background-size .35s ease, color .3s ease;" style-hover="background-size:100% 1px; color:#1A1A1A;">← Voltar</a>
     </nav>
 
-    <!-- CORAL HEADER -->
-    <!-- INSERIR: t10bank-mocks-home-extrato-aprovacoes.png -->
-    <div style="background:#E8796A; width:100%; min-height:clamp(180px,30vw,280px); display:flex; align-items:center; justify-content:center; padding:34px 24px; overflow:hidden; margin-top:28px;">
-      <div style="display:flex; gap:clamp(14px,2.2vw,26px); align-items:flex-end; justify-content:center;">
-        <div style="width:clamp(86px,13vw,138px); aspect-ratio:9/19; background:rgba(255,255,255,0.16); border:1px solid rgba(255,255,255,0.42); display:flex; align-items:center; justify-content:center; padding:10px; transform:translateY(14px);">
-          <span style="font-family:'DM Sans',sans-serif; font-size:10px; letter-spacing:0.02em; color:rgba(255,255,255,0.92); text-align:center;">Home</span>
+    <!-- HERO -->
+    <header style="max-width:1080px; margin:0 auto; padding:clamp(40px,7vh,72px) 24px clamp(32px,5vh,56px);">
+      <style>.case-tags{display:flex; flex-wrap:wrap; gap:8px;} .case-tag{font-family:'Inter',sans-serif; font-size:12px; font-weight:500; color:#555555; background:#F2F2F0; border-radius:999px; padding:6px 12px; line-height:1; white-space:nowrap;}</style>
+      <div data-case-hero style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(32px,5vw,64px); align-items:start;">
+        <!-- COLUNA ESQUERDA -->
+        <div>
+          <div style="font-family:'Inter',sans-serif; font-weight:500; font-size:14px; color:#9A9A92; margin-bottom:16px;">Projeto desenvolvido para <strong style="font-weight:700; color:#1A1A1A;">T10 Bank</strong></div>
+          <h1 style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(34px,4.6vw,52px); line-height:1.06; letter-spacing:-0.02em; margin:0 0 14px; color:#1A1A1A;">Redesign do APP da T10 Bank</h1>
+          <p style="font-family:'Inter',sans-serif; font-size:14px; color:#9A9A92; letter-spacing:0.02em; margin:0 0 24px;">Dezembro de 2022</p>
+          <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(15px,1.4vw,16px); line-height:1.7; color:#1A1A1A; margin:0 0 30px;">Conduzi o redesign do app do T10 Bank, banco 100% digital. Além da nova interface, redesenhei fluxos críticos como o de aprovação de pagamentos PJ, equilibrando modernidade visual com a confiança que um produto financeiro exige.</p>
+          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.04em; text-transform:uppercase; color:#1A1A1A; margin-bottom:12px;">Tags</div>
+          <div class="case-tags">
+            <span class="case-tag">UI</span>
+            <span class="case-tag">UX</span>
+            <span class="case-tag">Mobile</span>
+            <span class="case-tag">Fintech</span>
+            <span class="case-tag">B2C</span>
+          </div>
         </div>
-        <div style="width:clamp(94px,14vw,150px); aspect-ratio:9/19; background:rgba(255,255,255,0.2); border:1px solid rgba(255,255,255,0.5); display:flex; align-items:center; justify-content:center; padding:10px;">
-          <span style="font-family:'DM Sans',sans-serif; font-size:10px; letter-spacing:0.02em; color:rgba(255,255,255,0.95); text-align:center;">Extrato</span>
-        </div>
-        <div style="width:clamp(86px,13vw,138px); aspect-ratio:9/19; background:rgba(255,255,255,0.16); border:1px solid rgba(255,255,255,0.42); display:flex; align-items:center; justify-content:center; padding:10px; transform:translateY(14px);">
-          <span style="font-family:'DM Sans',sans-serif; font-size:10px; letter-spacing:0.02em; color:rgba(255,255,255,0.92); text-align:center;">Aprovações</span>
+        <!-- COLUNA DIREITA: imagem do projeto -->
+        <div data-case-hero-img style="border-radius:14px; overflow:hidden;">
+          <img src="img/mobile-app-resumo.png" alt="Projeto T10 Bank" style="width:100%; height:auto; display:block;" onerror="this.style.display='none'; this.parentElement.style.minHeight='260px';">
         </div>
       </div>
-    </div>
-
-    <!-- LOGO -->
-    <!-- INSERIR: logo-t10bank.png -->
-    <div style="display:flex; justify-content:center; margin-top:-30px;">
-      <div style="width:60px; height:60px; background:#E8796A; border-radius:14px; display:flex; align-items:center; justify-content:center; color:#fff; font-family:'DM Sans',sans-serif; font-weight:600; font-size:18px; letter-spacing:0.01em; box-shadow:0 0 0 4px #fff;">T10</div>
-    </div>
-
-    <!-- HERO -->
-    <header style="max-width:800px; margin:0 auto; padding:clamp(28px,5vh,48px) 24px clamp(28px,5vh,52px); text-align:center;">
-      <h1 style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(38px,7vw,68px); line-height:1.04; letter-spacing:-0.015em; margin:0 0 20px; color:#1A1A1A;">T10Bank<br><span style="color:#3A3A36;">Redesign do APP</span></h1>
-      <p style="font-size:14px; color:#9A9A92; letter-spacing:0.02em; margin:0 0 16px;">Produto financeiro mobile · B2C e PJ · Dezembro de 2022 · Product Designer</p>
-      <p style="font-size:13px; font-weight:500; letter-spacing:0.04em; color:#C4622D; margin:0;">UI · UX · User Research · Fintech · Mobile</p>
     </header>
 
-    <!-- METRICS BAND -->
-    <section style="background:#F5F5F0; border-top:1px solid #E2E2DA; border-bottom:1px solid #E2E2DA;">
-      <div data-metrics3 style="max-width:1000px; margin:0 auto; padding:clamp(40px,6vh,64px) 24px; display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(20px,3vw,44px);">
-        <div data-fade style="text-align:center;">
-          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(22px,3.4vw,34px); line-height:1.1; color:#1A1A1A;">2 perfis de usuário</div>
-          <div style="font-size:12.5px; line-height:1.5; color:#6B6B66; margin-top:12px; max-width:230px; margin-left:auto; margin-right:auto;">PF e PJ redesenhados na mesma plataforma</div>
-        </div>
-        <div data-fade style="text-align:center; border-left:1px solid #E2E2DA; border-right:1px solid #E2E2DA;">
-          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(22px,3.4vw,34px); line-height:1.1; color:#1A1A1A;">Do zero ao MVP</div>
-          <div style="font-size:12.5px; line-height:1.5; color:#6B6B66; margin-top:12px; max-width:230px; margin-left:auto; margin-right:auto;">discovery, design e entrega em produção</div>
-        </div>
-        <div data-fade style="text-align:center;">
-          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(22px,3.4vw,34px); line-height:1.1; color:#1A1A1A;">Dez 2022</div>
-          <div style="font-size:12.5px; line-height:1.5; color:#6B6B66; margin-top:12px; max-width:230px; margin-left:auto; margin-right:auto;">data de entrega</div>
-        </div>
-      </div>
-    </section>
+    <!-- ============ SECAO 2 - O PROBLEMA ============ -->
+    <section style="background:#F5F5F0;">
+      <div style="max-width:1080px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px;">
+        <div data-grid2 style="display:grid; grid-template-columns:1.4fr 1fr; gap:clamp(36px,5vw,64px); align-items:start;">
+          <!-- ESQUERDA -->
+          <div>
+            <div data-fade style="font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; margin-bottom:20px;">O Problema</div>
+            <h2 data-fade style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(26px,3.6vw,40px); line-height:1.16; letter-spacing:-0.02em; color:#1A1A1A; margin:0 0 22px;">Um app sem identidade num mercado onde a experiência é o diferencial</h2>
+            <p data-fade style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(15px,1.5vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 32px;">O T10 Bank é um banco 100% digital para o empresário brasileiro. O app existia, mas não tinha identidade. Num mercado onde banco digital é commodity, a experiência visual é o que diferencia.</p>
 
-    <!-- O PRODUTO -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px clamp(24px,4vh,40px);">
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">A T10Bank é um banco completo, 100% digital, pensado para a realidade do empresário brasileiro. O desafio central era tornar operações financeiras, aprovação de pagamentos, gestão de saldo e controle de transações, claras e confiáveis para dois perfis muito diferentes: o empreendedor pessoa física e o gestor de conta PJ. Tudo isso dentro de um app mobile onde o usuário espera velocidade e clareza em cada interação.</p>
-    </section>
+            <div data-grid2 style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:28px;">
+              <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 22px rgba(0,0,0,0.06); padding:22px;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.6 3.2-5.6 7-5.6s7 2 7 5.6"/></svg>
+                <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:15px; color:#1A1A1A; margin:14px 0 6px;">Pessoa Física</div>
+                <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.6; color:#6B6B66; margin:0;">Espera velocidade e clareza nas transações do dia a dia</p>
+              </div>
+              <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 22px rgba(0,0,0,0.06); padding:22px;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1.5"/><line x1="9" y1="8" x2="11" y2="8"/><line x1="13" y1="8" x2="15" y2="8"/><line x1="9" y1="12" x2="11" y2="12"/><line x1="13" y1="12" x2="15" y2="12"/><line x1="11" y1="20" x2="13" y2="20"/></svg>
+                <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:15px; color:#1A1A1A; margin:14px 0 6px;">Pessoa Jurídica</div>
+                <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.6; color:#6B6B66; margin:0;">Precisa de controle e confiança para aprovar folhas de pagamento e gerir múltiplas contas</p>
+              </div>
+            </div>
 
-    <!-- O PROBLEMA -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(40px,6vh,72px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">O Problema</div>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">A T10Bank queria oferecer aos usuários uma maneira mais fácil de gerenciar suas finanças no celular. Os objetivos incluíam simplificar o processo de aprovação das folhas de pagamentos, melhorar a experiência das transações e atrair investimentos do mercado.</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 28px;">O pedido veio direto do cliente: um design novo que repercutisse tanto nos usuários com conta pessoal quanto nos de contas PJ.</p>
-      <div data-fade style="background:rgba(196,98,45,0.06); border-left:3px solid #C4622D; padding:clamp(22px,3.5vw,30px) clamp(22px,3.5vw,34px);">
-        <p style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(20px,2.4vw,22px); line-height:1.5; color:#1A1A1A; margin:0;">O aplicativo existia, mas não tinha identidade. Num mercado onde banco digital é commodity, a experiência visual é o que diferencia — e a T10Bank precisava disso para crescer.</p>
-      </div>
-    </section>
-
-    <!-- MEU PAPEL -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(40px,6vh,72px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">Meu papel</div>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Depois de estudar o mercado e coletar feedback, criei um design simples e acessível para o aplicativo T10Bank. Me concentrei em fazer uma UI amigável e garantir que o processo de aprovação de pagamentos fosse o mais claro possível.</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">Fui responsável por todo o processo de design: da descoberta à entrega dos protótipos de alta fidelidade que guiaram o desenvolvimento. Isso incluiu decisões de navegação mobile, hierarquia de informação financeira e como apresentar dados complexos de forma clara numa tela pequena.</p>
-    </section>
-
-    <!-- INSERIR: mocks-aprovacoes-pf-pj-e-foto-contexto.png -->
-    <div data-fade style="max-width:1100px; margin:clamp(24px,4vh,40px) auto; padding:0 24px;">
-      <div data-grid2 style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-        <div style="background:#F0F0EE; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; padding:20px; border:1px solid #E8E8E2;">
-          <span style="font-family:'DM Sans',sans-serif; font-size:12.5px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:240px;">Mocks de aprovações PF e PJ</span>
-        </div>
-        <div style="background:#F0F0EE; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; padding:20px; border:1px solid #E8E8E2;">
-          <span style="font-family:'DM Sans',sans-serif; font-size:12.5px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:240px;">Foto de contexto de uso</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- PROCESSO -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">Processo</div>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 clamp(36px,5vh,52px);">Ao mergulhar na visão do cliente e integrar as percepções do mercado, garanti que cada fase do design fosse iterativa e construída sobre a anterior, levando a um produto final que é ao mesmo tempo intuitivo e impactante.</p>
-
-      <div data-fade data-stepper style="position:relative; margin:0 0 clamp(36px,5vh,48px);">
-        <div data-line style="position:absolute; background:rgba(196,98,45,0.3); left:0; top:0; width:0; height:0; z-index:0;"></div>
-        <div data-steps style="display:flex; flex-direction:row; justify-content:space-between; align-items:flex-start; gap:8px; position:relative; z-index:1;">
-          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
-            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">01</div>
-            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:110px;">Descoberta</div>
+            <p data-fade style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(15px,1.5vw,17px); line-height:1.7; color:#3A3A36; margin:0;">A solicitação veio direta do cliente: redesenhar a interface para atender os dois perfis com qualidade e posicionar o produto para atrair investimento.</p>
           </div>
-          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
-            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">02</div>
-            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:110px;">Escopo do MVP</div>
-          </div>
-          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
-            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">03</div>
-            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:110px;">Design de produto</div>
-          </div>
-          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
-            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">04</div>
-            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:110px;">Entrega</div>
+
+          <!-- DIREITA: placeholder imagem -->
+          <div data-fade style="aspect-ratio:3/4; background:#E8E8E2; border-radius:16px; overflow:hidden; box-shadow:0 10px 28px rgba(0,0,0,0.10);">
+            <img src="img/bank-problema.png" alt="Telas anteriores do app T10 Bank" style="width:100%; height:100%; object-fit:cover; display:block;" onerror="this.style.display='none'">
           </div>
         </div>
       </div>
-
-      <!-- Expanded blocks -->
-      <div data-fade style="border-top:1px solid #E2E2DA; padding:clamp(24px,4vh,32px) 0;">
-        <div style="font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:12px;">Descoberta</div>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 12px;">Mergulhei na visão do T10Bank, discernindo seus desafios e aspirações. Isso formou a base do projeto.</p>
-        <p style="font-size:13.5px; line-height:1.65; color:#9A9A92; margin:0;">→ Entrevistas sobre dores e motivações · Matriz CSD · Mapeamento dos fluxos e jornadas atuais · Benchmarking de apps concorrentes</p>
-      </div>
-      <div data-fade style="border-top:1px solid #E2E2DA; padding:clamp(24px,4vh,32px) 0;">
-        <div style="font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:12px;">Escopo do MVP</div>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 12px;">Determinamos os recursos e funcionalidades essenciais para o lançamento da primeira fase de transição visual do produto.</p>
-        <p style="font-size:13.5px; line-height:1.65; color:#9A9A92; margin:0;">→ Workshops · Documentação</p>
-      </div>
-      <div data-fade style="border-top:1px solid #E2E2DA; padding:clamp(24px,4vh,32px) 0;">
-        <div style="font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:12px;">Design de produto</div>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 12px;">Transferi todos os insights para um design interativo, com foco em recursos e funcionalidades centrados no usuário.</p>
-        <p style="font-size:13.5px; line-height:1.65; color:#9A9A92; margin:0;">→ Mapeamento dos componentes existentes · Desenvolvimento dos protótipos em baixa e alta qualidade</p>
-      </div>
-      <div data-fade style="border-top:1px solid #E2E2DA; border-bottom:1px solid #E2E2DA; padding:clamp(24px,4vh,32px) 0;">
-        <div style="font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:12px;">Entrega</div>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 12px;">Junto à T10Bank, implementamos fases de testes rigorosas para garantir uma experiência de usuário tranquila e funcionalidade do aplicativo.</p>
-        <p style="font-size:13.5px; line-height:1.65; color:#9A9A92; margin:0;">→ Testes de usabilidade · Ajustes finos · Documentação</p>
-      </div>
     </section>
 
-    <!-- A DECISÃO -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">A decisão</div>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">O redesign poderia ter sido apenas cosmético, trocar cores, atualizar tipografia, modernizar ícones. Seria mais rápido e mais seguro.</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Escolhemos ir além: redesenhar também os fluxos críticos, especialmente o de aprovação de pagamentos PJ. Isso aumentou o escopo e o risco de entrega, mas era o único caminho para que o produto tivesse impacto real — não apenas visual.</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">O trade-off foi o tempo: para entregar os dois perfis (PF e PJ) com qualidade, precisamos priorizar os fluxos principais e deixar funcionalidades secundárias para fases seguintes.</p>
-    </section>
+    <!-- ============ SECAO 3 - O PROCESSO ============ -->
+    <section style="background:#FFFFFF;">
+      <div style="max-width:1080px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px;">
+        <div data-fade style="font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; margin-bottom:20px;">O Processo</div>
+        <h2 data-fade style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(26px,3.6vw,40px); line-height:1.16; letter-spacing:-0.02em; color:#1A1A1A; margin:0 0 22px;">Do diagnóstico à entrega em 4 etapas</h2>
+        <p data-fade style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(15px,1.5vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 clamp(40px,6vh,60px); max-width:760px;">Fui responsável por todo o processo de design, da descoberta à entrega dos protótipos de alta fidelidade que guiaram o desenvolvimento. As decisões centrais foram: navegação mobile para dois perfis distintos, hierarquia de informação financeira e como apresentar dados complexos com clareza em tela pequena.</p>
 
-    <!-- ANTES E DEPOIS -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(8px,2vh,16px);">
-      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">Antes e depois</div>
-      <div data-fade style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:0;">Versão anterior</div>
-    </section>
-    <!-- INSERIR: t10bank-versao-antiga-home-menu-perfil-aprovacoes.png -->
-    <div data-fade style="max-width:1100px; margin:16px auto 12px; padding:0 24px;">
-      <div data-grid4 style="background:#F5F0EE; display:grid; grid-template-columns:repeat(4,1fr); gap:14px; padding:clamp(20px,3vw,32px); border:1px solid #ECE5E0;">
-        <div style="aspect-ratio:9/19; background:#EDE5E0; border:1px solid #E2D8D2; display:flex; align-items:center; justify-content:center;"><span style="font-size:10px; color:#A89B93; text-align:center; padding:6px;">Home</span></div>
-        <div style="aspect-ratio:9/19; background:#EDE5E0; border:1px solid #E2D8D2; display:flex; align-items:center; justify-content:center;"><span style="font-size:10px; color:#A89B93; text-align:center; padding:6px;">Menu</span></div>
-        <div style="aspect-ratio:9/19; background:#EDE5E0; border:1px solid #E2D8D2; display:flex; align-items:center; justify-content:center;"><span style="font-size:10px; color:#A89B93; text-align:center; padding:6px;">Perfil</span></div>
-        <div style="aspect-ratio:9/19; background:#EDE5E0; border:1px solid #E2D8D2; display:flex; align-items:center; justify-content:center;"><span style="font-size:10px; color:#A89B93; text-align:center; padding:6px;">Aprovações pendentes</span></div>
-      </div>
-    </div>
-    <section style="max-width:800px; margin:0 auto; padding:0 24px clamp(40px,6vh,64px);">
-      <p data-fade style="font-size:14px; font-style:italic; line-height:1.65; color:#9A9A92; margin:0;">Interface com excesso de elementos, hierarquia visual pouco clara e identidade genérica.</p>
-    </section>
+        <!-- STEPPER -->
+        <div style="position:relative;">
+          <div class="step-line" aria-hidden="true" style="position:absolute; top:18px; left:12%; right:12%; height:2px; background:rgba(196,98,45,0.25); z-index:0;"></div>
+          <div data-stepper style="display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(20px,3vw,36px); position:relative; z-index:1;">
 
-    <div data-fade style="max-width:800px; margin:0 auto; padding:0 24px;"><div style="height:1px; background:#C4622D; opacity:0.45;"></div></div>
+            <div data-fade>
+              <div style="width:36px; height:36px; border-radius:50%; background:#C4622D; color:#FFFFFF; font-family:'Inter',sans-serif; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center;">01</div>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin:16px 0 10px;"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:15px; color:#1A1A1A; margin-bottom:8px;">Descoberta</div>
+              <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.6; color:#6B6B66; margin:0;">Entrevistas com stakeholders, matriz CSD, mapeamento dos fluxos existentes e benchmarking de apps financeiros concorrentes.</p>
+            </div>
 
-    <section style="max-width:800px; margin:0 auto; padding:clamp(40px,6vh,64px) 24px clamp(8px,2vh,16px);">
-      <div data-fade style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:22px;">Nova versão</div>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">Ficou exatamente como o pedido: um aplicativo intuitivo que não apenas atende às funções básicas, mas também oferece uma interface de usuário visualmente rica, onde os usuários podem monitorar facilmente suas pendências e navegar pelos dados financeiros.</p>
-    </section>
-    <!-- INSERIR: t10bank-nova-versao-home-aprovacoes-produtos.png -->
-    <div data-fade style="max-width:1100px; margin:clamp(24px,4vh,40px) auto; padding:0 24px;">
-      <div data-grid3 style="background:rgba(232,121,106,0.1); display:grid; grid-template-columns:repeat(3,1fr); gap:16px; padding:clamp(22px,3.5vw,40px); border:1px solid rgba(232,121,106,0.25);">
-        <div style="text-align:center;">
-          <div style="aspect-ratio:9/19; background:#F4ECE9; border:1px solid rgba(232,121,106,0.3); display:flex; align-items:center; justify-content:center;"><span style="font-size:11px; color:#9A9A92; text-align:center; padding:8px;">tela home</span></div>
-          <div style="font-size:11px; color:#6B6B66; margin-top:10px;">Home</div>
+            <div data-fade>
+              <div style="width:36px; height:36px; border-radius:50%; background:#C4622D; color:#FFFFFF; font-family:'Inter',sans-serif; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center;">02</div>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin:16px 0 10px;"><path d="M8 6h12"/><path d="M8 12h12"/><path d="M8 18h12"/><path d="M3 6l1.2 1.2L6.5 5"/><path d="M3 12l1.2 1.2L6.5 11"/><path d="M3 18l1.2 1.2L6.5 17"/></svg>
+              <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:15px; color:#1A1A1A; margin-bottom:8px;">Escopo do MVP</div>
+              <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.6; color:#6B6B66; margin:0;">Definição dos fluxos prioritários: home, transações e aprovação de pagamentos PJ, os mais críticos para os dois perfis.</p>
+            </div>
+
+            <div data-fade>
+              <div style="width:36px; height:36px; border-radius:50%; background:#C4622D; color:#FFFFFF; font-family:'Inter',sans-serif; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center;">03</div>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin:16px 0 10px;"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>
+              <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:15px; color:#1A1A1A; margin-bottom:8px;">Design de produto</div>
+              <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.6; color:#6B6B66; margin:0;">Mapeamento dos componentes existentes, construção do sistema visual e protótipos em baixa e alta fidelidade.</p>
+            </div>
+
+            <div data-fade>
+              <div style="width:36px; height:36px; border-radius:50%; background:#C4622D; color:#FFFFFF; font-family:'Inter',sans-serif; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center;">04</div>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin:16px 0 10px;"><rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M8.5 12.5l2.4 2.4 4.6-5"/></svg>
+              <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:15px; color:#1A1A1A; margin-bottom:8px;">Entrega</div>
+              <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.6; color:#6B6B66; margin:0;">Testes de usabilidade, ajustes finos e documentação para handoff com o time de desenvolvimento.</p>
+            </div>
+
+          </div>
         </div>
-        <div style="text-align:center;">
-          <div style="aspect-ratio:9/19; background:#F4ECE9; border:1px solid rgba(232,121,106,0.3); display:flex; align-items:center; justify-content:center;"><span style="font-size:11px; color:#9A9A92; text-align:center; padding:8px;">tela aprovações</span></div>
-          <div style="font-size:11px; color:#6B6B66; margin-top:10px;">Aprovações PJ</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="aspect-ratio:9/19; background:#F4ECE9; border:1px solid rgba(232,121,106,0.3); display:flex; align-items:center; justify-content:center;"><span style="font-size:11px; color:#9A9A92; text-align:center; padding:8px;">tela produtos</span></div>
-          <div style="font-size:11px; color:#6B6B66; margin-top:10px;">Produtos</div>
+
+        <!-- CALLOUT -->
+        <div data-fade style="margin-top:clamp(36px,5vh,52px); background:rgba(196,98,45,0.06); border-left:3px solid #C4622D; border-radius:8px; padding:clamp(22px,3vw,30px);">
+          <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(15px,1.5vw,16.5px); line-height:1.7; color:#3A3A36; margin:0;"><strong style="font-weight:700; color:#1A1A1A;">A decisão de escopo:</strong> para entregar PF e PJ com qualidade dentro do prazo, priorizamos os fluxos principais e deixamos funcionalidades secundárias para fases seguintes. O risco de tentar cobrir tudo seria entregar nada bem.</p>
         </div>
       </div>
-    </div>
-
-    <!-- RESULTADO -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">Resultado</div>
-      <div data-fade style="display:flex; flex-wrap:wrap; gap:16px;">
-        <div style="flex:1 1 280px; background:#F5F5F0; border-top:2px solid #C4622D; padding:clamp(22px,3vw,28px);">
-          <div style="font-size:14px; font-weight:600; color:#1A1A1A; margin-bottom:10px;">Identidade criada do zero</div>
-          <p style="font-size:15px; line-height:1.65; color:#4A4A45; margin:0;">O T10Bank passou a ter uma identidade visual própria e consistente, diferenciada num mercado de bancos digitais cada vez mais parecidos.</p>
-        </div>
-        <div style="flex:1 1 280px; background:#F5F5F0; border-top:2px solid #CCCCCC; padding:clamp(22px,3vw,28px);">
-          <div style="font-size:14px; font-weight:600; color:#1A1A1A; margin-bottom:10px;">Fluxo crítico redesenhado</div>
-          <p style="font-size:15px; line-height:1.65; color:#4A4A45; margin:0;">O processo de aprovação de pagamentos PJ — o mais complexo do produto — foi simplificado para funcionar com clareza em poucos passos.</p>
-        </div>
-      </div>
-      <p data-fade style="font-size:14px; line-height:1.65; color:#9A9A92; margin:18px 0 0;">Devido ao termo de confidencialidade, o protótipo completo pode ser apresentado em reunião privada.</p>
     </section>
 
-    <!-- FECHAMENTO -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(56px,9vh,104px);">
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 clamp(40px,6vh,64px);">Esse projeto me ensinou que redesign de produto financeiro é, acima de tudo, um exercício de confiança. O usuário precisa sentir segurança antes de sentir modernidade — e encontrar esse equilíbrio foi o desafio mais interessante do projeto.</p>
+    <!-- ============ SECAO 4 - ANTES E DEPOIS ============ -->
+    <section style="background:#F5F5F0;">
+      <div style="max-width:1080px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px;">
+        <div data-fade style="font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; margin-bottom:20px;">Antes e Depois</div>
+        <h2 data-fade style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(26px,3.6vw,40px); line-height:1.16; letter-spacing:-0.02em; color:#1A1A1A; margin:0 0 clamp(36px,5vh,52px);">Uma identidade que transmite confiança</h2>
+
+        <!-- BLOCO ANTES -->
+        <div data-grid2 style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,4vw,52px); align-items:center;">
+          <div>
+            <span data-fade style="display:inline-block; font-family:'Inter',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.05em; text-transform:uppercase; color:#6B6B66; background:#E2E2DA; border-radius:999px; padding:6px 14px; margin-bottom:18px;">Antes</span>
+            <p data-fade style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(15px,1.5vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 22px;">Interface com excesso de elementos, hierarquia visual pouco clara e identidade genérica.</p>
+            <div data-fade style="display:flex; flex-direction:column; gap:12px;">
+              <div style="display:flex; align-items:flex-start; gap:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9685E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto; margin-top:1px;"><line x1="17" y1="7" x2="7" y2="17"/><line x1="7" y1="7" x2="17" y2="17"/></svg><span style="font-family:'Inter',sans-serif; font-size:14.5px; line-height:1.5; color:#3A3A36;">Hierarquia visual confusa</span></div>
+              <div style="display:flex; align-items:flex-start; gap:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9685E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto; margin-top:1px;"><line x1="17" y1="7" x2="7" y2="17"/><line x1="7" y1="7" x2="17" y2="17"/></svg><span style="font-family:'Inter',sans-serif; font-size:14.5px; line-height:1.5; color:#3A3A36;">Identidade genérica sem diferencial</span></div>
+              <div style="display:flex; align-items:flex-start; gap:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9685E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto; margin-top:1px;"><line x1="17" y1="7" x2="7" y2="17"/><line x1="7" y1="7" x2="17" y2="17"/></svg><span style="font-family:'Inter',sans-serif; font-size:14.5px; line-height:1.5; color:#3A3A36;">Excesso de elementos competindo por atenção</span></div>
+            </div>
+          </div>
+          <div data-fade style="max-width:300px; width:100%; margin:0 auto; border-radius:16px; overflow:hidden; box-shadow:0 10px 28px rgba(0,0,0,0.10);">
+            <img src="img/bank1.png" alt="Telas anteriores" style="width:100%; height:auto; display:block;" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <!-- DIVISOR -->
+        <div data-fade style="display:flex; align-items:center; gap:18px; margin:clamp(36px,5vh,56px) 0;">
+          <div style="flex:1; height:1px; background:#D8D8D0;"></div>
+          <span style="font-family:'Inter',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#C4622D;">redesign</span>
+          <div style="flex:1; height:1px; background:#D8D8D0;"></div>
+        </div>
+
+        <!-- BLOCO DEPOIS -->
+        <div data-grid2 style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,4vw,52px); align-items:center;">
+          <div data-fade data-after-img style="max-width:300px; width:100%; margin:0 auto; border-radius:16px; overflow:hidden; box-shadow:0 10px 28px rgba(0,0,0,0.10);">
+            <img src="img/bancodigital.gif" alt="Telas redesenhadas do app T10 Bank" style="width:100%; height:auto; display:block;" onerror="this.style.display='none'">
+          </div>
+          <div data-after-text>
+            <span data-fade style="display:inline-block; font-family:'Inter',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.05em; text-transform:uppercase; color:#C4622D; background:rgba(196,98,45,0.12); border-radius:999px; padding:6px 14px; margin-bottom:18px;">Depois</span>
+            <p data-fade style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(15px,1.5vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 22px;">Interface com identidade própria, hierarquia clara e fluxos críticos simplificados, projetada para transmitir confiança em cada interação financeira.</p>
+            <div data-fade style="display:flex; flex-direction:column; gap:12px;">
+              <div style="display:flex; align-items:flex-start; gap:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto; margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg><span style="font-family:'Inter',sans-serif; font-size:14.5px; line-height:1.5; color:#3A3A36;">Hierarquia clara e escanável</span></div>
+              <div style="display:flex; align-items:flex-start; gap:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto; margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg><span style="font-family:'Inter',sans-serif; font-size:14.5px; line-height:1.5; color:#3A3A36;">Identidade visual própria e consistente</span></div>
+              <div style="display:flex; align-items:flex-start; gap:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto; margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg><span style="font-family:'Inter',sans-serif; font-size:14.5px; line-height:1.5; color:#3A3A36;">Fluxo de aprovação PJ simplificado</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 TELAS MOBILE LADO A LADO -->
+        <div data-grid4 style="display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(14px,2vw,22px); margin-top:clamp(40px,6vh,64px); width:min(1280px, calc(100vw - 48px)); margin-left:50%; transform:translateX(-50%);">
+          <div data-fade style="border-radius:12px; overflow:hidden; background:#E8E8E2; box-shadow:0 8px 22px rgba(0,0,0,0.08);"><img src="img/bank01mob.png" alt="Tela 1 do app T10 Bank" style="width:100%; height:auto; display:block;" onerror="this.style.display='none'"></div>
+          <div data-fade style="border-radius:12px; overflow:hidden; background:#E8E8E2; box-shadow:0 8px 22px rgba(0,0,0,0.08);"><img src="img/bank02mob.png" alt="Tela 2 do app T10 Bank" style="width:100%; height:auto; display:block;" onerror="this.style.display='none'"></div>
+          <div data-fade style="border-radius:12px; overflow:hidden; background:#E8E8E2; box-shadow:0 8px 22px rgba(0,0,0,0.08);"><img src="img/bank03mob.png" alt="Tela 3 do app T10 Bank" style="width:100%; height:auto; display:block;" onerror="this.style.display='none'"></div>
+          <div data-fade style="border-radius:12px; overflow:hidden; background:#E8E8E2; box-shadow:0 8px 22px rgba(0,0,0,0.08);"><img src="img/bank04mob.png" alt="Tela 4 do app T10 Bank" style="width:100%; height:auto; display:block;" onerror="this.style.display='none'"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECAO 5 - RESULTADO ============ -->
+    <section style="background:rgba(196,98,45,0.04);">
+      <div style="max-width:1080px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px;">
+        <div data-fade style="font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; margin-bottom:20px;">Resultado</div>
+        <h2 data-fade style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(26px,3.6vw,40px); line-height:1.16; letter-spacing:-0.02em; color:#1A1A1A; margin:0 0 clamp(36px,5vh,52px);">O que foi entregue</h2>
+
+        <div data-grid3 style="display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px,2.5vw,28px);">
+          <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(24px,3vw,32px);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.5 6 .5-4.5 4 1.4 5.9L12 17l-5.4 3 1.4-5.9-4.5-4 6-.5L12 3z"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:17px; color:#1A1A1A; margin:16px 0 10px;">Identidade criada do zero</div>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:14px; line-height:1.65; color:#6B6B66; margin:0;">O T10 Bank passou a ter uma identidade visual própria e consistente, diferenciada num mercado de bancos digitais cada vez mais parecidos.</p>
+          </div>
+
+          <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(24px,3vw,32px);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h12"/><path d="M12 5l3 3-3 3"/><path d="M21 16H9"/><path d="M12 13l-3 3 3 3"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:17px; color:#1A1A1A; margin:16px 0 10px;">Fluxo crítico redesenhado</div>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:14px; line-height:1.65; color:#6B6B66; margin:0;">O processo de aprovação de pagamentos PJ, o mais complexo do produto, foi simplificado para funcionar com clareza em poucos passos numa tela pequena.</p>
+          </div>
+
+          <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(24px,3vw,32px);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:17px; color:#1A1A1A; margin:16px 0 10px;">Contexto do projeto</div>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:14px; line-height:1.65; color:#6B6B66; margin:0;">Este projeto foi desenvolvido via contrato de serviço. Por não fazer parte do time interno, não tive acesso a métricas de uso, satisfação ou resultado após a entrega, como NPS, retenção ou dados de conversão. Os resultados apresentados refletem o escopo entregue: identidade criada, fluxos redesenhados e protótipos validados com stakeholders.</p>
+          </div>
+        </div>
+
+        <div data-fade style="display:flex; align-items:center; justify-content:center; gap:9px; margin-top:clamp(34px,5vh,46px);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9A9A92" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          <span style="font-family:'Inter',sans-serif; font-weight:400; font-size:13px; color:#9A9A92; text-align:center;">O protótipo navegável pode ser apresentado em reunião privada, mediante NDA.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VOLTAR ============ -->
+    <section style="max-width:1080px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(56px,9vh,104px);">
       <a data-fade href="index.html" style="display:inline-block; font-size:15px; font-weight:500; color:#1A1A1A; text-decoration:none; padding-bottom:2px; background-image:linear-gradient(#C4622D,#C4622D); background-size:0% 1px; background-position:0 100%; background-repeat:no-repeat; transition:background-size .35s ease, color .3s ease;" style-hover="background-size:100% 1px; color:#C4622D;">← Voltar ao portfólio</a>
     </section>
 
@@ -829,6 +830,47 @@
     mobileMenu.querySelectorAll('a').forEach(function(link){ link.addEventListener('click', function(){ closeMenu(); }); });
     document.addEventListener('keydown', function(e){ if (e.key==='Escape' && mobileMenu.classList.contains('open')) closeMenu(); });
   })();
+})();
+</script>
+<script>
+(function(){
+  // ===== Custom cursor (apenas non-touch) =====
+  var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+  if (!coarse) {
+    var ACCENT = '#C4622D';
+    var cursor = document.createElement('div');
+    Object.assign(cursor.style, {
+      position: 'fixed', top: '0', left: '0', width: '8px', height: '8px',
+      marginLeft: '-4px', marginTop: '-4px', borderRadius: '50%',
+      background: ACCENT, border: '1px solid ' + ACCENT,
+      pointerEvents: 'none', zIndex: '99999', opacity: '0',
+      transition: 'width .2s ease, height .2s ease, margin .2s ease, background-color .2s ease, border-color .2s ease, opacity .2s ease',
+      willChange: 'transform'
+    });
+    document.body.appendChild(cursor);
+    document.body.style.cursor = 'none';
+    var cx = window.innerWidth / 2, cy = window.innerHeight / 2, raf = null;
+    var place = function(){ cursor.style.transform = 'translate(' + cx + 'px,' + cy + 'px)'; raf = null; };
+    window.addEventListener('mousemove', function(e){
+      cx = e.clientX; cy = e.clientY; cursor.style.opacity = '1';
+      if (!raf) raf = requestAnimationFrame(place);
+    }, { passive: true });
+    window.addEventListener('mouseout', function(e){ if (!e.relatedTarget) cursor.style.opacity = '0'; });
+    var grow = function(){
+      cursor.style.width = '32px'; cursor.style.height = '32px';
+      cursor.style.marginLeft = '-16px'; cursor.style.marginTop = '-16px';
+      cursor.style.background = 'transparent'; cursor.style.borderColor = ACCENT;
+    };
+    var shrink = function(){
+      cursor.style.width = '8px'; cursor.style.height = '8px';
+      cursor.style.marginLeft = '-4px'; cursor.style.marginTop = '-4px';
+      cursor.style.background = ACCENT; cursor.style.borderColor = ACCENT;
+    };
+    document.querySelectorAll('a, button, .proj').forEach(function(el){
+      el.addEventListener('mouseenter', grow);
+      el.addEventListener('mouseleave', shrink);
+    });
+  }
 })();
 </script>
 </body>

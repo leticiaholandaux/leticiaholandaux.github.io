@@ -16,11 +16,14 @@
     img, video, iframe { max-width: 100%; height: auto; }
     ::selection { background: #C4622D; color: #fff; }
     @media (max-width: 768px) {
+      [data-case-hero] { grid-template-columns: 1fr !important; }
       [data-metrics3] { grid-template-columns: 1fr !important; gap: 0 !important; }
       [data-metrics3] > div { border-left: 0 !important; border-right: 0 !important; padding: 24px 0 !important; }
       [data-metrics3] > div + div { border-top: 1px solid #E2E2DA !important; }
       [data-grid2], [data-grid3] { grid-template-columns: 1fr !important; }
       [data-grid4] { grid-template-columns: 1fr 1fr !important; }
+      [data-ncstep] { grid-template-columns: 1fr !important; }
+      .step-line { display: none !important; }
     }
   </style>
 
@@ -358,190 +361,196 @@
       <a href="index.html" style="font-size:13.5px; color:#6B6B66; text-decoration:none; padding-bottom:2px; background-image:linear-gradient(#C4622D,#C4622D); background-size:0% 1px; background-position:0 100%; background-repeat:no-repeat; transition:background-size .35s ease, color .3s ease;" style-hover="background-size:100% 1px; color:#1A1A1A;">← Voltar</a>
     </nav>
 
-    <!-- BLUE HEADER -->
-    <div style="background:#C8D8F0; width:100%; min-height:clamp(160px,26vw,240px); margin-top:28px;"></div>
-
-    <!-- FLOATING LOGO -->
-    <!-- INSERIR: logo-nextcoders.png -->
-    <div style="display:flex; justify-content:center; margin-top:-60px;">
-      <div style="width:120px; height:120px; background:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 24px rgba(40,60,110,0.16); border-radius:4px;">
-        <span style="font-family:'DM Sans',sans-serif; font-size:17px; font-weight:600; letter-spacing:-0.01em; color:#2F6BD8;">next<span style="color:#5BA84F;">&lt;oders</span></span>
-      </div>
-    </div>
-
     <!-- HERO -->
-    <header style="max-width:800px; margin:0 auto; padding:clamp(28px,5vh,44px) 24px clamp(28px,5vh,52px); text-align:center;">
-      <h1 style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(38px,7vw,68px); line-height:1.04; letter-spacing:-0.015em; margin:0 0 20px; color:#1A1A1A;">Next Coders<br><span style="color:#3A3A36;">Criação da plataforma</span></h1>
-      <p style="font-size:14px; color:#9A9A92; letter-spacing:0.02em; margin:0 0 16px;">Produto web · Dezembro de 2022 · Product Designer</p>
-      <p style="font-size:13px; font-weight:500; letter-spacing:0.04em; color:#C4622D; margin:0;">UI · UX · User Research · User Test · Discovery</p>
+    <header style="max-width:1080px; margin:0 auto; padding:clamp(40px,7vh,72px) 24px clamp(32px,5vh,56px);">
+      <style>.case-tags{display:flex; flex-wrap:wrap; gap:8px;} .case-tag{font-family:'Inter',sans-serif; font-size:12px; font-weight:500; color:#555555; background:#F2F2F0; border-radius:999px; padding:6px 12px; line-height:1; white-space:nowrap;}</style>
+      <div data-case-hero style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(32px,5vw,64px); align-items:start;">
+        <!-- COLUNA ESQUERDA -->
+        <div>
+          <div style="font-family:'Inter',sans-serif; font-weight:500; font-size:14px; color:#9A9A92; margin-bottom:16px;">Projeto desenvolvido para <strong style="font-weight:700; color:#1A1A1A;">Next Coders</strong></div>
+          <h1 style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(34px,4.6vw,52px); line-height:1.06; letter-spacing:-0.02em; margin:0 0 14px; color:#1A1A1A;">Plataforma de Educação</h1>
+          <p style="font-family:'Inter',sans-serif; font-size:14px; color:#9A9A92; letter-spacing:0.02em; margin:0 0 24px;">Dezembro de 2022</p>
+          <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(15px,1.4vw,16px); line-height:1.7; color:#1A1A1A; margin:0 0 30px;">Atuei na criação da plataforma de uma edtech, do zero ao MVP. O desafio não era ser mais uma plataforma de cursos de TI, e sim criar um ambiente que os alunos reconhecessem como seu, então estruturei uma jornada de aprendizado com gamificação para engajar e preparar jovens estudantes para o mercado de TI.</p>
+          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.04em; text-transform:uppercase; color:#1A1A1A; margin-bottom:12px;">Tags</div>
+          <div class="case-tags">
+            <span class="case-tag">UI</span>
+            <span class="case-tag">UX</span>
+            <span class="case-tag">Research</span>
+            <span class="case-tag">Gamification</span>
+            <span class="case-tag">SAAS</span>
+            <span class="case-tag">B2C</span>
+          </div>
+        </div>
+        <!-- COLUNA DIREITA: imagem do projeto -->
+        <div data-case-hero-img style="border-radius:14px; overflow:hidden;">
+          <img src="img/edtech-resumo.png" alt="Projeto Next Coders" style="width:100%; height:auto; display:block;" onerror="this.style.display='none'; this.parentElement.style.minHeight='260px';">
+        </div>
+      </div>
     </header>
 
-    <!-- METRICS BAND -->
-    <section style="background:#F5F5F0; border-top:1px solid #E2E2DA; border-bottom:1px solid #E2E2DA;">
-      <div data-metrics3 style="max-width:1000px; margin:0 auto; padding:clamp(40px,6vh,64px) 24px; display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(20px,3vw,44px);">
-        <div data-fade style="text-align:center;">
-          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(22px,3.4vw,34px); line-height:1.1; color:#1A1A1A;">MVP</div>
-          <div style="font-size:12.5px; line-height:1.5; color:#6B6B66; margin-top:12px; max-width:230px; margin-left:auto; margin-right:auto;">primeira fase da plataforma entregue</div>
+    <!-- ============ SECAO 2 - O DESAFIO ============ -->
+    <section style="background:#F5F5F0;">
+      <div style="max-width:880px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px;">
+        <div data-fade style="font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; margin-bottom:20px;">O Desafio</div>
+        <h2 data-fade style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(26px,3.6vw,40px); line-height:1.16; letter-spacing:-0.02em; color:#1A1A1A; margin:0 0 22px;">Criar uma plataforma que os alunos reconhecessem como sua</h2>
+        <p data-fade style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(15px,1.5vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 20px;">A NextCoders é uma plataforma que combina mecanismos de compensação social e preparação para o mercado de trabalho, gerando empregabilidade para camadas menos privilegiadas e reduzindo o apagão de mão de obra em tecnologia no Brasil.</p>
+        <p data-fade style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(15px,1.5vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 28px;">Os candidatos aprovados ganham bolsa de estudo integral num processo gamificado, onde os melhores são recompensados com ganhos maiores. Professores e contratantes acompanham e avaliam os alunos diariamente durante as trilhas.</p>
+
+        <div data-fade style="background:rgba(196,98,45,0.06); border-left:3px solid #C4622D; border-radius:8px; padding:clamp(22px,3vw,28px); margin-bottom:clamp(36px,5vh,48px);">
+          <p style="font-family:'Inter',sans-serif; font-weight:500; font-size:clamp(16px,1.6vw,18px); line-height:1.65; color:#1A1A1A; margin:0;">Plataformas de educação tech existem às dezenas. O desafio não era criar mais uma. Era criar uma que fizesse o aluno querer continuar.</p>
         </div>
-        <div data-fade style="text-align:center; border-left:1px solid #E2E2DA; border-right:1px solid #E2E2DA;">
-          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(22px,3.4vw,34px); line-height:1.1; color:#1A1A1A;">4 etapas</div>
-          <div style="font-size:12.5px; line-height:1.5; color:#6B6B66; margin-top:12px; max-width:230px; margin-left:auto; margin-right:auto;">do discovery à entrega</div>
-        </div>
-        <div data-fade style="text-align:center;">
-          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(22px,3.4vw,34px); line-height:1.1; color:#1A1A1A;">Dez 2022</div>
-          <div style="font-size:12.5px; line-height:1.5; color:#6B6B66; margin-top:12px; max-width:230px; margin-left:auto; margin-right:auto;">data de entrega</div>
+
+        <div data-fade style="aspect-ratio:16/9; background:#E8E8E2; border-radius:16px; display:flex; align-items:center; justify-content:center; text-align:center; padding:24px;">
+          <span style="font-family:'Inter',sans-serif; font-size:13px; font-weight:500; color:#9A9A92;">Telas da plataforma NextCoders</span>
         </div>
       </div>
     </section>
 
-    <!-- O PRODUTO -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px clamp(24px,4vh,40px);">
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">NextCoders é uma plataforma que combina mecanismos de compensação social e preparação para o trabalho, gerando empregabilidade para camadas menos privilegiadas ao mesmo tempo que diminui o apagão de mão de obra no mercado de Tecnologia da Informação no Brasil.</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">Os candidatos aprovados ganham bolsa de estudo para estudarem em período integral, num processo gamificado onde os melhores são recompensados com ganhos maiores. Professores associados e contratantes acompanham e avaliam diariamente os estudantes durante as trilhas.</p>
-    </section>
+    <!-- ============ SECAO 3 - O PROCESSO ============ -->
+    <section style="background:#FFFFFF;">
+      <div style="max-width:980px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px;">
+        <div data-fade style="font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; margin-bottom:20px;">O Processo</div>
+        <h2 data-fade style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(26px,3.6vw,40px); line-height:1.16; letter-spacing:-0.02em; color:#1A1A1A; margin:0 0 22px;">Da pesquisa à entrega em 4 etapas</h2>
+        <p data-fade style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(15px,1.5vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 clamp(40px,6vh,60px); max-width:780px;">Fui responsável pela pesquisa, pela definição dos recursos do MVP e pela entrega dos protótipos de alta fidelidade. Por ser um projeto terceirizado com prazo fixo de entrega, não participei do acompanhamento do desenvolvimento nem do uso em produção da plataforma.</p>
 
-    <!-- INSERIR: nextcoders-pagina-inicial-wagner-curso-backend.png -->
-    <div data-fade style="max-width:1100px; margin:clamp(24px,4vh,40px) auto; padding:0 24px;">
-      <div style="background:#1E2A44; padding:clamp(24px,4vw,48px); border:1px solid #18223A;">
-        <div style="background:#F0F0EE; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; padding:24px;">
-          <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:480px;">Tela “Página inicial” — saudação ao usuário Wagner, curso em andamento “Desenvolvedor Backend Junior - ASP.Net” e vídeos de onboarding</span>
-        </div>
-      </div>
-    </div>
+        <div style="position:relative;">
+          <div class="step-line" aria-hidden="true" style="position:absolute; top:18px; left:12%; right:12%; height:2px; background:rgba(196,98,45,0.25); z-index:0;"></div>
+          <div data-ncstep style="display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(20px,3vw,36px); position:relative; z-index:1;">
 
-    <!-- O PROBLEMA -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(40px,6vh,72px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:28px;">O Problema</div>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 28px;">A NextCoders precisava se diferenciar num mercado de plataformas educacionais cada vez mais parecidas entre si. O objetivo final era conduzir os alunos em uma trajetória profissional na área de tecnologia com recursos inovadores, garantindo uma experiência de usuário que os fizesse querer continuar.</p>
-      <div data-fade style="background:rgba(196,98,45,0.06); border-left:3px solid #C4622D; padding:clamp(22px,3.5vw,30px) clamp(22px,3.5vw,34px);">
-        <p style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(20px,2.4vw,22px); line-height:1.5; color:#1A1A1A; margin:0;">Plataformas de educação tech existem às dezenas. O desafio não era criar mais uma — era criar uma que os alunos reconhecessem como sua.</p>
-      </div>
-    </section>
+            <div data-fade>
+              <div style="width:36px; height:36px; border-radius:50%; background:#C4622D; color:#FFFFFF; font-family:'Inter',sans-serif; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center;">01</div>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin:16px 0 10px;"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:15px; color:#1A1A1A; margin-bottom:8px;">Descoberta</div>
+              <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.6; color:#6B6B66; margin:0;">Entrevistas com stakeholders e usuários, matriz CSD, benchmarking dos concorrentes e workshop de definição do produto.</p>
+            </div>
 
-    <!-- MEU PAPEL -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(40px,6vh,72px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">Meu papel</div>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Tive a oportunidade de ficar à frente do desenvolvimento da primeira fase da plataforma NextCoders. Meu objetivo foi trazer uma interface limpa, fácil e com alguns pontos lúdicos para os alunos se identificarem.</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">Fui responsável pela pesquisa, pela definição dos recursos do MVP e pela entrega dos protótipos de alta fidelidade. Por ser um projeto terceirizado com prazo fixo de entrega, não participei do acompanhamento do desenvolvimento nem do uso em produção da plataforma.</p>
-    </section>
+            <div data-fade>
+              <div style="width:36px; height:36px; border-radius:50%; background:#C4622D; color:#FFFFFF; font-family:'Inter',sans-serif; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center;">02</div>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin:16px 0 10px;"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14"/><path d="M15 6v14"/></svg>
+              <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:15px; color:#1A1A1A; margin-bottom:8px;">Ideação do MVP</div>
+              <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.6; color:#6B6B66; margin:0;">Brainstorming dos recursos com base nos insights de pesquisa, mapeamento de jornadas e documentação.</p>
+            </div>
 
-    <!-- INSERIR: nextcoders-trilha-backend-e-tela-aula.png -->
-    <div data-fade style="max-width:1100px; margin:clamp(24px,4vh,40px) auto; padding:0 24px;">
-      <div data-grid2 style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-        <div style="background:#E8F0D8; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; padding:20px; border:1px solid #DCE6C8;">
-          <span style="font-family:'DM Sans',sans-serif; font-size:12.5px; letter-spacing:0.03em; color:#7E8A66; text-align:center; max-width:240px;">Trilha de formação “Desenvolvedor Backend Junior”</span>
-        </div>
-        <div style="background:#D9E4F5; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; padding:20px; border:1px solid #C7D6EE;">
-          <span style="font-family:'DM Sans',sans-serif; font-size:12.5px; letter-spacing:0.03em; color:#6981A8; text-align:center; max-width:240px;">Tela de aula</span>
-        </div>
-      </div>
-    </div>
+            <div data-fade>
+              <div style="width:36px; height:36px; border-radius:50%; background:#C4622D; color:#FFFFFF; font-family:'Inter',sans-serif; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center;">03</div>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin:16px 0 10px;"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>
+              <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:15px; color:#1A1A1A; margin-bottom:8px;">Conceito visual e protótipos</div>
+              <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.6; color:#6B6B66; margin:0;">Conceito visual alinhado à marca, wireframes e protótipos de alta fidelidade.</p>
+            </div>
 
-    <!-- PROCESSO -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:clamp(28px,4vh,40px);">Processo</div>
+            <div data-fade>
+              <div style="width:36px; height:36px; border-radius:50%; background:#C4622D; color:#FFFFFF; font-family:'Inter',sans-serif; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center;">04</div>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin:16px 0 10px;"><rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M8.5 12.5l2.4 2.4 4.6-5"/></svg>
+              <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:15px; color:#1A1A1A; margin-bottom:8px;">Entrega e testes</div>
+              <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.6; color:#6B6B66; margin:0;">Duas fases de testes de usabilidade, ajustes finos e documentação para handoff.</p>
+            </div>
 
-      <div data-fade data-stepper style="position:relative; margin:0 0 clamp(36px,5vh,48px);">
-        <div data-line style="position:absolute; background:rgba(196,98,45,0.3); left:0; top:0; width:0; height:0; z-index:0;"></div>
-        <div data-steps style="display:flex; flex-direction:row; justify-content:space-between; align-items:flex-start; gap:8px; position:relative; z-index:1;">
-          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
-            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">01</div>
-            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:120px;">Descoberta</div>
           </div>
-          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
-            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">02</div>
-            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:120px;">Ideação do MVP</div>
+        </div>
+
+        <div data-grid2 style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:clamp(36px,5vh,52px);">
+          <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(22px,3vw,28px);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:12px;"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:16px; color:#1A1A1A; margin-bottom:8px;">A decisão central</div>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:14px; line-height:1.65; color:#6B6B66; margin:0;">Integrar gamificação não como decoração, mas como mecanismo real de engajamento e recompensa desde o MVP.</p>
           </div>
-          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
-            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">03</div>
-            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:120px;">Conceito visual e protótipos</div>
-          </div>
-          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
-            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">04</div>
-            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:120px;">Entrega e testes</div>
+          <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(22px,3vw,28px);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:12px;"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7 2.5 13a3 3 0 0 0 5 0L5 7z"/><path d="M19 7l-2.5 6a3 3 0 0 0 5 0L19 7z"/><path d="M8 21h8"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:16px; color:#1A1A1A; margin-bottom:8px;">O trade-off</div>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:14px; line-height:1.65; color:#6B6B66; margin:0;">Menos telas entregues no MVP, mas as telas certas: as que sustentam o diferencial do produto.</p>
           </div>
         </div>
       </div>
+    </section>
 
-      <div data-fade style="border-top:1px solid #E2E2DA; padding:clamp(24px,4vh,32px) 0;">
-        <div style="font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:12px;">Descoberta</div>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 12px;">Por meio de uma extensa pesquisa, adquiri informações valiosas sobre o público-alvo, as tendências do setor e os concorrentes da NextCoders.</p>
-        <p style="font-size:13.5px; line-height:1.65; color:#9A9A92; margin:0;">→ Entrevistas com stakeholders e usuários sobre dores e motivações · Matriz CSD · Benchmarking dos concorrentes · Workshop de definição do produto</p>
-      </div>
-      <div data-fade style="border-top:1px solid #E2E2DA; padding:clamp(24px,4vh,32px) 0;">
-        <div style="font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:12px;">Ideação do MVP</div>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 12px;">Em seguida, fizemos um brainstorming sobre os recursos do produto com base nos insights de pesquisa.</p>
-        <p style="font-size:13.5px; line-height:1.65; color:#9A9A92; margin:0;">→ Workshops · Mapeamento de jornadas · Documentação</p>
-      </div>
-      <div data-fade style="border-top:1px solid #E2E2DA; padding:clamp(24px,4vh,32px) 0;">
-        <div style="font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:12px;">Conceito visual e protótipos</div>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 12px;">Foi criado um conceito visual cativante e protótipos de alta fidelidade alinhados à marca e objetivos da NextCoders.</p>
-        <p style="font-size:13.5px; line-height:1.65; color:#9A9A92; margin:0;">→ Wireframes · Prototipação em alta fidelidade</p>
-      </div>
-      <div data-fade style="border-top:1px solid #E2E2DA; border-bottom:1px solid #E2E2DA; padding:clamp(24px,4vh,32px) 0;">
-        <div style="font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:12px;">Entrega e testes</div>
-        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 12px;">Junto à NextCoders, implementamos duas fases de testes a fim de garantir a melhor experiência de estudo para os alunos.</p>
-        <p style="font-size:13.5px; line-height:1.65; color:#9A9A92; margin:0;">→ Testes de usabilidade · Ajustes finos · Documentação</p>
+    <!-- ============ SECAO 4 - A GAMIFICACAO ============ -->
+    <section style="background:#F5F5F0;">
+      <div style="max-width:1080px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px;">
+        <div data-fade style="font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; margin-bottom:20px;">A Gamificação</div>
+        <h2 data-fade style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(26px,3.6vw,40px); line-height:1.16; letter-spacing:-0.02em; color:#1A1A1A; margin:0 0 18px;">Cada elemento de jogo tem um propósito</h2>
+        <p data-fade style="font-family:'Inter',sans-serif; font-weight:400; font-size:clamp(15px,1.5vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 clamp(36px,5vh,48px); max-width:720px;">A gamificação da NextCoders não foi uma camada estética. Cada mecanismo foi projetado para resolver um problema real de engajamento e retenção.</p>
+
+        <div data-grid3 style="display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2.4vw,24px); margin-bottom:clamp(36px,5vh,48px);">
+
+          <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(22px,3vw,28px);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s4.5 4 4.5 8.5a4.5 4.5 0 0 1-9 0c0-1.8 1-3 1.7-3.8C10 8.5 12 7 12 2z"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:16px; color:#1A1A1A; margin:14px 0 8px;">Sequência de dias</div>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.65; color:#6B6B66; margin:0;">O aluno visualiza sua sequência ativa de estudo. Perder um dia é perder o progresso visível. O mecanismo cria hábito sem precisar de notificação.</p>
+          </div>
+
+          <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(22px,3vw,28px);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:16px; color:#1A1A1A; margin:14px 0 8px;">Sistema de XP e níveis</div>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.65; color:#6B6B66; margin:0;">Cada aula concluída, cada módulo aprovado gera pontos. O progresso é visível no topo da tela o tempo todo, criando senso constante de evolução.</p>
+          </div>
+
+          <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(22px,3vw,28px);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:16px; color:#1A1A1A; margin:14px 0 8px;">Módulos desbloqueáveis</div>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.65; color:#6B6B66; margin:0;">Conteúdos avançados só abrem após a conclusão do anterior. A progressão cria antecipação e reduz abandono por sobrecarga.</p>
+          </div>
+
+          <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(22px,3vw,28px);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v4a5 5 0 0 1-10 0V4z"/><path d="M5 5H3v1.5a3 3 0 0 0 3 3"/><path d="M19 5h2v1.5a3 3 0 0 1-3 3"/><path d="M12 13v4"/><path d="M8.5 21h7"/><path d="M10 17h4l1 4h-6l1-4z"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:16px; color:#1A1A1A; margin:14px 0 8px;">Ranking da turma</div>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.65; color:#6B6B66; margin:0;">Os alunos veem sua posição em tempo real. A competição saudável entre pares aumenta o engajamento sem pressão negativa.</p>
+          </div>
+
+          <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(22px,3vw,28px);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9 13.2 7.5 22 12 19.2 16.5 22 15 13.2"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:16px; color:#1A1A1A; margin:14px 0 8px;">Conquistas e badges</div>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.65; color:#6B6B66; margin:0;">Marcos de aprendizado viram recompensas visíveis. O badge é um símbolo de esforço que o aluno carrega no perfil.</p>
+          </div>
+
+          <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(22px,3vw,28px);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><line x1="4" y1="9" x2="20" y2="9"/><line x1="9" y1="3" x2="9" y2="6"/><line x1="15" y1="3" x2="15" y2="6"/><path d="M9 14l2 2 3.5-3.5"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:16px; color:#1A1A1A; margin:14px 0 8px;">Desafio semanal</div>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.65; color:#6B6B66; margin:0;">Metas curtas com recompensa de bônus de XP. O desafio semanal mantém o aluno ativo mesmo fora da trilha principal.</p>
+          </div>
+
+        </div>
+
+        <div data-fade style="aspect-ratio:16/8; background:#E0E0DA; border-radius:16px; display:flex; align-items:center; justify-content:center; text-align:center; padding:24px;">
+          <span style="font-family:'Inter',sans-serif; font-size:13px; font-weight:500; color:#9A9A92;">Telas de gamificação, home, trilha e conquistas</span>
+        </div>
       </div>
     </section>
 
-    <!-- A DECISÃO -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
-      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">A decisão</div>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Utilizamos feedbacks de usuários como guia para elaborar uma cuidadosa seleção de recursos-chave. A principal decisão foi integrar estrategicamente elementos de gamificação na plataforma — não como decoração, mas como mecanismo real de engajamento e recompensa.</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Poderíamos ter entregue uma plataforma funcional e simples. Escolhemos investir parte do escopo do MVP nos elementos que faziam a NextCoders ser diferente: a trilha gamificada, o sistema de bolsas e a sensação de progressão visível para o aluno.</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">O trade-off foi claro: menos telas entregues no MVP, mas as telas certas, as que sustentam o diferencial do produto.</p>
-    </section>
+    <!-- ============ SECAO 5 - RESULTADO ============ -->
+    <section style="background:rgba(196,98,45,0.04);">
+      <div style="max-width:1080px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px;">
+        <div data-fade style="font-family:'Inter',sans-serif; font-weight:600; font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; margin-bottom:20px;">Resultado</div>
+        <h2 data-fade style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(26px,3.6vw,40px); line-height:1.16; letter-spacing:-0.02em; color:#1A1A1A; margin:0 0 clamp(36px,5vh,52px);">O que foi entregue</h2>
 
-    <!-- O PRODUTO ENTREGUE -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(8px,2vh,16px);">
-      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">O produto entregue</div>
-    </section>
-    <!-- INSERIR: nextcoders-login-home-trilha.png -->
-    <div data-fade style="max-width:1100px; margin:0 auto clamp(20px,3vh,32px); padding:0 24px;">
-      <div data-grid3 style="background:#E8F0D8; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; padding:clamp(22px,3.5vw,40px); border:1px solid #DCE6C8;">
-        <div style="text-align:center;">
-          <div style="aspect-ratio:16/10; background:#F4F8EC; border:1px solid #DCE6C8; display:flex; align-items:center; justify-content:center;"><span style="font-size:11px; color:#7E8A66; text-align:center; padding:8px;">tela de login</span></div>
-          <div style="font-size:11.5px; color:#6B6B66; margin-top:10px; line-height:1.4;">Login · acesso simples e limpo</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="aspect-ratio:16/10; background:#F4F8EC; border:1px solid #DCE6C8; display:flex; align-items:center; justify-content:center;"><span style="font-size:11px; color:#7E8A66; text-align:center; padding:8px;">página inicial</span></div>
-          <div style="font-size:11.5px; color:#6B6B66; margin-top:10px; line-height:1.4;">Home · curso em andamento e onboarding</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="aspect-ratio:16/10; background:#F4F8EC; border:1px solid #DCE6C8; display:flex; align-items:center; justify-content:center;"><span style="font-size:11px; color:#7E8A66; text-align:center; padding:8px;">trilha de formação</span></div>
-          <div style="font-size:11.5px; color:#6B6B66; margin-top:10px; line-height:1.4;">Trilha · módulos e progresso do aluno</div>
-        </div>
-      </div>
-    </div>
-    <section style="max-width:800px; margin:0 auto; padding:clamp(24px,4vh,40px) 24px clamp(24px,4vh,40px);">
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">A execução ágil e econômica do design do MVP foi um marco crucial. A pesquisa conduzida no início do projeto reforçou o entendimento dos recursos do produto e validou as escolhas antes da construção.</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">A função essencial desse MVP foi capacitar a NextCoders a viabilizar a experimentação e a validação de conceitos em meio ao contexto dinâmico da área educacional, criando uma base sólida para navegar e inovar num setor em constante evolução.</p>
-    </section>
+        <div data-grid3 style="display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px,2.5vw,28px);">
+          <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(24px,3vw,32px);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.4 2.4 4.6-5"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:17px; color:#1A1A1A; margin:16px 0 10px;">MVP entregue no prazo</div>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:14px; line-height:1.65; color:#6B6B66; margin:0;">Primeira fase da plataforma projetada e entregue dentro do prazo, com todos os fluxos principais validados em testes de usabilidade.</p>
+          </div>
 
-    <!-- RESULTADO -->
-    <section style="background:#FAFAF8; border-top:1px solid #E2E2DA; border-bottom:1px solid #E2E2DA; margin-top:clamp(40px,6vh,72px);">
-      <div style="max-width:800px; margin:0 auto; padding:clamp(56px,9vh,100px) 24px;">
-        <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:44px;">Resultado</div>
+          <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(24px,3vw,32px);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="9" rx="4"/><path d="M8 11v3"/><path d="M6.5 12.5h3"/><circle cx="16" cy="11.5" r="1"/><circle cx="18" cy="13.5" r="1"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:17px; color:#1A1A1A; margin:16px 0 10px;">Gamificação no núcleo do produto</div>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:14px; line-height:1.65; color:#6B6B66; margin:0;">Elementos de progressão e recompensa incorporados desde o MVP: sequência de dias, XP, níveis, badges, ranking e desafios semanais. Não como feature secundária, mas como parte central da experiência do aluno.</p>
+          </div>
 
-        <div data-fade style="padding-bottom:34px; margin-bottom:34px; border-bottom:1px solid #E2E2DA;">
-          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4.4vw,42px); line-height:1.08; letter-spacing:-0.01em; color:#1A1A1A; margin-bottom:14px;">MVP entregue</div>
-          <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#4A4A45; margin:0; max-width:600px;">Primeira fase da plataforma projetada e entregue dentro do prazo, com todos os fluxos principais validados em testes de usabilidade.</p>
+          <div data-fade style="background:#FFFFFF; border-radius:12px; box-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); padding:clamp(24px,3vw,32px);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4622D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:17px; color:#1A1A1A; margin:16px 0 10px;">Contexto do projeto</div>
+            <p style="font-family:'Inter',sans-serif; font-weight:400; font-size:14px; line-height:1.65; color:#6B6B66; margin:0;">Este projeto foi desenvolvido via contrato de serviço. Por não fazer parte do time interno, não tive acesso a métricas de uso, satisfação ou resultado após a entrega, como NPS, retenção ou dados de conversão. Os resultados apresentados refletem o escopo entregue: pesquisa conduzida, fluxos desenhados e protótipos validados com stakeholders.</p>
+          </div>
         </div>
 
-        <div data-fade style="margin-bottom:34px;">
-          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4.4vw,42px); line-height:1.08; letter-spacing:-0.01em; color:#1A1A1A; margin-bottom:14px;">Gamificação integrada</div>
-          <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#4A4A45; margin:0; max-width:600px;">Elementos de progressão e recompensa incorporados desde o MVP — não como feature secundária, mas como parte central da experiência do aluno.</p>
+        <div data-fade style="display:flex; align-items:center; justify-content:center; gap:9px; margin-top:clamp(34px,5vh,46px);">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9A9A92" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          <span style="font-family:'Inter',sans-serif; font-weight:400; font-size:13px; color:#9A9A92; text-align:center;">A experiência completa de design pode ser apresentada em reunião privada.</span>
         </div>
-
-        <p data-fade style="font-size:14px; line-height:1.65; color:#9A9A92; font-style:italic; margin:0; max-width:620px;">Por ser um projeto terceirizado com prazo fixo, não acompanhei o desenvolvimento nem os dados de uso em produção. A experiência completa de design pode ser apresentada em reunião privada.</p>
       </div>
     </section>
 
-    <!-- FECHAMENTO -->
-    <section style="max-width:800px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px;">
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Esse projeto me ensinou algo que carrego em todo trabalho desde então: pesquisa antes de pixel. A tentação em plataformas educacionais é ir direto para a interface — mas o que diferenciou a NextCoders foi ter clareza sobre para quem e por quê antes de decidir o quê.</p>
-      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 clamp(40px,6vh,64px);">Se tivesse a chance de repetir, teria negociado acompanhar pelo menos a fase inicial de desenvolvimento — perder o contato com o produto após a entrega é uma lacuna real no aprendizado.</p>
+    <!-- ============ VOLTAR ============ -->
+    <section style="max-width:1080px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(56px,9vh,104px);">
       <a data-fade href="index.html" style="display:inline-block; font-size:15px; font-weight:500; color:#1A1A1A; text-decoration:none; padding-bottom:2px; background-image:linear-gradient(#C4622D,#C4622D); background-size:0% 1px; background-position:0 100%; background-repeat:no-repeat; transition:background-size .35s ease, color .3s ease;" style-hover="background-size:100% 1px; color:#C4622D;">← Voltar ao portfólio</a>
     </section>
 
@@ -812,6 +821,47 @@
     mobileMenu.querySelectorAll('a').forEach(function(link){ link.addEventListener('click', function(){ closeMenu(); }); });
     document.addEventListener('keydown', function(e){ if (e.key==='Escape' && mobileMenu.classList.contains('open')) closeMenu(); });
   })();
+})();
+</script>
+<script>
+(function(){
+  // ===== Custom cursor (apenas non-touch) =====
+  var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+  if (!coarse) {
+    var ACCENT = '#C4622D';
+    var cursor = document.createElement('div');
+    Object.assign(cursor.style, {
+      position: 'fixed', top: '0', left: '0', width: '8px', height: '8px',
+      marginLeft: '-4px', marginTop: '-4px', borderRadius: '50%',
+      background: ACCENT, border: '1px solid ' + ACCENT,
+      pointerEvents: 'none', zIndex: '99999', opacity: '0',
+      transition: 'width .2s ease, height .2s ease, margin .2s ease, background-color .2s ease, border-color .2s ease, opacity .2s ease',
+      willChange: 'transform'
+    });
+    document.body.appendChild(cursor);
+    document.body.style.cursor = 'none';
+    var cx = window.innerWidth / 2, cy = window.innerHeight / 2, raf = null;
+    var place = function(){ cursor.style.transform = 'translate(' + cx + 'px,' + cy + 'px)'; raf = null; };
+    window.addEventListener('mousemove', function(e){
+      cx = e.clientX; cy = e.clientY; cursor.style.opacity = '1';
+      if (!raf) raf = requestAnimationFrame(place);
+    }, { passive: true });
+    window.addEventListener('mouseout', function(e){ if (!e.relatedTarget) cursor.style.opacity = '0'; });
+    var grow = function(){
+      cursor.style.width = '32px'; cursor.style.height = '32px';
+      cursor.style.marginLeft = '-16px'; cursor.style.marginTop = '-16px';
+      cursor.style.background = 'transparent'; cursor.style.borderColor = ACCENT;
+    };
+    var shrink = function(){
+      cursor.style.width = '8px'; cursor.style.height = '8px';
+      cursor.style.marginLeft = '-4px'; cursor.style.marginTop = '-4px';
+      cursor.style.background = ACCENT; cursor.style.borderColor = ACCENT;
+    };
+    document.querySelectorAll('a, button, .proj').forEach(function(el){
+      el.addEventListener('mouseenter', grow);
+      el.addEventListener('mouseleave', shrink);
+    });
+  }
 })();
 </script>
 </body>

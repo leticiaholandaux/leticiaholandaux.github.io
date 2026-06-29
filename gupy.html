@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gupy — Impulsionamento de Vagas — Letícia Holanda</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #FFFFFF; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { overflow-x: hidden; max-width: 100vw; }
+    img, video, iframe { max-width: 100%; height: auto; }
+    ::selection { background: #C4622D; color: #fff; }
+    @media (max-width: 768px) {
+      [data-roadmap] { grid-template-columns: 1fr !important; gap: 24px !important; }
+      [data-roadmap] [data-rm-track] { display: none !important; }
+    }
+  </style>
+
+
+<style>
+  #site-header {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 9000;
+    width: calc(100% - 48px);
+    max-width: 680px;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 999px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 8px 8px 14px;
+    transition: box-shadow .3s ease;
+  }
+  #site-header.scrolled {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  }
+  .hdr-identity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .hdr-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #F2F2F0;
+  }
+  .hdr-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111111;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+  }
+  .hdr-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .hdr-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #555555;
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 999px;
+    transition: color .2s ease, background .2s ease;
+    white-space: nowrap;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .hdr-link:hover {
+    color: #111111;
+    background: rgba(0,0,0,0.05);
+  }
+  .hdr-btn-contato {
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #111111;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1.5px solid #111111;
+    background: transparent;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, box-shadow .2s ease;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  }
+  .hdr-btn-contato:hover {
+    background: #111111;
+    color: #FFFFFF;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  }
+
+  /* Compensa o header fixo no topo */
+  body { padding-top: 84px; }
+
+  /* ===== MOBILE HEADER (≤ 768px) ===== */
+  /* Botão três pontos — só aparece no mobile */
+  .hdr-dots-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 14px;
+    color: #555555;
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 1;
+    border-radius: 999px;
+    transition: background .2s ease;
+    flex-shrink: 0;
+  }
+  .hdr-dots-btn:hover {
+    background: rgba(0,0,0,0.05);
+    color: #111111;
+  }
+
+  @media (max-width: 768px) {
+    #site-header {
+      top: 16px;
+      width: calc(100% - 32px);
+      max-width: 400px;
+      padding: 7px 7px 7px 12px;
+    }
+    /* Esconder nav desktop */
+    .hdr-nav {
+      display: none;
+    }
+    /* Mostrar botão ··· */
+    .hdr-dots-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    body { padding-top: 76px; }
+  }
+
+  /* ===== MENU MOBILE FLUTUANTE ===== */
+  #mobile-menu {
+    display: none;
+    position: fixed;
+    top: 76px; /* logo abaixo do header mobile */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: calc(100% - 32px);
+    max-width: 400px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.14);
+    z-index: 8999;
+    padding: 20px 20px 20px;
+    flex-direction: column;
+    gap: 0;
+    /* Animação de entrada */
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+    transition: opacity .2s ease, transform .2s ease;
+  }
+  #mobile-menu.open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  /* Cabeçalho do menu: avatar + nome + X */
+  .mmenu-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #F2F2F0;
+  }
+  .mmenu-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #F2F2F0;
+  }
+  .mmenu-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111111;
+    letter-spacing: -0.01em;
+    flex: 1;
+  }
+  .mmenu-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #555555;
+    font-size: 20px;
+    line-height: 1;
+    transition: background .2s ease, color .2s ease;
+    flex-shrink: 0;
+  }
+  .mmenu-close:hover {
+    background: rgba(0,0,0,0.06);
+    color: #111111;
+  }
+  /* Itens de navegação do menu */
+  .mmenu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 20px;
+  }
+  .mmenu-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #111111;
+    text-decoration: none;
+    padding: 10px 4px;
+    border-radius: 8px;
+    transition: color .2s ease, background .15s ease;
+    letter-spacing: -0.02em;
+    display: block;
+  }
+  .mmenu-item:hover {
+    color: #C4622D;
+    background: rgba(196,98,45,0.05);
+    padding-left: 10px;
+  }
+  /* Botão Contato no fundo do menu */
+  .mmenu-btn-contato {
+    display: block;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111111;
+    text-align: center;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 999px;
+    border: 1.5px solid #111111;
+    background: transparent;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    letter-spacing: -0.01em;
+  }
+  .mmenu-btn-contato:hover {
+    background: #111111;
+    color: #FFFFFF;
+  }
+  /* Overlay escuro por trás do menu */
+  #mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.18);
+    z-index: 8998;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+  #mobile-menu-overlay.open {
+    display: block;
+  }
+
+</style>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/favicon.png">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<div id="mobile-menu-overlay" role="presentation" aria-hidden="true"></div>
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+  <div class="mmenu-head">
+    <img class="mmenu-avatar" src="img/avatar.png" alt="Avatar Letícia Holanda" aria-hidden="true">
+    <span class="mmenu-name">Letícia Holanda</span>
+    <button class="mmenu-close" id="mmenu-close-btn" aria-label="Fechar menu">&#x2715;</button>
+  </div>
+  <nav class="mmenu-items" aria-label="Menu mobile">
+    <a href="index.html#projetos" class="mmenu-item">Projetos</a>
+    <a href="index.html#sobre" class="mmenu-item">Sobre</a>
+  </nav>
+  <a href="#contato" class="mmenu-btn-contato">Contato</a>
+</div>
+<header id="site-header" role="banner">
+  <a href="index.html" class="hdr-identity" aria-label="Início">
+    <img class="hdr-avatar" src="img/avatar.png" alt="Avatar Letícia Holanda" aria-hidden="true">
+    <span class="hdr-name">Letícia Holanda</span>
+  </a>
+  <nav class="hdr-nav" aria-label="Navegação principal">
+    <a href="index.html#projetos" class="hdr-link">Projetos</a>
+    <a href="index.html#sobre" class="hdr-link">Sobre</a>
+    <a href="#contato" class="hdr-btn-contato">Contato</a>
+  </nav>
+  <button class="hdr-dots-btn" id="hdr-dots-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">&#xB7;&#xB7;&#xB7;</button>
+</header>
+
+<div style="background:#FFFFFF; color:#1A1A1A; font-family:'DM Sans',sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden;">
+
+  <!-- ============ PASSWORD GATE ============ -->
+  <div data-gate style="position:fixed; inset:0; z-index:1000; background:#FFFFFF; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px; opacity:1; transition:opacity .3s ease;">
+    <img src="img/avatar.png" alt="Letícia Holanda" style="width:56px; height:56px; object-fit:contain; display:block; margin:0 auto;">
+    <h1 style="font-family:'Inter',sans-serif; font-weight:700; font-size:1.5rem; line-height:1.2; letter-spacing:-0.015em; margin:14px 0 8px; color:#1A1A1A; text-align:center;">Este conteúdo é protegido.</h1>
+    <style>.gate-linkedin{color:inherit; text-decoration:none;} .gate-linkedin:hover{color:inherit; text-decoration:underline;}</style>
+    <p style="font-family:'DM Sans',sans-serif; font-size:0.9rem; line-height:1.5; color:#9A9A92; margin:0 auto 36px; max-width:320px; text-align:center;">Não possui a senha? Entre em contato comigo no <a href="https://www.linkedin.com/in/leticia-holanda" target="_blank" rel="noopener" class="gate-linkedin">LinkedIn</a>.</p>
+    <div style="position:relative; width:280px; max-width:80vw;">
+      <input data-pw type="password" placeholder="senha" autocomplete="off" style="width:100%; border:1px solid #D7D7CF; background:#fff; padding:13px 48px 13px 16px; font-family:'DM Sans',sans-serif; font-size:16px; min-height:48px; color:#1A1A1A; outline:none; border-radius:2px; transition:border-color .25s ease;" onfocus="this.style.borderColor='#1A1A1A'" onblur="this.style.borderColor='#D7D7CF'">
+      <button data-toggle-pw type="button" aria-label="Mostrar ou ocultar senha" style="position:absolute; right:14px; top:50%; transform:translateY(-50%); background:none; border:none; padding:0; cursor:pointer; color:#9A9A92; display:flex; align-items:center; transition:color .2s ease;" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='#9A9A92'">
+        <svg data-eye-open width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg data-eye-closed width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+      </button>
+    </div>
+    <button data-enter style="width:280px; max-width:80vw; margin-top:12px; border:none; background:#1A1A1A; color:#fff; padding:13px 16px; font-family:'DM Sans',sans-serif; font-size:15px; min-height:48px; font-weight:500; letter-spacing:0.01em; border-radius:2px; cursor:pointer; transition:background-color .25s ease;" onmouseover="this.style.backgroundColor='#C4622D'" onmouseout="this.style.backgroundColor='#1A1A1A'">Entrar →</button>
+    <div data-err role="alert" aria-live="polite" style="width:280px; max-width:80vw; margin-top:10px; padding:10px 14px; background:#FEF2F2; border:1px solid #FECACA; border-radius:2px; font-family:'DM Sans',sans-serif; font-size:13px; color:#B91C1C; display:none; align-items:center; gap:8px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Senha incorreta. Tente novamente.
+    </div>
+  </div>
+
+  <!-- ============ CASE CONTENT ============ -->
+  <div data-content style="opacity:0; transition:opacity .4s ease;">
+
+    <!-- NAV -->
+    <nav style="max-width:1100px; margin:0 auto; padding:28px 24px 0;">
+      <a href="index.html" style="font-size:13.5px; color:#6B6B66; text-decoration:none; padding-bottom:2px; background-image:linear-gradient(#C4622D,#C4622D); background-size:0% 1px; background-position:0 100%; background-repeat:no-repeat; transition:background-size .35s ease, color .3s ease;" style-hover="background-size:100% 1px; color:#1A1A1A;">← Voltar</a>
+    </nav>
+
+    <!-- TINTED HEADER -->
+    <div style="background:rgba(196,98,45,0.08); width:100%; min-height:clamp(140px,22vw,200px); margin-top:28px;"></div>
+
+    <!-- FLOATING LOGO -->
+    <!-- INSERIR: logo-gupy.png -->
+    <div style="display:flex; justify-content:center; margin-top:-30px;">
+      <div style="width:120px; height:60px; background:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 24px rgba(80,50,110,0.14); border-radius:4px;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:20px; font-weight:600; letter-spacing:-0.01em; color:#6D34B8;">gupy</span>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <header style="max-width:800px; margin:0 auto; padding:clamp(28px,5vh,44px) 24px clamp(28px,5vh,52px); text-align:center;">
+      <h1 style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(38px,7vw,68px); line-height:1.04; letter-spacing:-0.015em; margin:0 0 20px; color:#1A1A1A;">Gupy<br><span style="color:#3A3A36;">Impulsionamento de Vagas</span></h1>
+      <p style="font-size:14px; color:#9A9A92; letter-spacing:0.02em; margin:0 0 16px;">Produto SaaS B2B · 2024–2025 · Product Designer Sr</p>
+      <p style="font-size:13px; font-weight:500; letter-spacing:0.04em; color:#C4622D; margin:0;">Product Design · UX Research · B2B · SaaS · Discovery · IA</p>
+    </header>
+
+    <!-- HERO METRICS — 4 COLUMNS -->
+    <section style="background:#F5F5F0; border-top:1px solid #E2E2DA; border-bottom:1px solid #E2E2DA;">
+      <div style="max-width:1000px; margin:0 auto; padding:clamp(40px,6vh,64px) 24px; display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(16px,2.5vw,36px);" data-metrics4>
+        <div data-fade style="text-align:center;">
+          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(30px,4.6vw,52px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">3,7M</div>
+          <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:12px;">talentos alcançados</div>
+        </div>
+        <div data-fade style="text-align:center;">
+          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(30px,4.6vw,52px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">101k</div>
+          <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:12px;">inscrições geradas</div>
+        </div>
+        <div data-fade style="text-align:center;">
+          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(30px,4.6vw,52px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">107</div>
+          <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:12px;">contratações</div>
+        </div>
+        <div data-fade style="text-align:center;">
+          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(30px,4.6vw,52px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">2.082</div>
+          <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:12px;">empresas impactadas</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTEXTO -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px clamp(24px,4vh,40px);">
+      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:28px;">O contexto</div>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">A Gupy é uma plataforma de recrutamento e seleção B2B que conecta empresas a candidatos em escala nacional. Dentro da área de Atração, identificamos um problema recorrente: vagas publicadas há mais de 15 dias sem atingir 50 candidaturas, o que chamamos internamente de “baixa atratividade”.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Esse cenário gerava risco de churn, especialmente para clientes com alto volume de contratações em vagas operacionais: varejistas, redes de farmácia, logística e serviços. Empresas como McDonald's, Raia Drogasil, Vivo, Stone e Total Express eram impactadas diretamente.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">A solução inicial foi manual: o time de Produto, sob demanda, realizava consultas no banco de talentos e enviava e-mails de forma manual, o que chamamos de “processo concierge”. O sucesso e a crescente demanda por esse processo geraram a necessidade de automatizar, escalar e monetizar a solução.</p>
+      <p data-fade style="font-family:'Inter',sans-serif; font-weight:700; font-style:italic; font-size:clamp(19px,2.4vw,24px); line-height:1.5; color:#1A1A1A; margin:0;">Foi daí que surgiu o Impulsionamento de Vagas.</p>
+    </section>
+
+    <!-- O PROBLEMA -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(40px,6vh,72px) 24px clamp(24px,4vh,40px);">
+      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">O Problema</div>
+      <div data-fade style="background:rgba(196,98,45,0.06); border-left:3px solid #C4622D; padding:clamp(22px,3.5vw,30px) clamp(22px,3.5vw,34px); margin-bottom:28px;">
+        <p style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(20px,2.4vw,22px); line-height:1.5; color:#1A1A1A; margin:0;">Vagas publicadas há mais de 15 dias sem candidaturas suficientes geram risco de churn. O processo manual que resolvia isso não escalava — e não gerava dados.</p>
+      </div>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 clamp(36px,5vh,48px);">O processo concierge funcionava, mas tinha limites críticos: dependia de esforço humano para cada demanda, não tinha rastreabilidade de resultados e não podia ser monetizado. Para crescer, precisava virar produto.</p>
+
+      <div data-fade style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:20px;">Problema central</div>
+      <div data-fade style="display:flex; flex-wrap:wrap; gap:16px;">
+        <div style="flex:1 1 280px; background:#F5F5F0; border-top:2px solid #C4622D; padding:clamp(22px,3vw,28px);">
+          <div style="font-size:14px; font-weight:600; color:#1A1A1A; margin-bottom:10px;">Para o cliente</div>
+          <p style="font-size:15px; line-height:1.65; color:#4A4A45; margin:0;">Vagas operacionais com baixa atratividade ficavam semanas sem candidatos qualificados, aumentando risco de perder a vaga e o próprio cliente.</p>
+        </div>
+        <div style="flex:1 1 280px; background:#F5F5F0; border-top:2px solid #CCCCCC; padding:clamp(22px,3vw,28px);">
+          <div style="font-size:14px; font-weight:600; color:#1A1A1A; margin-bottom:10px;">Para a Gupy</div>
+          <p style="font-size:15px; line-height:1.65; color:#4A4A45; margin:0;">O processo manual não tinha tracking, não escalava e não gerava receita — era esforço sem retorno mensurável.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEU PAPEL -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
+      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">Meu papel</div>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Fui a Product Designer responsável por todo o processo de design das duas fases do produto:</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;"><span style="color:#1A1A1A; font-weight:500;">Na Fase 1 (e-mail)</span>, desenhei o fluxo completo de criação de campanhas, onde o recrutador seleciona a vaga, define os filtros de audiência (localização, escolaridade, experiência profissional, diversidade), visualiza o preview do e-mail que será enviado, revisa o resumo e confirma o impulsionamento. Também desenhei a gestão dessas campanhas, com dashboard de créditos, vagas impulsionadas, candidaturas e contratações.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;"><span style="color:#1A1A1A; font-weight:500;">Na Fase 2 (WhatsApp + IA)</span>, trabalhei na evolução estratégica: adição do canal WhatsApp via grupos regionais e integração de IA para pré-seleção automática de filtros, eliminando o erro humano de impulsionar sem segmentação adequada.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">Em ambas as fases, conduzi pesquisas com usuários e alinhamentos com stakeholders antes de abrir o Figma.</p>
+    </section>
+
+    <!-- FASE 1 DIVIDER -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(40px,6vh,72px) 24px clamp(24px,4vh,40px);">
+      <div data-fade style="display:flex; align-items:baseline; gap:16px; border-top:1px solid #C4622D; padding-top:24px;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#fff; background:#C4622D; padding:5px 11px; border-radius:2px; flex:0 0 auto;">Fase 1</span>
+        <h2 style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4.4vw,42px); line-height:1.1; letter-spacing:-0.01em; margin:0; color:#1A1A1A;">Impulsionamento por E-mail</h2>
+      </div>
+    </section>
+
+    <!-- FASE 1 STEPPER -->
+    <section style="max-width:800px; margin:0 auto; padding:0 24px clamp(24px,4vh,40px);">
+      <div data-fade data-stepper style="position:relative; margin:0 0 clamp(36px,5vh,48px);">
+        <div data-line style="position:absolute; background:rgba(196,98,45,0.3); left:0; top:0; width:0; height:0; z-index:0;"></div>
+        <div data-steps style="display:flex; flex-direction:row; justify-content:space-between; align-items:flex-start; gap:8px; position:relative; z-index:1;">
+          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
+            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">01</div>
+            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:110px;">Audiência</div>
+          </div>
+          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
+            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">02</div>
+            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:110px;">Mensagem</div>
+          </div>
+          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
+            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">03</div>
+            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:110px;">Resumo</div>
+          </div>
+          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
+            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">04</div>
+            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:110px;">Gestão</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASE 1 — AUDIÊNCIA -->
+    <section style="max-width:800px; margin:0 auto; padding:0 24px clamp(8px,2vh,16px);">
+      <div data-fade style="border-top:1px solid #E2E2DA; padding-top:clamp(24px,4vh,32px);">
+        <div style="font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:14px;">Audiência</div>
+        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0;">O recrutador define para quem a vaga será impulsionada. Os filtros disponíveis são: localização (por região ou distância em km, com opção de impulsionar para todo o Brasil), escolaridade (grau e curso), experiência profissional (cargo de referência) e diversidade (PcD, cor/raça, gênero, faixa etária, todos opcionais). No final da tela, o sistema exibe o público estimado com base nos filtros selecionados e informa que a IA da Gupy recomendará os melhores talentos conforme os critérios definidos.</p>
+      </div>
+    </section>
+    <!-- INSERIR: gupy-fase1-step1-audiencia-filtros.png -->
+    <div data-fade style="max-width:1100px; margin:clamp(20px,3vh,32px) auto clamp(32px,5vh,48px); padding:0 24px;">
+      <div style="background:#F0F0EE; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:500px;">Tela “Criar campanha de impulsionamento” — step 1 Audiência: accordions de Localização, Escolaridade, Experiência profissional e Diversidade, com contador de público estimado “87.987 talentos” no rodapé</span>
+      </div>
+    </div>
+
+    <!-- FASE 1 — MENSAGEM -->
+    <section style="max-width:800px; margin:0 auto; padding:0 24px clamp(8px,2vh,16px);">
+      <div data-fade style="border-top:1px solid #E2E2DA; padding-top:clamp(24px,4vh,32px);">
+        <div style="font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:14px;">Mensagem</div>
+        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0;">O recrutador visualiza o preview do e-mail que será enviado automaticamente pela Gupy. O e-mail é personalizado com o nome da candidata, o nome da empresa e os dados da vaga. O recrutador não edita o conteúdo — apenas confirma que está de acordo antes de avançar.</p>
+      </div>
+    </section>
+    <!-- INSERIR: gupy-fase1-step2-mensagem-preview-email.png -->
+    <div data-fade style="max-width:1100px; margin:clamp(20px,3vh,32px) auto clamp(32px,5vh,48px); padding:0 24px;">
+      <div style="background:#F0F0EE; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:480px;">Step 2 Mensagem — preview do e-mail com o texto personalizado e botão Continuar</span>
+      </div>
+    </div>
+
+    <!-- FASE 1 — RESUMO -->
+    <section style="max-width:800px; margin:0 auto; padding:0 24px clamp(8px,2vh,16px);">
+      <div data-fade style="border-top:1px solid #E2E2DA; padding-top:clamp(24px,4vh,32px);">
+        <div style="font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:14px;">Resumo</div>
+        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0;">Antes de confirmar, o recrutador revisa todas as configurações: público estimado com a recomendação da IA, vaga impulsionada, código da campanha e audiência definida. Pode voltar para editar ou confirmar o impulsionamento.</p>
+      </div>
+    </section>
+    <!-- INSERIR: gupy-fase1-step3-resumo.png -->
+    <div data-fade style="max-width:1100px; margin:clamp(20px,3vh,32px) auto clamp(32px,5vh,48px); padding:0 24px;">
+      <div style="background:#F0F0EE; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:480px;">Step 3 Resumo — configurações consolidadas e botão “Impulsionar”</span>
+      </div>
+    </div>
+
+    <!-- FASE 1 — GESTÃO -->
+    <section style="max-width:800px; margin:0 auto; padding:0 24px clamp(8px,2vh,16px);">
+      <div data-fade style="border-top:1px solid #E2E2DA; padding-top:clamp(24px,4vh,32px);">
+        <div style="font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:14px;">Gestão</div>
+        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0;">Após a confirmação, o recrutador acessa a tela de “Vagas impulsionadas” com o dashboard de: créditos adquiridos, créditos consumidos, vagas impulsionadas, total de candidaturas, total de contratações e próximo vencimento. A listagem mostra cada vaga com seus impulsionamentos e candidaturas geradas.</p>
+      </div>
+    </section>
+    <!-- INSERIR: gupy-fase1-gestao-vagas-impulsionadas.png -->
+    <div data-fade style="max-width:1100px; margin:clamp(20px,3vh,32px) auto; padding:0 24px;">
+      <div style="background:#F0F0EE; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:480px;">Tela “Vagas impulsionadas” — cards de métricas no topo e lista de vagas com colunas de posições, contratações e inscrições</span>
+      </div>
+    </div>
+
+    <!-- A DECISÃO FASE 1 -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
+      <div data-fade style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:28px;">A decisão — Fase 1</div>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">O maior risco do produto não era técnico — era de medição. Sem tracking de ponta a ponta (clique no e-mail → candidatura), era impossível provar ROI para o cliente e para o negócio. Antes de desenhar qualquer tela de criação de campanha, priorizamos resolver o gap de tracking. Isso atrasou a entrega da interface, mas garantiu que o MVP fosse validável — não apenas funcional.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">Uma segunda decisão importante foi o modelo de permissionamento: separamos “criar impulsionamento” de “gerenciar impulsionamento”, permitindo que empresas dessem acesso granular para diferentes perfis de usuário. Isso reduziu fricção de adoção sem abrir mão de controle.</p>
+    </section>
+
+    <!-- RESULTADOS FASE 1 -->
+    <section style="background:#FAFAF8; border-top:1px solid #E2E2DA; border-bottom:1px solid #E2E2DA;">
+      <div style="max-width:900px; margin:0 auto; padding:clamp(56px,9vh,100px) 24px;">
+        <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:44px;">Resultados — Fase 1</div>
+        <div data-fade style="display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(16px,2.5vw,32px); padding-bottom:34px; border-bottom:1px solid #E2E2DA;" data-metrics4>
+          <div>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4vw,44px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">2.082</div>
+            <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:10px;">empresas impactadas</div>
+          </div>
+          <div>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4vw,44px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">385</div>
+            <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:10px;">impulsionaram (18% adoção)</div>
+          </div>
+          <div>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4vw,44px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">1.130</div>
+            <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:10px;">impulsionamentos realizados</div>
+          </div>
+          <div>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4vw,44px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">3,7M</div>
+            <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:10px;">talentos alcançados</div>
+          </div>
+        </div>
+        <div data-fade style="display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2.5vw,32px); padding-top:34px;" data-metrics3>
+          <div>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4vw,44px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">101k</div>
+            <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:10px;">inscrições geradas (2,7% conv.)</div>
+          </div>
+          <div>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4vw,44px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">107</div>
+            <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:10px;">contratações (Atento: 34, RD: 9, OVD: 6)</div>
+          </div>
+          <div>
+            <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4vw,44px); line-height:1; letter-spacing:-0.02em; color:#1A1A1A;">51</div>
+            <div style="font-size:12px; line-height:1.5; color:#6B6B66; margin-top:10px;">empresas com 100% dos créditos consumidos</div>
+          </div>
+        </div>
+        <p data-fade style="font-size:13px; font-style:italic; color:#9A9A92; margin:30px 0 0;">Dados do Status Report Consolidado, 22/06/2025</p>
+      </div>
+    </section>
+
+    <!-- FASE 2 DIVIDER -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px clamp(24px,4vh,40px);">
+      <div data-fade style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; border-top:1px solid #C4622D; padding-top:24px;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#fff; background:#C4622D; padding:5px 11px; border-radius:2px; flex:0 0 auto;">Fase 2</span>
+        <h2 style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(26px,4.4vw,42px); line-height:1.1; letter-spacing:-0.01em; margin:0; color:#1A1A1A;">WhatsApp + IA</h2>
+        <span style="font-size:12px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:#9A9A92; border:1px solid #D7D7CF; padding:4px 10px; border-radius:2px;">Em andamento</span>
+      </div>
+    </section>
+
+    <!-- POR QUE EVOLUIR -->
+    <section style="max-width:800px; margin:0 auto; padding:0 24px clamp(24px,4vh,40px);">
+      <div data-fade style="background:#F5F5F0; border-top:2px solid #C4622D; padding:clamp(26px,4vw,38px);">
+        <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(20px,2.6vw,26px); color:#1A1A1A; margin-bottom:20px;">Por que evoluir para WhatsApp?</div>
+        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 20px;">O canal de e-mail demonstrou tração real — mas apresentava limitações estruturais que precisavam ser endereçadas antes de comprometer a escala:</p>
+        <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
+          <div style="display:flex; gap:12px; font-size:clamp(14px,1.8vw,16px); line-height:1.6; color:#4A4A45;"><span style="color:#C4622D; flex:0 0 auto;">→</span><span>Conversão média de 2,4%: para gerar 24 candidaturas, eram necessários ~1.000 disparos</span></div>
+          <div style="display:flex; gap:12px; font-size:clamp(14px,1.8vw,16px); line-height:1.6; color:#4A4A45;"><span style="color:#C4622D; flex:0 0 auto;">→</span><span>Base de 16M candidatos, com +2M com dados desatualizados, risco crescente de saturação</span></div>
+          <div style="display:flex; gap:12px; font-size:clamp(14px,1.8vw,16px); line-height:1.6; color:#4A4A45;"><span style="color:#C4622D; flex:0 0 auto;">→</span><span>Alto custo operacional de volume para vagas de baixa atratividade</span></div>
+        </div>
+        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 20px;">A alternativa natural seria WhatsApp unitário. Avaliamos: custo estimado de R$ 0,35 por disparo individual tornaria inviável o volume necessário (R$ 350 para impulsionar 1.000 candidatos em uma única vaga). Descartamos para o MVP.</p>
+        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0;"><span style="color:#1A1A1A; font-weight:500;">A solução:</span> grupos regionais de WhatsApp já operados pelo time “Candidato Já” (incorporado à Gupy), sem custo direto por disparo, com alto volume de resposta validado. Vagas que testaram esse canal atingiram mais de 100 candidaturas em até 2 horas.</p>
+      </div>
+    </section>
+
+    <!-- FLUXO WHATSAPP -->
+    <!-- INSERIR: gupy-fase2-fluxo-whatsapp-grupos.png -->
+    <div data-fade style="max-width:1100px; margin:clamp(24px,4vh,40px) auto; padding:0 24px;">
+      <div style="background:#F0F0EE; padding:clamp(28px,4vw,44px) clamp(20px,3vw,32px); border:1px solid #E8E8E2;">
+        <div style="display:flex; flex-wrap:wrap; align-items:stretch; justify-content:center; gap:10px;" data-flow>
+          <div style="flex:1 1 160px; min-width:140px; background:#fff; border:1px solid #E2E2DA; padding:18px 16px; text-align:center; display:flex; flex-direction:column; justify-content:center;">
+            <div style="font-size:12px; font-weight:600; color:#C4622D; margin-bottom:6px;">01</div>
+            <div style="font-size:13px; line-height:1.5; color:#3A3A36;">Cliente impulsiona a vaga</div>
+          </div>
+          <div style="display:flex; align-items:center; color:#C4622D; font-size:18px;" data-flow-arrow>→</div>
+          <div style="flex:1 1 160px; min-width:140px; background:#fff; border:1px solid #E2E2DA; padding:18px 16px; text-align:center; display:flex; flex-direction:column; justify-content:center;">
+            <div style="font-size:12px; font-weight:600; color:#C4622D; margin-bottom:6px;">02</div>
+            <div style="font-size:13px; line-height:1.5; color:#3A3A36;">Gupy envia via endpoint</div>
+          </div>
+          <div style="display:flex; align-items:center; color:#C4622D; font-size:18px;" data-flow-arrow>→</div>
+          <div style="flex:1 1 160px; min-width:140px; background:#fff; border:1px solid #E2E2DA; padding:18px 16px; text-align:center; display:flex; flex-direction:column; justify-content:center;">
+            <div style="font-size:12px; font-weight:600; color:#C4622D; margin-bottom:6px;">03</div>
+            <div style="font-size:13px; line-height:1.5; color:#3A3A36;">Candidato Já distribui nos grupos</div>
+          </div>
+          <div style="display:flex; align-items:center; color:#C4622D; font-size:18px;" data-flow-arrow>→</div>
+          <div style="flex:1 1 160px; min-width:140px; background:#fff; border:1px solid #E2E2DA; padding:18px 16px; text-align:center; display:flex; flex-direction:column; justify-content:center;">
+            <div style="font-size:12px; font-weight:600; color:#C4622D; margin-bottom:6px;">04</div>
+            <div style="font-size:13px; line-height:1.5; color:#3A3A36;">Candidato recebe e clica para se candidatar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- A DECISÃO FASE 2 -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
+      <div data-fade style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:28px;">A decisão — Fase 2</div>
+      <div data-fade style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:16px;">AI-first</div>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 28px;">A decisão de integrar IA ao fluxo não foi incremental. Foi uma resposta direta a um comportamento identificado em dados: usuários impulsionando sem filtros, comprometendo a qualidade das candidaturas e o valor percebido do produto.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 28px;">Dois problemas precisavam ser resolvidos em paralelo:</p>
+
+      <div data-fade style="margin-bottom:28px;">
+        <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(18px,2.3vw,22px); color:#1A1A1A; margin-bottom:12px;"><span style="color:#C4622D;">1.</span> O comportamento de impulsionar sem filtros</div>
+        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0 0 16px;">Durante a análise de uso da Fase 1, identifiquei que alguns recrutadores estavam criando campanhas sem definir segmentação, impulsionando para audiências genéricas e reduzindo a qualidade das candidaturas. A solução foi adicionar IA para pré-seleção automática de filtros com base nos dados da vaga (cargo, localização, formação, experiência). O usuário ainda pode editar, adicionar ou remover filtros — mas parte certo por padrão.</p>
+        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#4A4A45; margin:0; font-style:italic;">Essa decisão foi validada com 6 clientes Gupy em pesquisa: todos compreenderam o fluxo e afirmaram que usariam o produto.</p>
+      </div>
+
+      <div data-fade style="margin-bottom:32px;">
+        <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(18px,2.3vw,22px); color:#1A1A1A; margin-bottom:12px;"><span style="color:#C4622D;">2.</span> O atrito de marca na jornada do candidato</div>
+        <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#3A3A36; margin:0;">O WhatsApp via grupos usa número neutro no disparo inicial, o que reduz atrito de marca (Gupy tem percepção negativa em B2C). Mas ao clicar no link, o candidato era redirecionado para o WhatsApp oficial da Gupy para candidatura, recriando o atrito. Identificamos que o problema não estava só em quem dispara a vaga, mas em quem conduz a candidatura. A Fase 2 do WhatsApp (pós-MVP) endereça isso com white label.</p>
+      </div>
+
+      <div data-fade style="background:rgba(196,98,45,0.06); border-left:3px solid #C4622D; padding:clamp(22px,3.5vw,30px) clamp(22px,3.5vw,34px);">
+        <p style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(20px,2.4vw,22px); line-height:1.5; color:#1A1A1A; margin:0;">Reduzir esforço manual do recrutador sem comprometer a qualidade da candidatura — essa foi a tensão central que a IA resolve.</p>
+      </div>
+    </section>
+
+    <!-- VALIDAÇÃO -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
+      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">Validação</div>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 28px;">Conduzi pesquisa com 6 clientes Gupy antes da entrega da Fase 2.</p>
+      <div data-fade style="display:flex; flex-wrap:wrap; gap:16px;">
+        <div style="flex:1 1 280px; background:#F5F5F0; border-top:2px solid #C4622D; padding:clamp(24px,3.5vw,32px);">
+          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(24px,3.4vw,34px); line-height:1.05; color:#1A1A1A; margin-bottom:10px;">6 de 6 clientes</div>
+          <p style="font-size:15px; line-height:1.65; color:#4A4A45; margin:0;">compreenderam o fluxo completo sem necessidade de explicação adicional</p>
+        </div>
+        <div style="flex:1 1 280px; background:#F5F5F0; border-top:2px solid #CCCCCC; padding:clamp(24px,3.5vw,32px);">
+          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(24px,3.4vw,34px); line-height:1.05; color:#1A1A1A; margin-bottom:10px;">6 de 6 clientes</div>
+          <p style="font-size:15px; line-height:1.65; color:#4A4A45; margin:0;">afirmaram que usariam o produto na forma como foi apresentado</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
+      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:clamp(32px,5vh,44px);">Próximas evoluções</div>
+      <div data-fade data-roadmap style="display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px,3vw,32px);">
+        <div data-rm-item style="position:relative;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px; position:relative;">
+            <div data-rm-dot style="width:14px; height:14px; border-radius:50%; background:#C4622D; flex:0 0 auto; position:relative; z-index:1;"></div>
+            <div data-rm-track style="position:absolute; left:14px; right:0; top:7px; height:1px; background:rgba(196,98,45,0.3); z-index:0;"></div>
+          </div>
+          <div style="font-size:12px; font-weight:600; letter-spacing:0.04em; color:#C4622D; margin-bottom:8px;">V1 · Em andamento</div>
+          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(18px,2.2vw,21px); color:#1A1A1A; margin-bottom:8px; line-height:1.2;">WhatsApp via grupos (MVP)</div>
+          <p style="font-size:14px; line-height:1.6; color:#4A4A45; margin:0;">Impulsionamento via grupos regionais, filtros manuais + IA de pré-seleção.</p>
+        </div>
+        <div data-rm-item style="position:relative;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px; position:relative;">
+            <div data-rm-dot style="width:14px; height:14px; border-radius:50%; background:#fff; border:1.5px solid #C4622D; flex:0 0 auto; position:relative; z-index:1;"></div>
+            <div data-rm-track style="position:absolute; left:14px; right:0; top:7px; height:1px; background:rgba(196,98,45,0.3); z-index:0;"></div>
+          </div>
+          <div style="font-size:12px; font-weight:600; letter-spacing:0.04em; color:#9A9A92; margin-bottom:8px;">V2 · Planejado</div>
+          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(18px,2.2vw,21px); color:#1A1A1A; margin-bottom:8px; line-height:1.2;">WhatsApp individual</div>
+          <p style="font-size:14px; line-height:1.6; color:#4A4A45; margin:0;">Disparo direto para candidatos da base Gupy, com segmentação fina e controle de saturação por candidato.</p>
+        </div>
+        <div data-rm-item style="position:relative;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px; position:relative;">
+            <div data-rm-dot style="width:14px; height:14px; border-radius:50%; background:#fff; border:1.5px solid #CCCCCC; flex:0 0 auto; position:relative; z-index:1;"></div>
+          </div>
+          <div style="font-size:12px; font-weight:600; letter-spacing:0.04em; color:#9A9A92; margin-bottom:8px;">V3 · Visão</div>
+          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(18px,2.2vw,21px); color:#1A1A1A; margin-bottom:8px; line-height:1.2;">White label de ponta a ponta</div>
+          <p style="font-size:14px; line-height:1.6; color:#4A4A45; margin:0;">Jornada de candidatura com a marca do cliente, eliminando o atrito de marca da Gupy do disparo à conversão.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FECHAMENTO -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(56px,9vh,104px);">
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">O Impulsionamento começou como um processo manual que não escalava e virou um produto com tracking, receita e duas fases de evolução. O aprendizado que carrego: em B2B, a decisão de produto mais importante raramente é a interface — é garantir que o impacto seja mensurável antes de construir.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 clamp(40px,6vh,64px);">A IA aqui não foi enfeite: ela resolveu uma tensão real entre reduzir o esforço do recrutador e proteger a qualidade da candidatura. Esse é o tipo de problema que mais me interessa, onde a decisão certa de design tem consequência direta no negócio.</p>
+      <a data-fade href="index.html" style="display:inline-block; font-size:15px; font-weight:500; color:#1A1A1A; text-decoration:none; padding-bottom:2px; background-image:linear-gradient(#C4622D,#C4622D); background-size:0% 1px; background-position:0 100%; background-repeat:no-repeat; transition:background-size .35s ease, color .3s ease;" style-hover="background-size:100% 1px; color:#C4622D;">← Voltar ao portfólio</a>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer id="contato" style="background:#000000;">
+      <style>
+        .ft-wrap{max-width:1080px; margin:0 auto; padding:80px 24px;}
+        .ft-title-top{font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(28px,4.2vw,40px); line-height:1.05; letter-spacing:-0.02em; margin:0; color:#888888;}
+        .ft-title-main{font-family:'Inter',sans-serif; font-weight:800; font-size:60px; line-height:1; letter-spacing:-0.04em; margin:6px 0 0; color:#FFFFFF;}
+        @media (max-width:768px){ .ft-title-main{font-size:55px;} }
+        .ft-label{font-family:'Inter',sans-serif; font-weight:500; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#888888;}
+        .ft-link{font-family:'Inter',sans-serif; color:#FFFFFF; text-decoration:none; border-bottom:1px solid transparent; padding-bottom:2px; transition:border-color .25s ease;}
+        .ft-link:hover{border-bottom-color:#FFFFFF;}
+        .ft-icon{display:inline-block; line-height:0; border-bottom:1px solid transparent; padding-bottom:5px; opacity:0.92; transition:border-color .25s ease, opacity .25s ease;}
+        .ft-icon:hover{border-bottom-color:#FFFFFF; opacity:1;}
+        .ft-contacts{display:flex; flex-wrap:wrap; gap:clamp(48px,10vw,120px); margin-top:clamp(40px,7vh,64px);}
+        .ft-bottom{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:24px; margin-top:clamp(40px,6vh,56px); padding-top:28px; border-top:1px solid #333333;}
+        .ft-menu-links{margin-top:12px; display:flex; gap:18px;}
+        .ft-credit{font-family:'Inter',sans-serif; font-weight:400; font-size:13px; color:#888888; text-align:right;}
+        @media (max-width:560px){
+          .ft-contacts{flex-direction:column; gap:32px;}
+          .ft-bottom{flex-direction:column; align-items:flex-start;}
+          .ft-credit{text-align:left;}
+        }
+      </style>
+      <div class="ft-wrap">
+        <h2 data-fade class="ft-title-top">Gostou?</h2>
+        <h2 data-fade class="ft-title-main">Vamos conversar</h2>
+
+        <div data-fade class="ft-contacts">
+          <div>
+            <div class="ft-label">Email</div>
+            <a href="mailto:leticia.holandaux@gmail.com" class="ft-link" style="display:inline-block; margin-top:10px; font-size:16px; font-weight:500;">leticia.holandaux@gmail.com</a>
+          </div>
+          <div>
+            <div class="ft-label">LinkedIn</div>
+            <a href="https://www.linkedin.com/in/leticia-holanda" target="_blank" rel="noopener" class="ft-link" style="display:inline-flex; align-items:center; gap:0; margin-top:10px; font-size:16px; font-weight:500;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="white" style="display:block;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              /leticia-holanda
+            </a>
+          </div>
+        </div>
+
+        <div data-fade class="ft-bottom">
+          <div>
+            <div class="ft-label">Menu</div>
+            <div class="ft-menu-links">
+              <a href="index.html#projetos" class="ft-link" style="font-size:15px; font-weight:500;">Projetos</a>
+              <a href="index.html#sobre" class="ft-link" style="font-size:15px; font-weight:500;">Sobre</a>
+            </div>
+          </div>
+          <div class="ft-credit">© 2026 Letícia Holanda</div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</div>
+<script>
+(function() {
+
+    const PW = 'uxdesign2026';
+    const gate = document.querySelector('[data-gate]');
+    const content = document.querySelector('[data-content]');
+    const input = document.querySelector('[data-pw]');
+    const btn = document.querySelector('[data-enter]');
+    const err = document.querySelector('[data-err]');
+    const toggleBtn = document.querySelector('[data-toggle-pw]');
+    const eyeOpen = document.querySelector('[data-eye-open]');
+    const eyeClosed = document.querySelector('[data-eye-closed]');
+    if (!gate || !content) return;
+
+    // Toggle de visibilidade da senha
+    if (toggleBtn && input) {
+      toggleBtn.addEventListener('click', () => {
+        const isPassword = input.type === 'password';
+        input.type = isPassword ? 'text' : 'password';
+        if (eyeOpen)   eyeOpen.style.display   = isPassword ? 'none'  : '';
+        if (eyeClosed) eyeClosed.style.display  = isPassword ? ''      : 'none';
+        input.focus();
+      });
+    }
+
+    let fadesReady = false;
+    const setupFades = () => {
+      if (fadesReady) return; fadesReady = true;
+      const els = Array.from(content.querySelectorAll('[data-fade]'));
+      els.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1)';
+        el.style.willChange = 'opacity, transform';
+      });
+      const reveal = el => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; };
+      const revealVisible = () => {
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+        els.forEach(el => {
+          if (el.style.opacity === '1') return;
+          const r = el.getBoundingClientRect();
+          if (r.top < vh * 0.92 && r.bottom > 0) reveal(el);
+        });
+      };
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) { reveal(e.target); io.unobserve(e.target); } });
+        }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+        els.forEach(el => io.observe(el));
+        revealVisible();
+        requestAnimationFrame(revealVisible);
+        window.addEventListener('scroll', revealVisible, { passive: true });
+        window.addEventListener('resize', revealVisible, { passive: true });
+        document.addEventListener('scroll', revealVisible, { passive: true, capture: true });
+        setTimeout(() => els.forEach(reveal), 1600);
+      } else {
+        els.forEach(reveal);
+      }
+    };
+
+    const layoutOneStepper = (stepper) => {
+      const stepsWrap = stepper.querySelector('[data-steps]');
+      const steps = Array.from(stepper.querySelectorAll('[data-step]'));
+      const line = stepper.querySelector('[data-line]');
+      const vertical = stepper.clientWidth < 560;
+      if (vertical) {
+        stepsWrap.style.flexDirection = 'column';
+        stepsWrap.style.justifyContent = 'flex-start';
+        stepsWrap.style.alignItems = 'flex-start';
+        stepsWrap.style.gap = '22px';
+        steps.forEach(s => {
+          s.style.flexDirection = 'row';
+          s.style.alignItems = 'center';
+          s.style.flex = '0 0 auto';
+          s.style.width = '100%';
+          s.style.gap = '14px';
+          const lab = s.querySelector('[data-label]');
+          lab.style.textAlign = 'left';
+          lab.style.marginTop = '0';
+          lab.style.maxWidth = 'none';
+        });
+      } else {
+        stepsWrap.style.flexDirection = 'row';
+        stepsWrap.style.justifyContent = 'space-between';
+        stepsWrap.style.alignItems = 'flex-start';
+        stepsWrap.style.gap = '8px';
+        steps.forEach(s => {
+          s.style.flexDirection = 'column';
+          s.style.alignItems = 'center';
+          s.style.flex = '1 1 0';
+          s.style.width = 'auto';
+          s.style.gap = '0';
+          const lab = s.querySelector('[data-label]');
+          lab.style.textAlign = 'center';
+          lab.style.marginTop = '10px';
+          lab.style.maxWidth = '110px';
+        });
+      }
+      requestAnimationFrame(() => {
+        const dots = steps.map(s => s.querySelector('[data-dot]'));
+        const base = stepper.getBoundingClientRect();
+        const first = dots[0].getBoundingClientRect();
+        const last = dots[dots.length - 1].getBoundingClientRect();
+        if (vertical) {
+          const cx = first.left - base.left + first.width / 2;
+          const top = first.top - base.top + first.height / 2;
+          const bottom = last.top - base.top + last.height / 2;
+          line.style.left = (cx - 0.5) + 'px';
+          line.style.top = top + 'px';
+          line.style.width = '1px';
+          line.style.height = Math.max(0, bottom - top) + 'px';
+        } else {
+          const cy = first.top - base.top + first.height / 2;
+          const lx = first.left - base.left + first.width / 2;
+          const rx = last.left - base.left + last.width / 2;
+          line.style.top = (cy - 0.5) + 'px';
+          line.style.left = lx + 'px';
+          line.style.height = '1px';
+          line.style.width = Math.max(0, rx - lx) + 'px';
+        }
+      });
+    };
+
+    const setupSteppers = () => {
+      const steppers = Array.from(document.querySelectorAll('[data-stepper]'));
+      if (!steppers.length) return;
+      const run = () => steppers.forEach(layoutOneStepper);
+      run();
+      window.addEventListener('resize', run, { passive: true });
+      setTimeout(run, 300);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(run);
+    };
+
+    const setupFlow = () => {
+      const flow = document.querySelector('[data-flow]');
+      if (!flow) return;
+      const arrows = Array.from(flow.querySelectorAll('[data-flow-arrow]'));
+      const apply = () => {
+        const stacked = flow.clientWidth < 520;
+        flow.style.flexDirection = stacked ? 'column' : 'row';
+        flow.style.alignItems = 'stretch';
+        arrows.forEach(a => { a.style.transform = stacked ? 'rotate(90deg)' : 'none'; a.style.justifyContent = 'center'; });
+      };
+      apply();
+      window.addEventListener('resize', apply, { passive: true });
+    };
+
+    const setupMetrics = () => {
+      const grids4 = Array.from(document.querySelectorAll('[data-metrics4]'));
+      const grids3 = Array.from(document.querySelectorAll('[data-metrics3]'));
+      const apply = () => {
+        const w = window.innerWidth || document.documentElement.clientWidth;
+        grids4.forEach(g => { g.style.gridTemplateColumns = w < 600 ? 'repeat(2,1fr)' : 'repeat(4,1fr)'; if (w < 600) g.style.rowGap = '32px'; });
+        grids3.forEach(g => { g.style.gridTemplateColumns = w < 600 ? 'repeat(1,1fr)' : 'repeat(3,1fr)'; if (w < 600) g.style.rowGap = '28px'; });
+      };
+      apply();
+      window.addEventListener('resize', apply, { passive: true });
+    };
+
+    const unlock = (instant) => {
+      if (instant) {
+        gate.style.display = 'none';
+        content.style.opacity = '1';
+      } else {
+        gate.style.opacity = '0';
+        gate.style.pointerEvents = 'none';
+        setTimeout(() => { gate.style.display = 'none'; }, 320);
+        content.style.opacity = '1';
+      }
+      setupFades();
+      setupSteppers();
+      setupFlow();
+      setupMetrics();
+    };
+
+    if (sessionStorage.getItem('cb_auth') === '1') {
+      unlock(true);
+    } else {
+      content.style.opacity = '0';
+      setTimeout(() => { try { input && input.focus(); } catch (e) {} }, 50);
+    }
+
+    const submit = () => {
+      if (!input) return;
+      if (input.value === PW) {
+        try { sessionStorage.setItem('cb_auth', '1'); } catch (e) {}
+        unlock(false);
+      } else {
+        if (err) { err.style.display = 'flex'; }
+        if (input) { input.style.borderColor = '#FECACA'; }
+        input.value = '';
+        input.focus();
+      }
+    };
+    if (btn) btn.addEventListener('click', submit);
+    if (input) {
+      input.addEventListener('keydown', (e) => { if (e.key === 'Enter') submit(); });
+      input.addEventListener('input', () => {
+        if (err) err.style.display = 'none';
+        if (input) input.style.borderColor = '#D7D7CF';
+      });
+    }
+  
+})();
+</script>
+<script>
+(function(){
+  var siteHeader = document.getElementById('site-header');
+  if (siteHeader) {
+    window.addEventListener('scroll', function(){
+      siteHeader.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  }
+  // Smooth scroll para âncoras locais (#...)
+  document.querySelectorAll('#site-header a[href^="#"], #mobile-menu a[href^="#"]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      var href = link.getAttribute('href');
+      if (href === '#') return;
+      var target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        var headerH = siteHeader ? siteHeader.offsetHeight + 24 : 80;
+        var top = target.getBoundingClientRect().top + window.scrollY - headerH;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+  // Menu mobile
+  (function(){
+    var dotsBtn = document.getElementById('hdr-dots-btn');
+    var mobileMenu = document.getElementById('mobile-menu');
+    var overlay = document.getElementById('mobile-menu-overlay');
+    var closeBtn = document.getElementById('mmenu-close-btn');
+    if (!dotsBtn || !mobileMenu) return;
+    function openMenu(){ mobileMenu.classList.add('open'); overlay.classList.add('open'); dotsBtn.setAttribute('aria-expanded','true'); mobileMenu.getBoundingClientRect(); }
+    function closeMenu(){ mobileMenu.style.opacity='0'; mobileMenu.style.transform='translateY(-8px) scale(0.98)'; overlay.classList.remove('open'); dotsBtn.setAttribute('aria-expanded','false'); setTimeout(function(){ mobileMenu.classList.remove('open'); mobileMenu.style.opacity=''; mobileMenu.style.transform=''; },200); }
+    dotsBtn.addEventListener('click', function(){ mobileMenu.classList.contains('open') ? closeMenu() : openMenu(); });
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+    mobileMenu.querySelectorAll('a').forEach(function(link){ link.addEventListener('click', function(){ closeMenu(); }); });
+    document.addEventListener('keydown', function(e){ if (e.key==='Escape' && mobileMenu.classList.contains('open')) closeMenu(); });
+  })();
+})();
+</script>
+</body>
+</html>

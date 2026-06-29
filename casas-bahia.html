@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grupo Casas Bahia — Devoluções & Bonificação — Letícia Holanda</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #FFFFFF; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { overflow-x: hidden; max-width: 100vw; }
+    img, video, iframe { max-width: 100%; height: auto; }
+    ::selection { background: #C4622D; color: #fff; }
+    @media (max-width: 768px) {
+      [data-metrics3] { grid-template-columns: 1fr !important; gap: 0 !important; }
+      [data-metrics3] > div { border-left: 0 !important; border-right: 0 !important; padding: 24px 0 !important; }
+      [data-metrics3] > div + div { border-top: 1px solid #E2E2DA !important; }
+      [data-grid2], [data-grid3] { grid-template-columns: 1fr !important; }
+      [data-grid4] { grid-template-columns: 1fr 1fr !important; }
+    }
+  </style>
+
+
+<style>
+  #site-header {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 9000;
+    width: calc(100% - 48px);
+    max-width: 680px;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 999px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 8px 8px 14px;
+    transition: box-shadow .3s ease;
+  }
+  #site-header.scrolled {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  }
+  .hdr-identity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .hdr-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #F2F2F0;
+  }
+  .hdr-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111111;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+  }
+  .hdr-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .hdr-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #555555;
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 999px;
+    transition: color .2s ease, background .2s ease;
+    white-space: nowrap;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .hdr-link:hover {
+    color: #111111;
+    background: rgba(0,0,0,0.05);
+  }
+  .hdr-btn-contato {
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #111111;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1.5px solid #111111;
+    background: transparent;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, box-shadow .2s ease;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  }
+  .hdr-btn-contato:hover {
+    background: #111111;
+    color: #FFFFFF;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  }
+
+  /* Compensa o header fixo no topo */
+  body { padding-top: 84px; }
+
+  /* ===== MOBILE HEADER (≤ 768px) ===== */
+  /* Botão três pontos — só aparece no mobile */
+  .hdr-dots-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 14px;
+    color: #555555;
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 1;
+    border-radius: 999px;
+    transition: background .2s ease;
+    flex-shrink: 0;
+  }
+  .hdr-dots-btn:hover {
+    background: rgba(0,0,0,0.05);
+    color: #111111;
+  }
+
+  @media (max-width: 768px) {
+    #site-header {
+      top: 16px;
+      width: calc(100% - 32px);
+      max-width: 400px;
+      padding: 7px 7px 7px 12px;
+    }
+    /* Esconder nav desktop */
+    .hdr-nav {
+      display: none;
+    }
+    /* Mostrar botão ··· */
+    .hdr-dots-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    body { padding-top: 76px; }
+  }
+
+  /* ===== MENU MOBILE FLUTUANTE ===== */
+  #mobile-menu {
+    display: none;
+    position: fixed;
+    top: 76px; /* logo abaixo do header mobile */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: calc(100% - 32px);
+    max-width: 400px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.14);
+    z-index: 8999;
+    padding: 20px 20px 20px;
+    flex-direction: column;
+    gap: 0;
+    /* Animação de entrada */
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+    transition: opacity .2s ease, transform .2s ease;
+  }
+  #mobile-menu.open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  /* Cabeçalho do menu: avatar + nome + X */
+  .mmenu-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #F2F2F0;
+  }
+  .mmenu-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #F2F2F0;
+  }
+  .mmenu-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111111;
+    letter-spacing: -0.01em;
+    flex: 1;
+  }
+  .mmenu-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #555555;
+    font-size: 20px;
+    line-height: 1;
+    transition: background .2s ease, color .2s ease;
+    flex-shrink: 0;
+  }
+  .mmenu-close:hover {
+    background: rgba(0,0,0,0.06);
+    color: #111111;
+  }
+  /* Itens de navegação do menu */
+  .mmenu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 20px;
+  }
+  .mmenu-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #111111;
+    text-decoration: none;
+    padding: 10px 4px;
+    border-radius: 8px;
+    transition: color .2s ease, background .15s ease;
+    letter-spacing: -0.02em;
+    display: block;
+  }
+  .mmenu-item:hover {
+    color: #C4622D;
+    background: rgba(196,98,45,0.05);
+    padding-left: 10px;
+  }
+  /* Botão Contato no fundo do menu */
+  .mmenu-btn-contato {
+    display: block;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111111;
+    text-align: center;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 999px;
+    border: 1.5px solid #111111;
+    background: transparent;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    letter-spacing: -0.01em;
+  }
+  .mmenu-btn-contato:hover {
+    background: #111111;
+    color: #FFFFFF;
+  }
+  /* Overlay escuro por trás do menu */
+  #mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.18);
+    z-index: 8998;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+  #mobile-menu-overlay.open {
+    display: block;
+  }
+
+</style>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/favicon.png">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<div id="mobile-menu-overlay" role="presentation" aria-hidden="true"></div>
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+  <div class="mmenu-head">
+    <img class="mmenu-avatar" src="img/avatar.png" alt="Avatar Letícia Holanda" aria-hidden="true">
+    <span class="mmenu-name">Letícia Holanda</span>
+    <button class="mmenu-close" id="mmenu-close-btn" aria-label="Fechar menu">&#x2715;</button>
+  </div>
+  <nav class="mmenu-items" aria-label="Menu mobile">
+    <a href="index.html#projetos" class="mmenu-item">Projetos</a>
+    <a href="index.html#sobre" class="mmenu-item">Sobre</a>
+  </nav>
+  <a href="#contato" class="mmenu-btn-contato">Contato</a>
+</div>
+<header id="site-header" role="banner">
+  <a href="index.html" class="hdr-identity" aria-label="Início">
+    <img class="hdr-avatar" src="img/avatar.png" alt="Avatar Letícia Holanda" aria-hidden="true">
+    <span class="hdr-name">Letícia Holanda</span>
+  </a>
+  <nav class="hdr-nav" aria-label="Navegação principal">
+    <a href="index.html#projetos" class="hdr-link">Projetos</a>
+    <a href="index.html#sobre" class="hdr-link">Sobre</a>
+    <a href="#contato" class="hdr-btn-contato">Contato</a>
+  </nav>
+  <button class="hdr-dots-btn" id="hdr-dots-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">&#xB7;&#xB7;&#xB7;</button>
+</header>
+
+<div style="background:#FFFFFF; color:#1A1A1A; font-family:'DM Sans',sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden;">
+
+  <!-- ============ PASSWORD GATE ============ -->
+  <div data-gate style="position:fixed; inset:0; z-index:1000; background:#FFFFFF; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px; opacity:1; transition:opacity .3s ease;">
+    <img src="img/avatar.png" alt="Letícia Holanda" style="width:56px; height:56px; object-fit:contain; display:block; margin:0 auto;">
+    <h1 style="font-family:'Inter',sans-serif; font-weight:700; font-size:1.5rem; line-height:1.2; letter-spacing:-0.015em; margin:14px 0 8px; color:#1A1A1A; text-align:center;">Este conteúdo é protegido.</h1>
+    <style>.gate-linkedin{color:inherit; text-decoration:none;} .gate-linkedin:hover{color:inherit; text-decoration:underline;}</style>
+    <p style="font-family:'DM Sans',sans-serif; font-size:0.9rem; line-height:1.5; color:#9A9A92; margin:0 auto 36px; max-width:320px; text-align:center;">Não possui a senha? Entre em contato comigo no <a href="https://www.linkedin.com/in/leticia-holanda" target="_blank" rel="noopener" class="gate-linkedin">LinkedIn</a>.</p>
+    <div style="position:relative; width:280px; max-width:80vw;">
+      <input data-pw type="password" placeholder="senha" autocomplete="off" style="width:100%; border:1px solid #D7D7CF; background:#fff; padding:13px 48px 13px 16px; font-family:'DM Sans',sans-serif; font-size:16px; min-height:48px; color:#1A1A1A; outline:none; border-radius:2px; transition:border-color .25s ease;" onfocus="this.style.borderColor='#1A1A1A'" onblur="this.style.borderColor='#D7D7CF'">
+      <button data-toggle-pw type="button" aria-label="Mostrar ou ocultar senha" style="position:absolute; right:14px; top:50%; transform:translateY(-50%); background:none; border:none; padding:0; cursor:pointer; color:#9A9A92; display:flex; align-items:center; transition:color .2s ease;" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='#9A9A92'">
+        <svg data-eye-open width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg data-eye-closed width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+      </button>
+    </div>
+    <button data-enter style="width:280px; max-width:80vw; margin-top:12px; border:none; background:#1A1A1A; color:#fff; padding:13px 16px; font-family:'DM Sans',sans-serif; font-size:15px; min-height:48px; font-weight:500; letter-spacing:0.01em; border-radius:2px; cursor:pointer; transition:background-color .25s ease;" onmouseover="this.style.backgroundColor='#C4622D'" onmouseout="this.style.backgroundColor='#1A1A1A'">Entrar →</button>
+    <div data-err role="alert" aria-live="polite" style="width:280px; max-width:80vw; margin-top:10px; padding:10px 14px; background:#FEF2F2; border:1px solid #FECACA; border-radius:2px; font-family:'DM Sans',sans-serif; font-size:13px; color:#B91C1C; display:none; align-items:center; gap:8px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Senha incorreta. Tente novamente.
+    </div>
+  </div>
+
+  <!-- ============ CASE CONTENT ============ -->
+  <div data-content style="opacity:0; transition:opacity .4s ease;">
+
+    <!-- NAV -->
+    <nav style="max-width:1100px; margin:0 auto; padding:28px 24px 0;">
+      <a href="index.html" style="font-size:13.5px; color:#6B6B66; text-decoration:none; padding-bottom:2px; background-image:linear-gradient(#C4622D,#C4622D); background-size:0% 1px; background-position:0 100%; background-repeat:no-repeat; transition:background-size .35s ease, color .3s ease;" style-hover="background-size:100% 1px; color:#1A1A1A;">← Voltar</a>
+    </nav>
+
+    <!-- HERO -->
+    <header style="max-width:800px; margin:0 auto; padding:clamp(48px,9vh,96px) 24px clamp(32px,5vh,56px);">
+      <h1 style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(38px,7vw,68px); line-height:1.04; letter-spacing:-0.015em; margin:0 0 22px; color:#1A1A1A;">Grupo Casas Bahia<br><span style="color:#3A3A36;">Devoluções &amp; Bonificação de Fornecedores</span></h1>
+      <p style="font-size:14px; color:#9A9A92; letter-spacing:0.02em; margin:0 0 18px;">Produto interno B2B · Julho de 2023 · Product Designer</p>
+      <p style="font-size:13px; font-weight:500; letter-spacing:0.04em; color:#C4622D; margin:0;">UX · User Test · User Research · Service Design · Discovery</p>
+    </header>
+
+    <!-- METRICS BAND -->
+    <section style="background:#F5F5F0; border-top:1px solid #E2E2DA; border-bottom:1px solid #E2E2DA;">
+      <div data-metrics3 style="max-width:1000px; margin:0 auto; padding:clamp(40px,6vh,64px) 24px; display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(20px,3vw,44px);">
+        <div data-fade style="text-align:center;">
+          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(22px,3.4vw,34px); line-height:1.1; color:#1A1A1A;">Processo unificado</div>
+          <div style="font-size:12.5px; line-height:1.5; color:#6B6B66; margin-top:12px; max-width:230px; margin-left:auto; margin-right:auto;">jornada de devolução padronizada e auditável</div>
+        </div>
+        <div data-fade style="text-align:center; border-left:1px solid #E2E2DA; border-right:1px solid #E2E2DA;">
+          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(22px,3.4vw,34px); line-height:1.1; color:#1A1A1A;">1 mês de research</div>
+          <div style="font-size:12.5px; line-height:1.5; color:#6B6B66; margin-top:12px; max-width:230px; margin-left:auto; margin-right:auto;">de entrevistas com todo o time comercial e áreas relacionadas</div>
+        </div>
+        <div data-fade style="text-align:center;">
+          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(22px,3.4vw,34px); line-height:1.1; color:#1A1A1A;">Julho 2023</div>
+          <div style="font-size:12.5px; line-height:1.5; color:#6B6B66; margin-top:12px; max-width:230px; margin-left:auto; margin-right:auto;">entrega em produção</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HERO IMAGE -->
+    <!-- INSERIR: apuracao-por-recebimento-tela-principal.png -->
+    <div data-fade style="max-width:1100px; margin:clamp(40px,6vh,72px) auto 0; padding:0 24px;">
+      <div style="background:#F0F0EE; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:460px;">Print principal do sistema — tela de “Apuração por recebimento” com filtros e tabela</span>
+      </div>
+    </div>
+
+    <!-- CONTEXTO -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px clamp(24px,4vh,40px);">
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Este discovery foi desenvolvido para atender os times do comercial que realizam acordos de bonificação, com o objetivo de utilizar uma plataforma interna automatizada e deixar as planilhas de lado.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Bonificação são acordos contratuais efetuados entre a Via e os parceiros de negócio, incentivos e recompensas nas negociações com os fornecedores, afim de evoluir o relacionamento com a indústria. A bonificação é utilizada para recompor a margem da companhia; os valores são lançados direto no resultado da Via.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">Também existe uma plataforma de bonificação criada para controlar os acordos comerciais e oferecer visibilidade, confiabilidade e rastreabilidade dos cálculos para as áreas interessadas (comercial e indústria).</p>
+    </section>
+
+    <!-- O PROBLEMA -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(40px,6vh,72px) 24px clamp(24px,4vh,40px);">
+      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">O Problema</div>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">A devolução nesse contexto ocorre quando o fornecedor descarrega seus produtos na DOCA da Via e o operário que recebe precisa identificar possíveis avarias nos produtos, e informar no sistema da empresa que houve devolução de determinados itens.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Todo final de mês, os times de comercial (categoria) precisam realizar o fechamento e extrair as planilhas com dados de devolução para gerar as notas de débito dos fornecedores.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">A “apuração de recebimento” é um processo que consiste em verificar e confirmar o valor que deve ser recebido na venda dos produtos. Durante a apuração, são verificados os valores acordados com os fornecedores, os descontos aplicados, as taxas e impostos incidentes, entre outros fatores que podem afetar o valor final a ser recebido.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">O objetivo é garantir que o valor correto seja recebido e que não ocorram erros ou divergências que possam prejudicar a Via ou parceiros.</p>
+    </section>
+
+    <!-- INSERIR: jornada-macro-recebimento-com-devolucao-as-is.png -->
+    <div data-fade style="max-width:1100px; margin:clamp(24px,4vh,40px) auto; padding:0 24px;">
+      <div style="background:#F0F0EE; aspect-ratio:21/9; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:520px;">Jornada Macro de recebimento com devolução (As is) — fluxo de 7 etapas, da DOCA até aprovação do fornecedor</span>
+      </div>
+    </div>
+
+    <!-- O DESAFIO -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px;">
+      <p data-fade style="font-family:'Inter',sans-serif; font-weight:700; font-style:italic; font-size:clamp(23px,3.6vw,34px); line-height:1.42; color:#1A1A1A; margin:0 0 40px;">“O processo de análise de bonificações era feito manualmente, em planilhas fora do sistema, sem rastreabilidade, sem padronização, sem controle.”</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">O discovery partiu de uma solicitação do stakeholder: automatizar o processo interno de análise de bonificações anteriormente manipuladas através de diversas planilhas.</p>
+      <p data-fade style="font-size:clamp(14px,1.8vw,15px); line-height:1.7; color:#9A9A92; margin:0 0 16px;">O problema era mais simples — e mais sério — do que parecia.</p>
+      <div data-fade style="background:rgba(196,98,45,0.06); border-left:3px solid #C4622D; padding:clamp(22px,3.5vw,30px) clamp(22px,3.5vw,34px); margin:0 0 16px;">
+        <p style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(20px,2.4vw,22px); line-height:1.5; color:#1A1A1A; margin:0;">Os valores registrados nas notas não batiam com os dados da plataforma de bonificação — e ninguém sabia ao certo qual dos dois estava certo.</p>
+      </div>
+      <p data-fade style="font-size:clamp(14px,1.8vw,15px); line-height:1.7; color:#9A9A92; margin:0;">Isso gerava erros nos repasses para fornecedores todo mês, sem rastreabilidade para identificar a origem da divergência.</p>
+    </section>
+
+    <!-- INSERIR: desafio-55.png -->
+    <div data-fade style="max-width:1100px; margin:0 auto clamp(24px,4vh,40px); padding:0 24px;">
+      <div style="background:#F0F0EE; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:440px;">Imagem do “Desafio 55” (se disponível)</span>
+      </div>
+    </div>
+
+    <!-- DISCOVERY -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
+      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">Discovery</div>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 26px;">Para iniciar o discovery, busquei entender quais os objetivos dessa entrega. Assim foram definidos com os stakeholders:</p>
+      <ol data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.7; color:#3A3A36; margin:0 0 34px; padding-left:22px;">
+        <li style="margin-bottom:8px;">Entender o processo atual de apuração do recebimento</li>
+        <li style="margin-bottom:8px;">Orientar a forma correta de realizar a apuração para as categorias</li>
+        <li>Entregar uma solução de apuração através da plataforma de bonificação</li>
+      </ol>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 26px; font-weight:500;">Processo de design executado:</p>
+      <div data-fade data-stepper style="position:relative; margin:8px 0 4px;">
+        <div data-line style="position:absolute; background:rgba(196,98,45,0.3); left:0; top:0; width:0; height:0; z-index:0;"></div>
+        <div data-steps style="display:flex; flex-direction:row; justify-content:space-between; align-items:flex-start; gap:8px; position:relative; z-index:1;">
+          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
+            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">01</div>
+            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:92px;">Entendimento do problema</div>
+          </div>
+          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
+            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">02</div>
+            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:92px;">Questionamentos</div>
+          </div>
+          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
+            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">03</div>
+            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:92px;">Entrevistas com categorias (planilha)</div>
+          </div>
+          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
+            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">04</div>
+            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:92px;">Entrevistas com logística e planejamento</div>
+          </div>
+          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
+            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">05</div>
+            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:92px;">Mapeamento da jornada</div>
+          </div>
+          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
+            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">06</div>
+            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:92px;">Comparação de canais</div>
+          </div>
+          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
+            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">07</div>
+            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:92px;">Nova proposta de jornada</div>
+          </div>
+          <div data-step style="display:flex; flex-direction:column; align-items:center; flex:1 1 0; min-width:0;">
+            <div data-dot style="width:28px; height:28px; border-radius:50%; background:#C4622D; color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">08</div>
+            <div data-label style="font-size:11px; line-height:1.3; color:#3A3A36; text-align:center; margin-top:10px; max-width:92px;">Regras de negócio</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSERIR: processo-de-design-7-passos.png -->
+    <div data-fade style="max-width:1100px; margin:clamp(24px,4vh,40px) auto; padding:0 24px;">
+      <div style="background:#F0F0EE; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:440px;">Slide “Processo de design” com os 7 passos</span>
+      </div>
+    </div>
+    <!-- INSERIR: principais-questionamentos.png -->
+    <div data-fade style="max-width:1100px; margin:clamp(24px,4vh,40px) auto; padding:0 24px;">
+      <div style="background:#F0F0EE; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:460px;">“Principais questionamentos” — grid de cards com as perguntas-chave do discovery</span>
+      </div>
+    </div>
+
+    <!-- ENTREVISTAS -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
+      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">Entrevistas</div>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Realizei entrevistas com os stakeholders para entendermos as principais dúvidas e criarmos uma pesquisa com o time comercial para entender todos os pontos levantados. 1 mês de entrevistas com todo o time comercial e outros times relacionados.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 14px; font-weight:500;">Perfis entrevistados:</p>
+      <ul data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.7; color:#3A3A36; margin:0; padding-left:22px;">
+        <li style="margin-bottom:8px;">Operação comercial: Gerentes e Analistas das Categorias</li>
+        <li style="margin-bottom:8px;">Supervisor de logística operacional de recebimento</li>
+        <li>Gerente de Planejamento SC Projetos</li>
+      </ul>
+    </section>
+
+    <!-- INSERIR: entrevistas-em-profundidade-remotas.png -->
+    <div data-fade style="max-width:1100px; margin:clamp(24px,4vh,40px) auto; padding:0 24px;">
+      <div style="background:#F0F0EE; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:460px;">Slide “Entrevistas em profundidade [Remotas]” com foto da reunião em Teams</span>
+      </div>
+    </div>
+
+    <section style="max-width:800px; margin:0 auto; padding:clamp(24px,4vh,40px) 24px;">
+      <div data-fade style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#C4622D; font-weight:500; margin-bottom:20px;">Achado de pesquisa</div>
+      <div data-fade style="display:flex; flex-wrap:wrap; gap:16px;">
+        <div style="flex:1 1 280px; background:#F5F5F0; border-top:2px solid #C4622D; padding:clamp(22px,3vw,28px);">
+          <div style="font-size:20px; line-height:1; color:#C4622D; margin-bottom:14px;">⚠</div>
+          <div style="font-size:14px; font-weight:600; color:#1A1A1A; margin-bottom:10px;">O que encontramos</div>
+          <p style="font-size:15px; line-height:1.65; color:#4A4A45; margin:0;">Os analistas utilizavam 2 canais adicionais além do canal correto para extrair as planilhas de recebimento.</p>
+        </div>
+        <div style="flex:1 1 280px; background:#F5F5F0; border-top:2px solid #CCCCCC; padding:clamp(22px,3vw,28px);">
+          <div style="font-size:20px; line-height:1; color:#9A9A92; margin-bottom:14px;">✕</div>
+          <div style="font-size:14px; font-weight:600; color:#1A1A1A; margin-bottom:10px;">O problema desses canais</div>
+          <p style="font-size:15px; line-height:1.65; color:#4A4A45; margin:0;">Nenhum dos dois incluía todos os impostos e valores necessários, o que o canal principal informa por padrão.</p>
+        </div>
+      </div>
+      <p data-fade style="font-size:14px; font-style:italic; line-height:1.65; color:#9A9A92; margin:18px 0 0;">Nenhum dos analistas entrevistados tinha um documento ou orientação formal sobre qual canal usar.</p>
+    </section>
+
+    <!-- INSERIR: entrevista-com-as-categorias-graficos-pizza.png -->
+    <div data-fade style="max-width:1100px; margin:clamp(24px,4vh,40px) auto; padding:0 24px;">
+      <div style="background:#F0F0EE; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:460px;">Slide “Entrevista com as categorias” com os 3 gráficos de pizza — canais utilizados</span>
+      </div>
+    </div>
+
+    <!-- O QUE DESCOBRIMOS -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
+      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">O que descobrimos</div>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Durante conversas com o time comercial e supervisor de logística, descobri que há analistas que extraem as planilhas de outros canais que não são os corretos para extrair a informação de devolução e recebimento. Além disso, estes não souberam explicar o motivo do uso e não tinham qualquer documento que os direcionasse.</p>
+    </section>
+
+    <!-- INSERIR: jornada-macro-caminhos-alternativos-sharepoint-pcom.png -->
+    <div data-fade style="max-width:1100px; margin:0 auto clamp(24px,4vh,40px); padding:0 24px;">
+      <div style="background:#F0F0EE; aspect-ratio:21/9; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:520px;">Jornada Macro de recebimento com devolução — versão expandida com caminhos alternativos via SharePoint e PCOM</span>
+      </div>
+    </div>
+
+    <section style="max-width:800px; margin:0 auto; padding:clamp(8px,2vh,24px) 24px clamp(24px,4vh,40px);">
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#1A1A1A; margin:0 0 16px; font-weight:500;">Problemas identificados:</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Categorias não sabem / não possuem direcionamento para o uso do PCOM e SharePoint — ao serem questionados, os analistas das categorias não conseguiram nos repassar qualquer documento, nomes, ou outra informação que pudessem os direcionar ao uso do PCOM e SharePoint.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">Há categorias que precisam fazer 2 etapas de verificação para confirmar os valores, que nem sempre são iguais.</p>
+    </section>
+
+    <!-- INSERIR: problemas-identificados-depoimentos.png -->
+    <div data-fade style="max-width:1100px; margin:clamp(24px,4vh,40px) auto; padding:0 24px;">
+      <div style="background:#F0F0EE; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:480px;">Slide “Problemas identificados” com depoimentos dos entrevistados em cards — Stephanie Araújo, Tatiana Mendes, Hellen Caroline</span>
+      </div>
+    </div>
+
+    <!-- A DECISÃO -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
+      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">A decisão</div>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Tínhamos duas direções possíveis para resolver o problema:</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Manter o processo atual e apenas documentar os canais corretos para extração das planilhas, uma solução rápida, mas que não eliminaria a raiz do problema: o dado errado continuaria sendo extraído, o erro continuaria acontecendo.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Ou redesenhar o processo dentro da plataforma de bonificação, descontinuando o uso das planilhas externas e tornando o sistema a fonte única de verdade.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Escolhemos a segunda opção porque os erros não eram de atenção — eram estruturais. Sem uma plataforma centralizada, qualquer documentação criada ficaria desatualizada e ignorada em semanas.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">O trade-off foi escopo: não conseguiríamos entregar tudo no primeiro ciclo, então priorizamos o fluxo crítico de fechamento mensal.</p>
+    </section>
+
+    <!-- A SOLUÇÃO -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(48px,8vh,90px) 24px clamp(24px,4vh,40px);">
+      <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:28px;">A solução</div>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 26px; font-weight:500;">O que propusemos:</p>
+      <ol data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.7; color:#3A3A36; margin:0 0 34px; padding-left:22px;">
+        <li style="margin-bottom:8px;">Descontinuar o uso das planilhas do SharePoint e PCOM</li>
+        <li style="margin-bottom:8px;">Padronizar a comunicação para que seja utilizado somente um canal</li>
+        <li style="margin-bottom:8px;">Criar nova parametrização de devolução na plataforma existente para o usuário escolher se quer ou não considerar o valor de devolução</li>
+        <li>Criar opção para utilização de valores de devolução de meses anteriores ao mês do fechamento</li>
+      </ol>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">Foi necessário explicar quais as diferenças dos valores de cada canal de extração e propor uma funcionalidade a mais de devolução na plataforma de bonificação para o comercial conseguir manipular alguns dos dados que ele conseguia na planilha.</p>
+    </section>
+
+    <!-- ANTES -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(24px,4vh,40px) 24px clamp(8px,2vh,16px);">
+      <div data-fade style="font-family:'Inter',sans-serif; font-weight:700; font-style:italic; font-size:clamp(20px,2.6vw,26px); color:#C4622D; margin-bottom:4px;">Antes</div>
+    </section>
+    <!-- INSERIR: planilha-devolucao-antes.png -->
+    <div data-fade style="max-width:1100px; margin:0 auto clamp(20px,3vh,32px); padding:0 24px;">
+      <div style="background:#F0F0EE; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:480px;">Print da planilha de devolução — tabela com colunas ACESSÓRIOS E INOVAÇÕES, múltiplas linhas de SKUs</span>
+      </div>
+    </div>
+    <section style="max-width:800px; margin:0 auto; padding:0 24px clamp(24px,4vh,40px);">
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">Anteriormente, o processo de devolução era feito manualmente por planilha, onde os analistas comerciais clusterizavam todas as informações dos fornecedores e realizavam os cálculos dentro da própria planilha para enviar os dados de devoluções para fornecedores.</p>
+    </section>
+
+    <!-- DEPOIS -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(24px,4vh,40px) 24px clamp(8px,2vh,16px);">
+      <div data-fade style="font-family:'Inter',sans-serif; font-weight:700; font-style:italic; font-size:clamp(20px,2.6vw,26px); color:#C4622D; margin-bottom:4px;">Depois</div>
+    </section>
+    <!-- INSERIR: nova-tela-apuracao-por-recebimento-depois.png -->
+    <div data-fade style="max-width:1100px; margin:0 auto clamp(20px,3vh,32px); padding:0 24px;">
+      <div style="background:#F0F0EE; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; padding:24px; border:1px solid #E8E8E2;">
+        <span style="font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.03em; color:#9A9A92; text-align:center; max-width:480px;">Print da nova tela da plataforma de bonificação — “Apuração por recebimento” com filtros e listagem de cálculos registrados</span>
+      </div>
+    </div>
+    <section style="max-width:800px; margin:0 auto; padding:0 24px clamp(24px,4vh,40px);">
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0;">Agora, os analistas possuem uma área na plataforma de bonificação para realizar os cálculos de forma automática e fiel aos dados/número de devoluções dos fornecedores.</p>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section style="background:#FAFAF8; border-top:1px solid #E2E2DA; border-bottom:1px solid #E2E2DA; margin-top:clamp(40px,6vh,72px);">
+      <div style="max-width:800px; margin:0 auto; padding:clamp(56px,9vh,100px) 24px;">
+        <div data-fade style="font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:#9A9A92; margin-bottom:44px;">Resultados</div>
+
+        <div data-fade style="padding-bottom:34px; margin-bottom:34px; border-bottom:1px solid #E2E2DA;">
+          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(28px,4.6vw,46px); line-height:1.08; letter-spacing:-0.01em; color:#1A1A1A; margin-bottom:16px;">Processo unificado</div>
+          <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#4A4A45; margin:0; max-width:600px;">Os times de analistas estão realizando um único processo de devolução, tornando a jornada padronizada e mais fácil de ser acompanhada pela auditoria.</p>
+        </div>
+
+        <div data-fade style="margin-bottom:34px;">
+          <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(28px,4.6vw,46px); line-height:1.08; letter-spacing:-0.01em; color:#1A1A1A; margin-bottom:16px;">Redução de erros nos valores de devoluções</div>
+          <p style="font-size:clamp(15px,1.9vw,17px); line-height:1.7; color:#4A4A45; margin:0; max-width:600px;">Eliminação dos erros causados pela extração de dados de canais incorretos — os valores financeiros ainda estão sendo contabilizados para mensuração exata do impacto.</p>
+        </div>
+
+        <p data-fade style="font-size:14px; line-height:1.65; color:#9A9A92; font-style:italic; margin:0; max-width:600px;">“Os valores financeiros de redução de erros estavam em processo de contabilização no momento da entrega — o impacto qualitativo foi imediato: um único processo, rastreável e auditável.”</p>
+      </div>
+    </section>
+
+    <!-- FECHAMENTO -->
+    <section style="max-width:800px; margin:0 auto; padding:clamp(56px,9vh,104px) 24px;">
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 22px;">Sistemas internos B2B têm uma complexidade que não aparece no wireframe: as regras de negócio existem na cabeça de quem faz o processo há anos, não na documentação. O maior trabalho nesse projeto foi tornar esse conhecimento tácito em algo que o sistema pudesse suportar.</p>
+      <p data-fade style="font-size:clamp(16px,2vw,18px); line-height:1.75; color:#3A3A36; margin:0 0 clamp(40px,6vh,64px);">Se repetisse o projeto, investiria mais tempo no início mapeando as variações entre canais antes das entrevistas — teria chegado mais rápido ao problema real.</p>
+      <a data-fade href="index.html" style="display:inline-block; font-size:15px; font-weight:500; color:#1A1A1A; text-decoration:none; padding-bottom:2px; background-image:linear-gradient(#C4622D,#C4622D); background-size:0% 1px; background-position:0 100%; background-repeat:no-repeat; transition:background-size .35s ease, color .3s ease;" style-hover="background-size:100% 1px; color:#C4622D;">← Voltar ao portfólio</a>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer id="contato" style="background:#000000;">
+      <style>
+        .ft-wrap{max-width:1080px; margin:0 auto; padding:80px 24px;}
+        .ft-title-top{font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(28px,4.2vw,40px); line-height:1.05; letter-spacing:-0.02em; margin:0; color:#888888;}
+        .ft-title-main{font-family:'Inter',sans-serif; font-weight:800; font-size:60px; line-height:1; letter-spacing:-0.04em; margin:6px 0 0; color:#FFFFFF;}
+        @media (max-width:768px){ .ft-title-main{font-size:55px;} }
+        .ft-label{font-family:'Inter',sans-serif; font-weight:500; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#888888;}
+        .ft-link{font-family:'Inter',sans-serif; color:#FFFFFF; text-decoration:none; border-bottom:1px solid transparent; padding-bottom:2px; transition:border-color .25s ease;}
+        .ft-link:hover{border-bottom-color:#FFFFFF;}
+        .ft-icon{display:inline-block; line-height:0; border-bottom:1px solid transparent; padding-bottom:5px; opacity:0.92; transition:border-color .25s ease, opacity .25s ease;}
+        .ft-icon:hover{border-bottom-color:#FFFFFF; opacity:1;}
+        .ft-contacts{display:flex; flex-wrap:wrap; gap:clamp(48px,10vw,120px); margin-top:clamp(40px,7vh,64px);}
+        .ft-bottom{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:24px; margin-top:clamp(40px,6vh,56px); padding-top:28px; border-top:1px solid #333333;}
+        .ft-menu-links{margin-top:12px; display:flex; gap:18px;}
+        .ft-credit{font-family:'Inter',sans-serif; font-weight:400; font-size:13px; color:#888888; text-align:right;}
+        @media (max-width:560px){
+          .ft-contacts{flex-direction:column; gap:32px;}
+          .ft-bottom{flex-direction:column; align-items:flex-start;}
+          .ft-credit{text-align:left;}
+        }
+      </style>
+      <div class="ft-wrap">
+        <h2 data-fade class="ft-title-top">Gostou?</h2>
+        <h2 data-fade class="ft-title-main">Vamos conversar</h2>
+
+        <div data-fade class="ft-contacts">
+          <div>
+            <div class="ft-label">Email</div>
+            <a href="mailto:leticia.holandaux@gmail.com" class="ft-link" style="display:inline-block; margin-top:10px; font-size:16px; font-weight:500;">leticia.holandaux@gmail.com</a>
+          </div>
+          <div>
+            <div class="ft-label">LinkedIn</div>
+            <a href="https://www.linkedin.com/in/leticia-holanda" target="_blank" rel="noopener" class="ft-link" style="display:inline-flex; align-items:center; gap:0; margin-top:10px; font-size:16px; font-weight:500;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="white" style="display:block;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              /leticia-holanda
+            </a>
+          </div>
+        </div>
+
+        <div data-fade class="ft-bottom">
+          <div>
+            <div class="ft-label">Menu</div>
+            <div class="ft-menu-links">
+              <a href="index.html#projetos" class="ft-link" style="font-size:15px; font-weight:500;">Projetos</a>
+              <a href="index.html#sobre" class="ft-link" style="font-size:15px; font-weight:500;">Sobre</a>
+            </div>
+          </div>
+          <div class="ft-credit">© 2026 Letícia Holanda</div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</div>
+<script>
+(function() {
+
+    const PW = 'uxdesign2026';
+    const gate = document.querySelector('[data-gate]');
+    const content = document.querySelector('[data-content]');
+    const input = document.querySelector('[data-pw]');
+    const btn = document.querySelector('[data-enter]');
+    const err = document.querySelector('[data-err]');
+    const toggleBtn = document.querySelector('[data-toggle-pw]');
+    const eyeOpen = document.querySelector('[data-eye-open]');
+    const eyeClosed = document.querySelector('[data-eye-closed]');
+    if (!gate || !content) return;
+
+    // Toggle de visibilidade da senha
+    if (toggleBtn && input) {
+      toggleBtn.addEventListener('click', () => {
+        const isPassword = input.type === 'password';
+        input.type = isPassword ? 'text' : 'password';
+        if (eyeOpen)   eyeOpen.style.display   = isPassword ? 'none'  : '';
+        if (eyeClosed) eyeClosed.style.display  = isPassword ? ''      : 'none';
+        input.focus();
+      });
+    }
+
+    let fadesReady = false;
+    const setupFades = () => {
+      if (fadesReady) return; fadesReady = true;
+      const els = Array.from(content.querySelectorAll('[data-fade]'));
+      els.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1)';
+        el.style.willChange = 'opacity, transform';
+      });
+      const reveal = el => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; };
+      const revealVisible = () => {
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+        els.forEach(el => {
+          if (el.style.opacity === '1') return;
+          const r = el.getBoundingClientRect();
+          if (r.top < vh * 0.92 && r.bottom > 0) reveal(el);
+        });
+      };
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) { reveal(e.target); io.unobserve(e.target); } });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        els.forEach(el => io.observe(el));
+        revealVisible();
+        requestAnimationFrame(revealVisible);
+        window.addEventListener('scroll', revealVisible, { passive: true });
+        window.addEventListener('resize', revealVisible, { passive: true });
+        document.addEventListener('scroll', revealVisible, { passive: true, capture: true });
+        setTimeout(() => els.forEach(reveal), 1600);
+      } else {
+        els.forEach(reveal);
+      }
+    };
+
+    const unlock = (instant) => {
+      if (instant) {
+        gate.style.display = 'none';
+        content.style.opacity = '1';
+      } else {
+        gate.style.opacity = '0';
+        gate.style.pointerEvents = 'none';
+        setTimeout(() => { gate.style.display = 'none'; }, 320);
+        content.style.opacity = '1';
+      }
+      setupFades();
+    };
+
+    if (sessionStorage.getItem('cb_auth') === '1') {
+      unlock(true);
+    } else {
+      content.style.opacity = '0';
+      setTimeout(() => { try { input && input.focus(); } catch (e) {} }, 50);
+    }
+
+    // Stepper: horizontal on desktop, vertical on mobile; connector drawn from real geometry
+    const stepper = document.querySelector('[data-stepper]');
+    if (stepper) {
+      const stepsWrap = stepper.querySelector('[data-steps]');
+      const steps = Array.from(stepper.querySelectorAll('[data-step]'));
+      const line = stepper.querySelector('[data-line]');
+      const layoutStepper = () => {
+        const vertical = stepper.clientWidth < 560;
+        if (vertical) {
+          stepsWrap.style.flexDirection = 'column';
+          stepsWrap.style.justifyContent = 'flex-start';
+          stepsWrap.style.alignItems = 'flex-start';
+          stepsWrap.style.gap = '22px';
+          steps.forEach(s => {
+            s.style.flexDirection = 'row';
+            s.style.alignItems = 'center';
+            s.style.flex = '0 0 auto';
+            s.style.width = '100%';
+            s.style.gap = '14px';
+            const lab = s.querySelector('[data-label]');
+            lab.style.textAlign = 'left';
+            lab.style.marginTop = '0';
+            lab.style.maxWidth = 'none';
+          });
+        } else {
+          stepsWrap.style.flexDirection = 'row';
+          stepsWrap.style.justifyContent = 'space-between';
+          stepsWrap.style.alignItems = 'flex-start';
+          stepsWrap.style.gap = '8px';
+          steps.forEach(s => {
+            s.style.flexDirection = 'column';
+            s.style.alignItems = 'center';
+            s.style.flex = '1 1 0';
+            s.style.width = 'auto';
+            s.style.gap = '0';
+            const lab = s.querySelector('[data-label]');
+            lab.style.textAlign = 'center';
+            lab.style.marginTop = '10px';
+            lab.style.maxWidth = '92px';
+          });
+        }
+        requestAnimationFrame(() => {
+          const dots = steps.map(s => s.querySelector('[data-dot]'));
+          const base = stepper.getBoundingClientRect();
+          const first = dots[0].getBoundingClientRect();
+          const last = dots[dots.length - 1].getBoundingClientRect();
+          if (vertical) {
+            const cx = first.left - base.left + first.width / 2;
+            const top = first.top - base.top + first.height / 2;
+            const bottom = last.top - base.top + last.height / 2;
+            line.style.left = (cx - 0.5) + 'px';
+            line.style.top = top + 'px';
+            line.style.width = '1px';
+            line.style.height = Math.max(0, bottom - top) + 'px';
+          } else {
+            const cy = first.top - base.top + first.height / 2;
+            const lx = first.left - base.left + first.width / 2;
+            const rx = last.left - base.left + last.width / 2;
+            line.style.top = (cy - 0.5) + 'px';
+            line.style.left = lx + 'px';
+            line.style.height = '1px';
+            line.style.width = Math.max(0, rx - lx) + 'px';
+          }
+        });
+      };
+      layoutStepper();
+      window.addEventListener('resize', layoutStepper, { passive: true });
+      setTimeout(layoutStepper, 300);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutStepper);
+    }
+
+    const submit = () => {
+      if (!input) return;
+      if (input.value === PW) {
+        try { sessionStorage.setItem('cb_auth', '1'); } catch (e) {}
+        unlock(false);
+      } else {
+        if (err) { err.style.display = 'flex'; }
+        if (input) { input.style.borderColor = '#FECACA'; }
+        input.value = '';
+        input.focus();
+      }
+    };
+    if (btn) btn.addEventListener('click', submit);
+    if (input) {
+      input.addEventListener('keydown', (e) => { if (e.key === 'Enter') submit(); });
+      input.addEventListener('input', () => {
+        if (err) err.style.display = 'none';
+        if (input) input.style.borderColor = '#D7D7CF';
+      });
+    }
+  
+})();
+</script>
+<script>
+(function(){
+  var siteHeader = document.getElementById('site-header');
+  if (siteHeader) {
+    window.addEventListener('scroll', function(){
+      siteHeader.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  }
+  // Smooth scroll para âncoras locais (#...)
+  document.querySelectorAll('#site-header a[href^="#"], #mobile-menu a[href^="#"]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      var href = link.getAttribute('href');
+      if (href === '#') return;
+      var target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        var headerH = siteHeader ? siteHeader.offsetHeight + 24 : 80;
+        var top = target.getBoundingClientRect().top + window.scrollY - headerH;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+  // Menu mobile
+  (function(){
+    var dotsBtn = document.getElementById('hdr-dots-btn');
+    var mobileMenu = document.getElementById('mobile-menu');
+    var overlay = document.getElementById('mobile-menu-overlay');
+    var closeBtn = document.getElementById('mmenu-close-btn');
+    if (!dotsBtn || !mobileMenu) return;
+    function openMenu(){ mobileMenu.classList.add('open'); overlay.classList.add('open'); dotsBtn.setAttribute('aria-expanded','true'); mobileMenu.getBoundingClientRect(); }
+    function closeMenu(){ mobileMenu.style.opacity='0'; mobileMenu.style.transform='translateY(-8px) scale(0.98)'; overlay.classList.remove('open'); dotsBtn.setAttribute('aria-expanded','false'); setTimeout(function(){ mobileMenu.classList.remove('open'); mobileMenu.style.opacity=''; mobileMenu.style.transform=''; },200); }
+    dotsBtn.addEventListener('click', function(){ mobileMenu.classList.contains('open') ? closeMenu() : openMenu(); });
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+    mobileMenu.querySelectorAll('a').forEach(function(link){ link.addEventListener('click', function(){ closeMenu(); }); });
+    document.addEventListener('keydown', function(e){ if (e.key==='Escape' && mobileMenu.classList.contains('open')) closeMenu(); });
+  })();
+})();
+</script>
+</body>
+</html>

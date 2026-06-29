@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Em breve — Letícia Holanda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FFFFFF; }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { overflow-x: hidden; max-width: 100vw; min-height: 100vh; }
+  ::selection { background: #C4622D; color: #fff; }
+</style>
+
+<style>
+  #site-header {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 9000;
+    width: calc(100% - 48px);
+    max-width: 680px;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 999px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 8px 8px 14px;
+    transition: box-shadow .3s ease;
+  }
+  #site-header.scrolled {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  }
+  .hdr-identity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .hdr-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #F2F2F0;
+  }
+  .hdr-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111111;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+  }
+  .hdr-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .hdr-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #555555;
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 999px;
+    transition: color .2s ease, background .2s ease;
+    white-space: nowrap;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .hdr-link:hover {
+    color: #111111;
+    background: rgba(0,0,0,0.05);
+  }
+  .hdr-btn-contato {
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #111111;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1.5px solid #111111;
+    background: transparent;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, box-shadow .2s ease;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  }
+  .hdr-btn-contato:hover {
+    background: #111111;
+    color: #FFFFFF;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  }
+
+  /* Compensa o header fixo no topo */
+  body { padding-top: 84px; }
+
+  /* ===== MOBILE HEADER (≤ 768px) ===== */
+  /* Botão três pontos — só aparece no mobile */
+  .hdr-dots-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 14px;
+    color: #555555;
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 1;
+    border-radius: 999px;
+    transition: background .2s ease;
+    flex-shrink: 0;
+  }
+  .hdr-dots-btn:hover {
+    background: rgba(0,0,0,0.05);
+    color: #111111;
+  }
+
+  @media (max-width: 768px) {
+    #site-header {
+      top: 16px;
+      width: calc(100% - 32px);
+      max-width: 400px;
+      padding: 7px 7px 7px 12px;
+    }
+    /* Esconder nav desktop */
+    .hdr-nav {
+      display: none;
+    }
+    /* Mostrar botão ··· */
+    .hdr-dots-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    body { padding-top: 76px; }
+  }
+
+  /* ===== MENU MOBILE FLUTUANTE ===== */
+  #mobile-menu {
+    display: none;
+    position: fixed;
+    top: 76px; /* logo abaixo do header mobile */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: calc(100% - 32px);
+    max-width: 400px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.14);
+    z-index: 8999;
+    padding: 20px 20px 20px;
+    flex-direction: column;
+    gap: 0;
+    /* Animação de entrada */
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+    transition: opacity .2s ease, transform .2s ease;
+  }
+  #mobile-menu.open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  /* Cabeçalho do menu: avatar + nome + X */
+  .mmenu-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #F2F2F0;
+  }
+  .mmenu-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #F2F2F0;
+  }
+  .mmenu-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111111;
+    letter-spacing: -0.01em;
+    flex: 1;
+  }
+  .mmenu-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #555555;
+    font-size: 20px;
+    line-height: 1;
+    transition: background .2s ease, color .2s ease;
+    flex-shrink: 0;
+  }
+  .mmenu-close:hover {
+    background: rgba(0,0,0,0.06);
+    color: #111111;
+  }
+  /* Itens de navegação do menu */
+  .mmenu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 20px;
+  }
+  .mmenu-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #111111;
+    text-decoration: none;
+    padding: 10px 4px;
+    border-radius: 8px;
+    transition: color .2s ease, background .15s ease;
+    letter-spacing: -0.02em;
+    display: block;
+  }
+  .mmenu-item:hover {
+    color: #C4622D;
+    background: rgba(196,98,45,0.05);
+    padding-left: 10px;
+  }
+  /* Botão Contato no fundo do menu */
+  .mmenu-btn-contato {
+    display: block;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111111;
+    text-align: center;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 999px;
+    border: 1.5px solid #111111;
+    background: transparent;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    letter-spacing: -0.01em;
+  }
+  .mmenu-btn-contato:hover {
+    background: #111111;
+    color: #FFFFFF;
+  }
+  /* Overlay escuro por trás do menu */
+  #mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.18);
+    z-index: 8998;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+  #mobile-menu-overlay.open {
+    display: block;
+  }
+  body { padding-top: 0 !important; }
+</style>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/favicon.png">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<div id="mobile-menu-overlay" role="presentation" aria-hidden="true"></div>
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+  <div class="mmenu-head">
+    <img class="mmenu-avatar" src="img/avatar.png" alt="Avatar Letícia Holanda" aria-hidden="true">
+    <span class="mmenu-name">Letícia Holanda</span>
+    <button class="mmenu-close" id="mmenu-close-btn" aria-label="Fechar menu">&#x2715;</button>
+  </div>
+  <nav class="mmenu-items" aria-label="Menu mobile">
+    <a href="index.html#projetos" class="mmenu-item">Projetos</a>
+    <a href="index.html#sobre" class="mmenu-item">Sobre</a>
+  </nav>
+  <a href="index.html#contato" class="mmenu-btn-contato">Contato</a>
+</div>
+<header id="site-header" role="banner">
+  <a href="index.html" class="hdr-identity" aria-label="Início">
+    <img class="hdr-avatar" src="img/avatar.png" alt="Avatar Letícia Holanda" aria-hidden="true">
+    <span class="hdr-name">Letícia Holanda</span>
+  </a>
+  <nav class="hdr-nav" aria-label="Navegação principal">
+    <a href="index.html#projetos" class="hdr-link">Projetos</a>
+    <a href="index.html#sobre" class="hdr-link">Sobre</a>
+    <a href="index.html#contato" class="hdr-btn-contato">Contato</a>
+  </nav>
+  <button class="hdr-dots-btn" id="hdr-dots-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">&#xB7;&#xB7;&#xB7;</button>
+</header>
+
+<div style="background:#FFFFFF; color:#111111; font-family:'Inter',sans-serif; -webkit-font-smoothing:antialiased; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:40px 24px; text-align:center;">
+
+  <!-- Ícone decorativo - ponto pulsante -->
+  <div style="margin-bottom:40px;">
+    <span id="dot" style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#C4622D;"></span>
+  </div>
+
+  <!-- Label -->
+  <div style="font-family:'Inter',sans-serif; font-size:12px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#999999; margin-bottom:24px;">Em construção</div>
+
+  <!-- Título -->
+  <h1 style="font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(28px,6vw,52px); letter-spacing:-0.03em; margin:0 0 20px; color:#111111; line-height:1.1;">Esse case está<br>sendo preparado.</h1>
+
+  <!-- Descrição -->
+  <p style="font-family:'Inter',sans-serif; font-size:clamp(15px,2.5vw,17px); line-height:1.6; color:#777777; margin:0 0 48px; max-width:400px;">Estou documentando o processo com cuidado. Volte em breve ou me chame no LinkedIn para saber mais.</p>
+
+  <!-- CTAs -->
+  <div style="display:flex; flex-wrap:wrap; gap:16px; justify-content:center; align-items:center;">
+    <a href="index.html" style="display:inline-flex; align-items:center; gap:8px; font-family:'Inter',sans-serif; font-size:15px; font-weight:500; color:#FFFFFF; background:#111111; text-decoration:none; padding:14px 28px; border-radius:2px; letter-spacing:0.01em; transition:background-color .25s ease;" onmouseover="this.style.backgroundColor='#C4622D'" onmouseout="this.style.backgroundColor='#111111'">← Ver outros projetos</a>
+    <a href="https://www.linkedin.com/in/leticia-holanda/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; font-family:'Inter',sans-serif; font-size:15px; font-weight:500; color:#111111; text-decoration:none; padding:14px 28px; border-radius:2px; border:1px solid #E5E5E5; letter-spacing:0.01em; transition:border-color .25s ease, color .25s ease;" onmouseover="this.style.borderColor='#111111'" onmouseout="this.style.borderColor='#E5E5E5'">LinkedIn</a>
+  </div>
+
+  <!-- Rodapé -->
+  <p style="font-family:'Inter',sans-serif; font-size:12px; color:#AAAAAA; margin:64px 0 0; letter-spacing:0.04em; text-transform:uppercase;">Letícia Holanda · Product Designer</p>
+
+</div>
+
+<style>
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%       { transform: scale(1.5); opacity: 0.4; }
+  }
+  #dot { animation: pulse 2s ease-in-out infinite; }
+</style>
+
+<script>
+(function () {
+  const coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+  if (!coarse) {
+    const ACCENT = '#C4622D';
+    const cursor = document.createElement('div');
+    Object.assign(cursor.style, {
+      position: 'fixed', top: '0', left: '0', width: '8px', height: '8px',
+      marginLeft: '-4px', marginTop: '-4px', borderRadius: '50%',
+      background: ACCENT, border: '1px solid ' + ACCENT,
+      pointerEvents: 'none', zIndex: '99999', opacity: '0',
+      transition: 'width .2s ease, height .2s ease, margin .2s ease, background-color .2s ease, border-color .2s ease, opacity .2s ease',
+      willChange: 'transform'
+    });
+    document.body.appendChild(cursor);
+    document.body.style.cursor = 'none';
+    let cx = window.innerWidth / 2, cy = window.innerHeight / 2, raf = null;
+    const place = () => { cursor.style.transform = 'translate(' + cx + 'px,' + cy + 'px)'; raf = null; };
+    window.addEventListener('mousemove', (e) => {
+      cx = e.clientX; cy = e.clientY; cursor.style.opacity = '1';
+      if (!raf) raf = requestAnimationFrame(place);
+    }, { passive: true });
+    window.addEventListener('mouseout', (e) => { if (!e.relatedTarget) cursor.style.opacity = '0'; });
+    const grow = () => {
+      cursor.style.width = '32px'; cursor.style.height = '32px';
+      cursor.style.marginLeft = '-16px'; cursor.style.marginTop = '-16px';
+      cursor.style.background = 'transparent'; cursor.style.borderColor = ACCENT;
+    };
+    const shrink = () => {
+      cursor.style.width = '8px'; cursor.style.height = '8px';
+      cursor.style.marginLeft = '-4px'; cursor.style.marginTop = '-4px';
+      cursor.style.background = ACCENT; cursor.style.borderColor = ACCENT;
+    };
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', grow);
+      el.addEventListener('mouseleave', shrink);
+    });
+  }
+})();
+</script>
+<script>
+(function(){
+  var siteHeader = document.getElementById('site-header');
+  if (siteHeader) {
+    window.addEventListener('scroll', function(){
+      siteHeader.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  }
+  // Smooth scroll para âncoras locais (#...)
+  document.querySelectorAll('#site-header a[href^="#"], #mobile-menu a[href^="#"]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      var href = link.getAttribute('href');
+      if (href === '#') return;
+      var target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        var headerH = siteHeader ? siteHeader.offsetHeight + 24 : 80;
+        var top = target.getBoundingClientRect().top + window.scrollY - headerH;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+  // Menu mobile
+  (function(){
+    var dotsBtn = document.getElementById('hdr-dots-btn');
+    var mobileMenu = document.getElementById('mobile-menu');
+    var overlay = document.getElementById('mobile-menu-overlay');
+    var closeBtn = document.getElementById('mmenu-close-btn');
+    if (!dotsBtn || !mobileMenu) return;
+    function openMenu(){ mobileMenu.classList.add('open'); overlay.classList.add('open'); dotsBtn.setAttribute('aria-expanded','true'); mobileMenu.getBoundingClientRect(); }
+    function closeMenu(){ mobileMenu.style.opacity='0'; mobileMenu.style.transform='translateY(-8px) scale(0.98)'; overlay.classList.remove('open'); dotsBtn.setAttribute('aria-expanded','false'); setTimeout(function(){ mobileMenu.classList.remove('open'); mobileMenu.style.opacity=''; mobileMenu.style.transform=''; },200); }
+    dotsBtn.addEventListener('click', function(){ mobileMenu.classList.contains('open') ? closeMenu() : openMenu(); });
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+    mobileMenu.querySelectorAll('a').forEach(function(link){ link.addEventListener('click', function(){ closeMenu(); }); });
+    document.addEventListener('keydown', function(e){ if (e.key==='Escape' && mobileMenu.classList.contains('open')) closeMenu(); });
+  })();
+})();
+</script>
+</body>
+</html>
